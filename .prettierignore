@@ -1,6 +1,7 @@
 # Ignore artifacts:
 
 # production
+/dist
 /build
 /generator/**/*.hbs
 coverage
