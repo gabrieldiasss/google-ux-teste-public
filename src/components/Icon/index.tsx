@@ -46,6 +46,9 @@ export const Icon = forwardRef<HTMLSpanElement, IconProps>(
         .join(', '),
     };
 
+    const validNames = new Set(Object.keys(SymbolCodepoints));
+    if (!validNames.has(name)) return <span></span>;
+
     return (
       <span {...props} ref={ref} style={style} className={className}>
         {name}
