@@ -7,6 +7,7 @@ import { SegmentedControl } from './SegmentedControl';
 import { Toggle } from './Toggle';
 import { ActionIcon } from './ActionIcon';
 import { Tag } from './Tag';
+import { Skeleton } from './Skeleton';
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   Toggle,
   ActionIcon,
   Tag,
+  Skeleton,
 };
