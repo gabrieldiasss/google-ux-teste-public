@@ -13,7 +13,7 @@ steps:
     displayName: 'Instalar Node.js'
 
   - script: |
-      npm install
+      npm install --force
     displayName: 'Instalar dependências'
 
  # - script: |
