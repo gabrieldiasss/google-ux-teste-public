@@ -1,5 +1,5 @@
 {
-    "name": "@design-system-senai/react",
+    "name": "design-system-senai-react",
     "version": "1.0.3",
     "scripts": {
         "dev": "rollup -c --watch",
