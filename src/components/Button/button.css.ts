@@ -20,6 +20,7 @@ export const buttonVariants = styleVariants({
     backgroundColor: theme.colors.primary[primaryShade],
     color: theme.colors.neutrals.light[50],
     border: 'solid transparent',
+    borderWidth: theme.borders.width.thin,
 
     ':hover': {
       backgroundColor: theme.colors.primary[400],
@@ -32,6 +33,8 @@ export const buttonVariants = styleVariants({
   outline: {
     backgroundColor: 'transparent',
     border: 'solid',
+    borderWidth: theme.borders.width.thin,
+
     color: theme.colors.primary[primaryShade],
     borderColor: theme.colors.primary[primaryShade],
 
@@ -47,6 +50,8 @@ export const buttonVariants = styleVariants({
   subtle: {
     backgroundColor: 'transparent',
     border: 'solid transparent',
+    borderWidth: theme.borders.width.thin,
+
     color: theme.colors.primary[primaryShade],
 
     ':hover': {

@@ -15,7 +15,6 @@ localStorage.getItem(colorSchemeKey);
 export const setColorScheme = (scheme: ColorScheme) => {
   typeof window !== 'undefined' &&
     window.localStorage.setItem(colorSchemeKey, scheme);
-  document.documentElement.setAttribute(colorSchemeKey, scheme);
 };
 
 export const getColorScheme = () => {

@@ -9,7 +9,7 @@ import { ActionIcon } from './ActionIcon';
 import { Tag } from './Tag';
 import { Skeleton } from './Skeleton';
 import { Widget } from './Widget';
-
+import { TextInput } from './Inputs/TextInput';
 export {
   Button,
   Avatar,
@@ -22,4 +22,5 @@ export {
   Tag,
   Skeleton,
   Widget,
+  TextInput,
 };

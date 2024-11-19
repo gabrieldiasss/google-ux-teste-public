@@ -63,10 +63,6 @@ export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
     setStateColorScheme(newScheme);
   };
 
-  useEffect(() => {
-    document.body.className = stateColorScheme;
-  }, [stateColorScheme]);
-
   return (
     <ColorSchemeContext.Provider
       value={{ colorScheme: stateColorScheme, toggleColorScheme }}
