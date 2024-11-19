@@ -3,6 +3,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 export const widgetBaseStyle = style({
   border: '1px solid transparent',
+  padding: theme.spacing.s,
   borderRadius: theme.borders.radius.lg,
 });
 

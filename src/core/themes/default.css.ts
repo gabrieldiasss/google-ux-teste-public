@@ -224,8 +224,8 @@ export const themeTokens = {
 
     gradient: {
       1: 'linear-gradient(225deg, #0F59E6 0.44%, #1670FA 5.39%, #E84910 54.13%, #F5631A 71.48%, #F8833F 88.33%, #FBB076 99.56%)',
-      2: 'background: linear-gradient(140.11deg, #D8EDFF 1.64%, #54B2FF 40.6%, #A7B5B9 68.76%, #FBB076 96.34%)',
-      3: 'background: radial-gradient(50% 50% at 50% 50%, rgba(0, 134, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%)',
+      2: 'linear-gradient(140.11deg, #D8EDFF 1.64%, #54B2FF 40.6%, #A7B5B9 68.76%, #FBB076 96.34%)',
+      3: 'radial-gradient(50% 50% at 50% 50%, rgba(0, 134, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%)',
     },
   },
 
