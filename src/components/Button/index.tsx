@@ -3,9 +3,17 @@ import React from 'react';
 import { Button as Btn } from '@headlessui/react';
 import './button.css';
 
-import { buttonSizes, buttonStyle, buttonVariants } from './button.css';
+import {
+  buttonDarkVariants,
+  buttonLightVariants,
+  buttonSizes,
+  buttonStyle,
+  buttonVariants,
+} from './button.css';
 import { Icon } from '@/components/Icon';
 import { SymbolCodepoints } from './../../core/icons/types';
+import { useColorScheme } from '@/providers';
+import { ColorSchemeEnum } from '@/utils';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -24,6 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
+  const { colorScheme } = useColorScheme();
   const renderIcon = () => {
     if (!iconProps?.icon) return null;
 
@@ -40,6 +49,9 @@ export const Button: React.FC<ButtonProps> = ({
         buttonStyle,
         buttonSizes[size],
         buttonVariants[variant],
+        colorScheme === ColorSchemeEnum.Dark
+          ? buttonDarkVariants[variant]
+          : buttonLightVariants[variant],
       ])}
     >
       {iconProps?.position === 'left' && renderIcon()}

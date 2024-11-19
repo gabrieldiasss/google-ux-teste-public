@@ -4,12 +4,16 @@ import { Button as Btn } from '@headlessui/react';
 import './actionIcon.css';
 
 import {
+  actionIconDarkVariants,
+  actionIconLightVariants,
   actionIconSizes,
   actionIconStyle,
   actionIconVariants,
 } from './actionIcon.css';
 import { Icon } from '@/components/Icon';
 import { SymbolCodepoints } from './../../core/icons/types';
+import { useColorScheme } from '@/providers';
+import { ColorSchemeEnum } from '@/utils';
 
 interface ActionIconProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -25,6 +29,7 @@ export const ActionIcon: React.FC<ActionIconProps> = ({
   onClick,
   ...props
 }) => {
+  const { colorScheme } = useColorScheme();
   const renderIcon = () => {
     if (!icon) return null;
     const iconSize =
@@ -40,6 +45,9 @@ export const ActionIcon: React.FC<ActionIconProps> = ({
         actionIconStyle,
         actionIconSizes[size],
         actionIconVariants[variant],
+        colorScheme === ColorSchemeEnum.Dark
+          ? actionIconDarkVariants[variant]
+          : actionIconLightVariants[variant],
       ])}
     >
       {renderIcon()}

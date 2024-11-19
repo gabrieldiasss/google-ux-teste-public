@@ -27,10 +27,6 @@ export const buttonVariants = styleVariants({
     ':active': {
       backgroundColor: theme.colors.primary[600],
     },
-    ':disabled': {
-      cursor: 'not-allowed',
-      backgroundColor: theme.colors.neutralsOverlay.light[400],
-    },
   },
 
   outline: {
@@ -47,11 +43,6 @@ export const buttonVariants = styleVariants({
       color: theme.colors.primary[600],
       borderColor: theme.colors.primary[600],
     },
-    ':disabled': {
-      cursor: 'not-allowed',
-      color: theme.colors.neutrals.dark[900],
-      borderColor: theme.colors.neutrals.dark[900],
-    },
   },
   subtle: {
     backgroundColor: 'transparent',
@@ -64,9 +55,49 @@ export const buttonVariants = styleVariants({
     ':active': {
       color: theme.colors.primary[600],
     },
+  },
+});
+
+export const buttonDarkVariants = styleVariants({
+  filled: {
     ':disabled': {
       cursor: 'not-allowed',
-      color: theme.colors.neutrals.dark[900],
+      backgroundColor: theme.colors.neutrals.dark[700],
+    },
+  },
+  outline: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.dark[700],
+      borderColor: theme.colors.neutrals.dark[700],
+    },
+  },
+  subtle: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.dark[700],
+    },
+  },
+});
+
+export const buttonLightVariants = styleVariants({
+  filled: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      backgroundColor: theme.colors.neutrals.light[300],
+    },
+  },
+  outline: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.light[300],
+      borderColor: theme.colors.neutrals.light[300],
+    },
+  },
+  subtle: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.light[300],
     },
   },
 });

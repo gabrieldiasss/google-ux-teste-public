@@ -22,7 +22,7 @@ export const tagStyle = style({
   fontWeight: theme.fontWeights.normal,
 });
 
-export const tagColors = styleVariants({
+const commonTagColors = {
   success: {
     background: theme.colors.success[100],
     color: theme.colors.success[800],
@@ -48,4 +48,18 @@ export const tagColors = styleVariants({
     borderColor: theme.colors.neutrals.light[200],
     color: theme.colors.neutrals.light[200],
   },
+};
+
+export const tagLightColors = styleVariants({
+  ...commonTagColors,
+
+  outline: {
+    background: 'transparent',
+    borderColor: theme.colors.neutrals.dark[800],
+    color: theme.colors.neutrals.dark[800],
+  },
+});
+
+export const tagDarkColors = styleVariants({
+  ...commonTagColors,
 });

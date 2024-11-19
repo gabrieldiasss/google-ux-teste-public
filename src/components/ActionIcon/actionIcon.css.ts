@@ -26,10 +26,6 @@ export const actionIconVariants = styleVariants({
     ':active': {
       backgroundColor: theme.colors.primary[600],
     },
-    ':disabled': {
-      cursor: 'not-allowed',
-      backgroundColor: theme.colors.neutralsOverlay.light[400],
-    },
   },
 
   outline: {
@@ -46,11 +42,6 @@ export const actionIconVariants = styleVariants({
       color: theme.colors.primary[600],
       borderColor: theme.colors.primary[600],
     },
-    ':disabled': {
-      cursor: 'not-allowed',
-      color: theme.colors.neutrals.dark[900],
-      borderColor: theme.colors.neutrals.dark[900],
-    },
   },
   subtle: {
     backgroundColor: 'transparent',
@@ -63,13 +54,52 @@ export const actionIconVariants = styleVariants({
     ':active': {
       color: theme.colors.primary[600],
     },
+  },
+});
+
+export const actionIconDarkVariants = styleVariants({
+  filled: {
     ':disabled': {
       cursor: 'not-allowed',
-      color: theme.colors.neutrals.dark[900],
+      backgroundColor: theme.colors.neutrals.dark[700],
+    },
+  },
+  outline: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.dark[700],
+      borderColor: theme.colors.neutrals.dark[700],
+    },
+  },
+  subtle: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.dark[700],
     },
   },
 });
 
+export const actionIconLightVariants = styleVariants({
+  filled: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      backgroundColor: theme.colors.neutrals.light[300],
+    },
+  },
+  outline: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.light[300],
+      borderColor: theme.colors.neutrals.light[300],
+    },
+  },
+  subtle: {
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.neutrals.light[300],
+    },
+  },
+});
 export const actionIconSizes = styleVariants({
   xs: {
     padding: 8,
