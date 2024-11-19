@@ -9,8 +9,16 @@ export const segmentedWrapper = style({
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
 
-  background: theme.colors.neutralsOverlay.dark[200],
   borderRadius: theme.borders.radius.xl,
+});
+
+export const segmentedWrapperStateVariants = styleVariants({
+  dark: {
+    background: theme.colors.neutralsOverlay.light[200],
+  },
+  light: {
+    background: theme.colors.neutralsOverlay.dark[200],
+  },
 });
 
 export const buttonSegmentedStyle = style({

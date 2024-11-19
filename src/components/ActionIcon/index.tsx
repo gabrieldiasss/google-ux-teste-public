@@ -4,10 +4,10 @@ import { Button as Btn } from '@headlessui/react';
 import './actionIcon.css';
 
 import {
+  actionIconStyle,
+  actionIconSizes,
   actionIconDarkVariants,
   actionIconLightVariants,
-  actionIconSizes,
-  actionIconStyle,
   actionIconVariants,
 } from './actionIcon.css';
 import { Icon } from '@/components/Icon';

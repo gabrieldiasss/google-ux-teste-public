@@ -8,6 +8,7 @@ import { Toggle } from './Toggle';
 import { ActionIcon } from './ActionIcon';
 import { Tag } from './Tag';
 import { Skeleton } from './Skeleton';
+import { Widget } from './Widget';
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   ActionIcon,
   Tag,
   Skeleton,
+  Widget,
 };

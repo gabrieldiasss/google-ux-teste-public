@@ -19,18 +19,18 @@ export const skeletonBase = style({
 export const skeletonStyleVariants = styleVariants({
   dark: {
     background: `repeating-linear-gradient(to right,
-   rgba(0,0,0,0),
-   ${theme.colors.neutralsOverlay.light[100]} ,
-   rgba(0,0,0,0)) `,
+    ${theme.colors.neutralsOverlay.light[50]} ,
+    rgba(0,0,0,0),
+   ${theme.colors.neutralsOverlay.light[50]} ) `,
 
     backgroundSize: '200% 100%',
     animation: `${loading} 5s ease-out infinite`,
   },
   light: {
     background: `repeating-linear-gradient(to right,
-    rgba(34, 39, 42, 0),
     ${theme.colors.neutralsOverlay.dark[50]} ,
-    rgba(34, 39, 42, 0)) `,
+    rgba(34, 39, 42, 0),
+    ${theme.colors.neutralsOverlay.dark[50]} ) `,
     backgroundSize: '200% 100%',
     animation: `${loading} 5s ease-out infinite`,
   },

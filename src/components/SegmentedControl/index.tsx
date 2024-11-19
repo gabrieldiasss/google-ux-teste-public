@@ -5,9 +5,11 @@ import {
   buttonSegmentedStyle,
   buttonStyleStateVariants,
   segmentedWrapper,
+  segmentedWrapperStateVariants,
 } from './segmentedControl.css';
 import { Icon } from '@/components/Icon';
 import { SymbolCodepoints } from './../../core/icons/types';
+import { useColorScheme } from '@/providers';
 export interface SegmentedControlItem {
   label: string;
   value: string;
@@ -25,6 +27,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   options,
   activeValue,
 }) => {
+  const { colorScheme } = useColorScheme();
   const renderOptions = () => {
     return options?.map(({ label, iconProps, onClick, value }, key) => {
       const renderIcon = () => {
@@ -50,7 +53,16 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
       );
     });
   };
-  return <div className={segmentedWrapper}>{renderOptions()}</div>;
+  return (
+    <div
+      className={clsx(
+        segmentedWrapper,
+        segmentedWrapperStateVariants[colorScheme],
+      )}
+    >
+      {renderOptions()}
+    </div>
+  );
 };
 
 SegmentedControl.displayName = 'SegmentedControl';
