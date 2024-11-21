@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.9
+
+### Patch Changes
+
+- Create SearchInput, PasswordInput and adjust token colors dark and light mode in other components
+
 ## 1.0.7
 
 ### Patch Changes
