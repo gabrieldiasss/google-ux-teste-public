@@ -12,6 +12,7 @@ import { Widget } from './Widget';
 import { TextInput } from './Inputs/TextInput';
 import { TextArea } from './Inputs/TextArea';
 import { SearchInput } from './Inputs/SearchInput';
+import { PasswordInput } from './Inputs/PasswordInput';
 export {
   Button,
   Avatar,
@@ -27,4 +28,5 @@ export {
   TextInput,
   TextArea,
   SearchInput,
+  PasswordInput,
 };
