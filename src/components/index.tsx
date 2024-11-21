@@ -11,6 +11,7 @@ import { Skeleton } from './Skeleton';
 import { Widget } from './Widget';
 import { TextInput } from './Inputs/TextInput';
 import { TextArea } from './Inputs/TextArea';
+import { SearchInput } from './Inputs/SearchInput';
 export {
   Button,
   Avatar,
@@ -25,4 +26,5 @@ export {
   Widget,
   TextInput,
   TextArea,
+  SearchInput,
 };

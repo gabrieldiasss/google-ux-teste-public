@@ -25,7 +25,7 @@ interface IconProps {
   icon: SymbolCodepoints;
 }
 
-interface TextInputProps
+export interface TextInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   size?: 'xs' | 'lg';
   iconProps?: IconProps;
