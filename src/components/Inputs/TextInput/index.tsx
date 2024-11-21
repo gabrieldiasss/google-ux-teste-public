@@ -1,15 +1,23 @@
 import React from 'react';
 import { Input } from '@headlessui/react';
 import {
-  container,
-  iconWrapper,
-  input,
-  sizes,
-  variants,
+  textInputGlobalWrapperStyle,
+  textInputWrapperStyle,
+  textInputWrapperSizesStyles,
+  textInputWrapperVariantStyles,
+  textInputWrapperVariantColorsWithErrors,
+  textInputStyle,
+  textInputLabelErrorStyle,
+  textInputLabelAsteriskStyle,
+  textInputLabelStyle,
+  textInputLabelVariantStyle,
+  textInputWrapperVariantColorsWithSuccess,
+  textInputDisabledWrapperStyle,
 } from './textInput.css';
 import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
 import { Icon } from '@/components/Icon';
+import clsx from 'clsx';
 
 interface IconProps {
   position: 'left' | 'right';
@@ -20,26 +28,77 @@ interface TextInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   size?: 'xs' | 'lg';
   iconProps?: IconProps;
+  label?: string;
+  error?: string;
+  isSuccess?: boolean;
+  withAsterisk?: boolean;
 }
 
 export const TextInput: React.FC<TextInputProps> = ({
   size = 'lg',
   iconProps,
   className,
+  label,
+  error,
+  isSuccess,
+  withAsterisk,
   ...props
 }) => {
+  const inputRef = React.useRef<HTMLDivElement>(null);
+
   const { colorScheme } = useColorScheme();
   const renderIcon = () => {
     if (iconProps?.icon) {
-      return <Icon name={iconProps.icon} size={18} color="inherit" />;
+      return (
+        <Icon
+          name={isSuccess ? 'check_circle' : error ? 'error' : iconProps.icon}
+          size={18}
+          color="inherit"
+        />
+      );
     }
     return null;
   };
+  const shouldRenderRightIcon =
+    iconProps?.position === 'right' || error || isSuccess;
   return (
-    <div className={`${container} ${sizes[size]} ${variants[colorScheme]}`}>
-      {iconProps?.position === 'left' && renderIcon()}
-      <Input className={input} {...props} />
-      {iconProps?.position === 'right' && renderIcon()}
+    <div className={clsx(textInputGlobalWrapperStyle)}>
+      {label && (
+        <span
+          className={clsx(
+            textInputLabelStyle,
+            textInputLabelVariantStyle[colorScheme],
+          )}
+        >
+          {label}
+          {(withAsterisk || props.required) && (
+            <b className={clsx(textInputLabelAsteriskStyle)}>*</b>
+          )}
+        </span>
+      )}
+      <div
+        className={clsx(
+          props.disabled
+            ? textInputDisabledWrapperStyle
+            : textInputWrapperStyle,
+          textInputWrapperSizesStyles[size],
+          isSuccess
+            ? textInputWrapperVariantColorsWithSuccess[colorScheme]
+            : error
+              ? textInputWrapperVariantColorsWithErrors[colorScheme]
+              : textInputWrapperVariantStyles[colorScheme],
+
+          className,
+        )}
+        onClick={() => {
+          inputRef?.current?.focus();
+        }}
+      >
+        {iconProps?.position === 'left' && !error && !isSuccess && renderIcon()}
+        <Input className={clsx(textInputStyle)} ref={inputRef} {...props} />
+        {shouldRenderRightIcon && renderIcon()}
+      </div>
+      {error && <span className={clsx(textInputLabelErrorStyle)}>{error}</span>}
     </div>
   );
 };
