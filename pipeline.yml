@@ -16,9 +16,9 @@ steps:
       npm install --force
     displayName: 'Instalar dependências'
 
- # - script: |
- #     npm run build
- #   displayName: 'Executar build'
+  # - script: |
+  #     npm run build
+  #   displayName: 'Executar build'
 
   - script: npm cache clean --force
     displayName: 'Limpar cache do npm'
@@ -26,12 +26,10 @@ steps:
   - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
     displayName: 'Autenticar com o npm'
 
-  - script: | 
+  - script: |
       npm run build
-      npm version patch --no-git-tag-version
       npm publish --access public
     displayName: 'Publicar no npm'
-
 #  - task: PublishPipelineArtifact@1
 #    inputs:
 #      targetPath: 'dist'  # O caminho correto
