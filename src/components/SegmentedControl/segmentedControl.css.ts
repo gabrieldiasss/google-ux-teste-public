@@ -14,10 +14,10 @@ export const segmentedWrapper = style({
 
 export const segmentedWrapperStateVariants = styleVariants({
   dark: {
-    background: theme.colors.neutralsOverlay.light[200],
+    background: theme.colors.neutralsOverlay.light[100],
   },
   light: {
-    background: theme.colors.neutralsOverlay.dark[200],
+    background: theme.colors.neutralsOverlay.dark[100],
   },
 });
 
@@ -42,7 +42,7 @@ export const buttonSegmentedStyle = style({
   fontWeight: theme.fontWeights.medium,
 });
 
-export const buttonStyleStateVariants = styleVariants({
+export const buttonStyleStateVariantsLight = styleVariants({
   active: {
     backgroundColor: theme.colors.primary[primaryShade],
     color: theme.colors.neutrals.light[50],
@@ -73,6 +73,41 @@ export const buttonStyleStateVariants = styleVariants({
     ':disabled': {
       cursor: 'not-allowed',
       backgroundColor: theme.colors.neutralsOverlay.light[400],
+    },
+  },
+});
+
+export const buttonStyleStateVariantsDark = styleVariants({
+  active: {
+    backgroundColor: theme.colors.primary[primaryShade],
+    color: theme.colors.neutrals.light[50],
+
+    ':hover': {
+      backgroundColor: theme.colors.primary[400],
+    },
+    ':active': {
+      backgroundColor: theme.colors.primary[600],
+    },
+    ':disabled': {
+      cursor: 'not-allowed',
+      backgroundColor: theme.colors.neutralsOverlay.dark[400],
+    },
+  },
+  inactive: {
+    color: theme.colors.neutrals.dark[700],
+    backgroundColor: theme.colors.neutrals.dark[50],
+
+    ':hover': {
+      color: theme.colors.neutrals.light[50],
+      backgroundColor: theme.colors.primary[400],
+    },
+    ':active': {
+      color: theme.colors.neutrals.light[50],
+      backgroundColor: theme.colors.primary[600],
+    },
+    ':disabled': {
+      cursor: 'not-allowed',
+      backgroundColor: theme.colors.neutralsOverlay.dark[400],
     },
   },
 });

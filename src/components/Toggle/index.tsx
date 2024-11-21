@@ -1,14 +1,18 @@
 import React from 'react';
 import clsx from 'clsx';
 import {
-  toggleInnerDisabledStyleStateVariants,
+  toggleInnerDisabledStyleStateVariantsLight,
+  toggleInnerDisabledStyleStateVariantsDark,
   toggleInnerStyle,
   toggleInnerStyleSizesVariants,
-  toggleInnerStyleStateVariants,
+  toggleInnerStyleStateVariantsLight,
+  toggleInnerStyleStateVariantsDark,
   toggleOuterStyle,
   toggleOuterStyleSizesVariants,
-  toggleOuterStyleStateVariants,
+  toggleOuterStyleStateVariantsDark,
+  toggleOuterStyleStateVariantsLight,
 } from './toggle.css';
+import { useColorScheme } from '@/providers';
 
 interface ToggleProps extends React.HTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'lg';
@@ -22,7 +26,19 @@ export const Toggle: React.FC<ToggleProps> = ({
   disabled = false,
   ...props
 }) => {
+  const { colorScheme } = useColorScheme();
   const switchedState = switched ? 'switched' : 'unswitched';
+
+  const getInnerStyle = () => {
+    if (disabled) {
+      return colorScheme === 'dark'
+        ? toggleInnerDisabledStyleStateVariantsDark[switchedState]
+        : toggleInnerDisabledStyleStateVariantsLight[switchedState];
+    }
+    return colorScheme === 'dark'
+      ? toggleInnerStyleStateVariantsDark[switchedState]
+      : toggleInnerStyleStateVariantsLight[switchedState];
+  };
   return (
     <button
       name="toggle-outer"
@@ -31,16 +47,16 @@ export const Toggle: React.FC<ToggleProps> = ({
       className={clsx(
         toggleOuterStyle,
         toggleOuterStyleSizesVariants[size],
-        toggleOuterStyleStateVariants[switchedState],
+        colorScheme === 'dark'
+          ? toggleOuterStyleStateVariantsDark[switchedState]
+          : toggleOuterStyleStateVariantsLight[switchedState],
       )}
     >
       <div
         className={clsx(
           toggleInnerStyle,
           toggleInnerStyleSizesVariants[size],
-          disabled
-            ? toggleInnerDisabledStyleStateVariants[switchedState]
-            : toggleInnerStyleStateVariants[switchedState],
+          getInnerStyle(),
         )}
       />
     </button>

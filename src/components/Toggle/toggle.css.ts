@@ -4,27 +4,41 @@ import { theme } from '@/core/themes/default.css';
 export const toggleOuterStyle = style({
   display: 'inline-flex',
   alignItems: 'center',
-  border: '1px solid',
+  border: 'none',
+  outlineWidth: 1,
+  outlineStyle: 'solid',
   cursor: 'pointer',
   borderRadius: theme.borders.radius.xl,
   paddingLeft: 1,
   paddingRight: 1,
-  transition:
-    'background-color 0.3s ease, border-color 0.3s ease, justify-content 0.3s ease, width 0.3s ease, height 0.3s ease',
+  transition: 'all 0.2s ease',
   ':disabled': {
     cursor: 'not-allowed',
   },
 });
 
-export const toggleOuterStyleStateVariants = styleVariants({
+export const toggleOuterStyleStateVariantsLight = styleVariants({
   unswitched: {
     justifyContent: 'flex-start',
-    borderColor: theme.colors.neutrals.light[300],
+    outlineColor: theme.colors.neutrals.light[200],
     backgroundColor: theme.colors.neutralsOverlay.light[900],
   },
   switched: {
     justifyContent: 'flex-end',
-    borderColor: theme.colors.primary[500],
+    outlineColor: theme.colors.primary[500],
+    backgroundColor: theme.colors.primary[500],
+  },
+});
+
+export const toggleOuterStyleStateVariantsDark = styleVariants({
+  unswitched: {
+    justifyContent: 'flex-start',
+    outlineColor: theme.colors.neutrals.dark[200],
+    backgroundColor: theme.colors.neutralsOverlay.dark[900],
+  },
+  switched: {
+    justifyContent: 'flex-end',
+    outlineColor: theme.colors.primary[500],
     backgroundColor: theme.colors.primary[500],
   },
 });
@@ -41,7 +55,7 @@ export const toggleOuterStyleSizesVariants = styleVariants({
 });
 
 export const toggleInnerStyle = style({
-  border: 0,
+  outline: 0,
   borderRadius: '50%',
   cursor: 'pointer',
   transition: 'all 0.2s ease',
@@ -50,7 +64,7 @@ export const toggleInnerStyle = style({
   },
 });
 
-export const toggleInnerStyleStateVariants = styleVariants({
+export const toggleInnerStyleStateVariantsLight = styleVariants({
   unswitched: {
     backgroundColor: theme.colors.primary[500],
     ':hover': {
@@ -64,14 +78,40 @@ export const toggleInnerStyleStateVariants = styleVariants({
     },
   },
 });
-export const toggleInnerDisabledStyleStateVariants = styleVariants({
+export const toggleInnerStyleStateVariantsDark = styleVariants({
+  unswitched: {
+    backgroundColor: theme.colors.primary[500],
+    ':hover': {
+      backgroundColor: theme.colors.primary[400],
+    },
+  },
+  switched: {
+    backgroundColor: theme.colors.neutralsOverlay.dark[900],
+    ':hover': {
+      backgroundColor: theme.colors.primary[200],
+    },
+  },
+});
+
+export const toggleInnerDisabledStyleStateVariantsLight = styleVariants({
   unswitched: {
     cursor: 'not-allowed',
-    backgroundColor: theme.colors.primary[50],
+    backgroundColor: theme.colors.primaryOverlay[50],
   },
   switched: {
     cursor: 'not-allowed',
-    backgroundColor: theme.colors.primary[400],
+    backgroundColor: theme.colors.neutralsOverlay.light[300],
+  },
+});
+
+export const toggleInnerDisabledStyleStateVariantsDark = styleVariants({
+  unswitched: {
+    cursor: 'not-allowed',
+    backgroundColor: theme.colors.primaryOverlay[50],
+  },
+  switched: {
+    cursor: 'not-allowed',
+    backgroundColor: theme.colors.neutralsOverlay.dark[300],
   },
 });
 

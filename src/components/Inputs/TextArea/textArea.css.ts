@@ -51,10 +51,10 @@ export const textAreaLabelStyle = style({
 
 export const textAreaLabelVariantStyle = styleVariants({
   light: {
-    color: theme.colors.neutrals.light[900],
+    color: theme.colors.neutrals.light[950],
   },
   dark: {
-    color: theme.colors.neutrals.dark[900],
+    color: theme.colors.neutrals.dark[950],
   },
 });
 

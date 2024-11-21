@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import { Button as Btn } from '@headlessui/react';
 import {
   buttonSegmentedStyle,
-  buttonStyleStateVariants,
+  buttonStyleStateVariantsDark,
+  buttonStyleStateVariantsLight,
   segmentedWrapper,
   segmentedWrapperStateVariants,
 } from './segmentedControl.css';
@@ -35,14 +36,15 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
         const iconSize = 18;
         return <Icon name={iconProps.icon} size={iconSize} color="inherit" />;
       };
+      const buttonState = activeValue === value ? 'active' : 'inactive';
       return (
         <Btn
           key={key}
           className={clsx([
             buttonSegmentedStyle,
-            buttonStyleStateVariants[
-              activeValue === value ? 'active' : 'inactive'
-            ],
+            colorScheme === 'dark'
+              ? buttonStyleStateVariantsDark[buttonState]
+              : buttonStyleStateVariantsLight[buttonState],
           ])}
           onClick={onClick}
         >

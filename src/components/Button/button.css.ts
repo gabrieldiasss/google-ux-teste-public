@@ -67,7 +67,7 @@ export const buttonDarkVariants = styleVariants({
   filled: {
     ':disabled': {
       cursor: 'not-allowed',
-      backgroundColor: theme.colors.neutrals.dark[700],
+      backgroundColor: theme.colors.neutralsOverlay.dark[700],
     },
   },
   outline: {
@@ -89,20 +89,21 @@ export const buttonLightVariants = styleVariants({
   filled: {
     ':disabled': {
       cursor: 'not-allowed',
-      backgroundColor: theme.colors.neutrals.light[300],
+      color: theme.colors.primary[primaryShade],
+      backgroundColor: theme.colors.neutralsOverlay.light[500],
     },
   },
   outline: {
     ':disabled': {
       cursor: 'not-allowed',
-      color: theme.colors.neutrals.light[300],
-      borderColor: theme.colors.neutrals.light[300],
+      color: theme.colors.neutrals.light[700],
+      borderColor: theme.colors.neutrals.light[700],
     },
   },
   subtle: {
     ':disabled': {
       cursor: 'not-allowed',
-      color: theme.colors.neutrals.light[300],
+      color: theme.colors.neutrals.light[700],
     },
   },
 });
