@@ -13,6 +13,7 @@ import {
   textInputLabelVariantStyle,
   textInputWrapperVariantColorsWithSuccess,
   textInputDisabledWrapperStyle,
+  textInputWrapperVariantColorsDisabled,
 } from './textInput.css';
 import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
@@ -61,6 +62,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   };
   const shouldRenderRightIcon =
     iconProps?.position === 'right' || error || isSuccess;
+
   return (
     <div className={clsx(textInputGlobalWrapperStyle)}>
       {label && (
@@ -81,12 +83,15 @@ export const TextInput: React.FC<TextInputProps> = ({
           props.disabled
             ? textInputDisabledWrapperStyle
             : textInputWrapperStyle,
+
           textInputWrapperSizesStyles[size],
-          isSuccess
-            ? textInputWrapperVariantColorsWithSuccess[colorScheme]
-            : error
-              ? textInputWrapperVariantColorsWithErrors[colorScheme]
-              : textInputWrapperVariantStyles[colorScheme],
+          props.disabled
+            ? textInputWrapperVariantColorsDisabled[colorScheme]
+            : isSuccess
+              ? textInputWrapperVariantColorsWithSuccess[colorScheme]
+              : error
+                ? textInputWrapperVariantColorsWithErrors[colorScheme]
+                : textInputWrapperVariantStyles[colorScheme],
 
           className,
         )}

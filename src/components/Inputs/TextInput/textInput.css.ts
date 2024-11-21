@@ -38,10 +38,12 @@ export const textInputWrapperStyle = style({
   ...sharedWrapperBase,
   cursor: 'text',
 });
+
 export const textInputDisabledWrapperStyle = style({
   ...sharedWrapperBase,
   cursor: 'not-allowed',
 });
+
 export const textInputWrapperSizesStyles = styleVariants({
   xs: {
     paddingInline: theme.spacing.xs,
@@ -66,6 +68,23 @@ export const textInputWrapperVariantStyles = styleVariants({
     backgroundColor: theme.colors.neutralsOverlay.dark[900],
     color: theme.colors.neutrals.dark[800],
     outlineColor: theme.colors.neutrals.dark[100],
+    ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
+  },
+});
+
+export const textInputWrapperVariantColorsDisabled = styleVariants({
+  light: {
+    backgroundColor: theme.colors.neutralsOverlay.light[900],
+    color: theme.colors.neutrals.light[300],
+    outlineColor: theme.colors.neutrals.light[300],
+    ...sharedDisabledStyles,
+    ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
+  },
+  dark: {
+    backgroundColor: theme.colors.neutralsOverlay.dark[900],
+    color: theme.colors.neutrals.dark[300],
+    outlineColor: theme.colors.neutrals.dark[300],
+    ...sharedDisabledStyles,
     ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
   },
 });
