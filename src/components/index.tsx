@@ -10,6 +10,7 @@ import { Tag } from './Tag';
 import { Skeleton } from './Skeleton';
 import { Widget } from './Widget';
 import { TextInput } from './Inputs/TextInput';
+import { TextArea } from './Inputs/TextArea';
 export {
   Button,
   Avatar,
@@ -23,4 +24,5 @@ export {
   Skeleton,
   Widget,
   TextInput,
+  TextArea,
 };
