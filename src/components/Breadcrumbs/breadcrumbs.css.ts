@@ -27,6 +27,7 @@ export const breadcrumbListStyle = style({
 
   transition: 'all 0.2s ease',
 });
+
 const activeOrHover = {
   light: {
     fontWeight: theme.fontWeights.bold,
@@ -37,6 +38,7 @@ const activeOrHover = {
     color: theme.colors.neutrals.dark[800],
   },
 };
+
 export const breadcrumbListVariantColorModeStyle = styleVariants({
   light: {
     color: theme.colors.neutrals.light[600],
@@ -55,6 +57,7 @@ export const breadcrumbListVariantColorModeStyle = styleVariants({
     },
   },
 });
+
 export const breadcrumbListActiveItemStyle = styleVariants({
   ...activeOrHover,
 });

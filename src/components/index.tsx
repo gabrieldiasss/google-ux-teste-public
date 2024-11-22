@@ -15,6 +15,7 @@ import { SearchInput } from './Inputs/SearchInput';
 import { PasswordInput } from './Inputs/PasswordInput';
 import { Checkbox } from './Checkbox';
 import { Breadcrumbs } from './Breadcrumbs';
+import { Snackbar } from './Snackbar';
 
 export {
   Button,
@@ -34,4 +35,5 @@ export {
   PasswordInput,
   Checkbox,
   Breadcrumbs,
+  Snackbar,
 };
