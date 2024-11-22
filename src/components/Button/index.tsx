@@ -60,3 +60,5 @@ export const Button: React.FC<ButtonProps> = ({
     </Btn>
   );
 };
+
+Button.displayName = 'Button';

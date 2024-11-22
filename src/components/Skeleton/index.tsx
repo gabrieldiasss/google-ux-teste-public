@@ -23,3 +23,4 @@ export const Skeleton: React.FC<SkeletonProps> = ({ width, height }) => {
     />
   );
 };
+Skeleton.displayName = 'Skeleton';

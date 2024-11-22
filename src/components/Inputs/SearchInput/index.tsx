@@ -12,3 +12,5 @@ export const SearchInput: React.FC<SearchInputProps> = ({ ...props }) => {
     />
   );
 };
+
+SearchInput.displayName = 'SearchInput';

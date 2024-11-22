@@ -53,3 +53,5 @@ export const TextArea: React.FC<TextAreaProps> = ({
     </div>
   );
 };
+
+TextArea.displayName = 'TextArea';

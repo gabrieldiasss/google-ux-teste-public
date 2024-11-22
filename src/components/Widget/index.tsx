@@ -23,3 +23,5 @@ export const Widget: React.FC<WidgetProps> = ({
     />
   );
 };
+
+Widget.displayName = 'Widget';

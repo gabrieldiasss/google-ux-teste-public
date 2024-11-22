@@ -107,3 +107,5 @@ export const TextInput: React.FC<TextInputProps> = ({
     </div>
   );
 };
+
+TextInput.displayName = 'TextInput';
