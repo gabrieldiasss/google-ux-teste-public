@@ -13,6 +13,7 @@ import { TextInput } from './Inputs/TextInput';
 import { TextArea } from './Inputs/TextArea';
 import { SearchInput } from './Inputs/SearchInput';
 import { PasswordInput } from './Inputs/PasswordInput';
+import { Checkbox } from './Checkbox';
 export {
   Button,
   Avatar,
@@ -29,4 +30,5 @@ export {
   TextArea,
   SearchInput,
   PasswordInput,
+  Checkbox,
 };

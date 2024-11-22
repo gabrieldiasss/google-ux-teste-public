@@ -1,4 +1,8 @@
-import { createGlobalTheme, globalFontFace } from '@vanilla-extract/css';
+import {
+  createGlobalTheme,
+  globalFontFace,
+  globalStyle,
+} from '@vanilla-extract/css';
 globalFontFace('OpenSans', [
   {
     src: "url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2) format('woff2')",
@@ -12,6 +16,10 @@ globalFontFace('MaterialSymbolsRounded', [
     fontStyle: 'normal',
   },
 ]);
+
+globalStyle('html, body', {
+  fontFamily: 'OpenSans, sans-serif',
+});
 export const themeTokens = {
   colors: {
     primary: {
