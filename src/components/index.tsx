@@ -14,6 +14,8 @@ import { TextArea } from './Inputs/TextArea';
 import { SearchInput } from './Inputs/SearchInput';
 import { PasswordInput } from './Inputs/PasswordInput';
 import { Checkbox } from './Checkbox';
+import { Breadcrumbs } from './Breadcrumbs';
+
 export {
   Button,
   Avatar,
@@ -31,4 +33,5 @@ export {
   SearchInput,
   PasswordInput,
   Checkbox,
+  Breadcrumbs,
 };

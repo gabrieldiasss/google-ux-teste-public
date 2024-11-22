@@ -5,13 +5,7 @@ import {
   ColorSchemeEnum,
   setColorScheme,
 } from '@/utils/colorScheme';
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface ColorSchemeContextType {
   colorScheme: ColorScheme;
