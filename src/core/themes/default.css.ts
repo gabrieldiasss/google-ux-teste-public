@@ -20,6 +20,7 @@ globalFontFace('MaterialSymbolsRounded', [
 globalStyle('html, body', {
   fontFamily: 'OpenSans, sans-serif',
 });
+
 export const themeTokens = {
   colors: {
     primary: {
@@ -300,6 +301,5 @@ export const themeTokens = {
 export const theme = createGlobalTheme(':root', {
   ...themeTokens,
 });
+
 export const primaryShade: keyof typeof theme.colors.primary = 500;
-export const darkModeQuery = '@media (prefers-color-scheme: dark)';
-export const lightModeQuery = '@media (prefers-color-scheme: light)';
