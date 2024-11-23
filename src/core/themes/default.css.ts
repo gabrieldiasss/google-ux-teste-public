@@ -20,7 +20,6 @@ globalFontFace('MaterialSymbolsRounded', [
 globalStyle('html, body', {
   fontFamily: 'OpenSans, sans-serif',
 });
-
 export const themeTokens = {
   colors: {
     primary: {
