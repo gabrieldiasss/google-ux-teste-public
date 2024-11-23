@@ -287,6 +287,15 @@ export const themeTokens = {
       thick: '2px',
     },
   },
+
+  breakpoints: {
+    xs: '320px',
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+    '2xl': '1536px',
+  },
 };
 export const theme = createGlobalTheme(':root', {
   ...themeTokens,

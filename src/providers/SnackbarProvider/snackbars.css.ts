@@ -10,11 +10,5 @@ export const snackbarsWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: theme.spacing.xxs,
-  pointerEvents: 'none',
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '100%',
-    },
-  },
   transition: 'all 0.2s ease',
 });

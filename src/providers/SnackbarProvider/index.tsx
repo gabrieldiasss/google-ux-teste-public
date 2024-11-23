@@ -42,14 +42,12 @@ export const SnackbarProvider = ({ children }: SnackbarProviderProps) => {
     const duration = snackbar.duration || 5000;
     setTimeout(() => removeSnackbar(id), duration);
   };
-  console.log('snackbars', snackbars);
   const removeSnackbar = (id: string) => {
     setSnackbars((prev) => prev.filter((snackbar) => snackbar.id !== id));
   };
 
   return (
     <SnackbarContext.Provider value={{ addSnackbar, removeSnackbar }}>
-      {children}
       {ReactDOM.createPortal(
         <div className={snackbarsWrapper}>
           {snackbars.map(({ id, ...props }) => (
@@ -63,6 +61,7 @@ export const SnackbarProvider = ({ children }: SnackbarProviderProps) => {
         </div>,
         document.body,
       )}
+      {children}
     </SnackbarContext.Provider>
   );
 };
