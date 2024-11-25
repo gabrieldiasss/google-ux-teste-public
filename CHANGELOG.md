@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.11
+
+### Patch Changes
+
+- Add defaultColorScheme property to ColorSchemeProvider
+
 ## 1.0.10
 
 ### Patch Changes
