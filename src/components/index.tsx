@@ -17,6 +17,7 @@ import { Checkbox } from './Checkbox';
 import { Breadcrumbs } from './Breadcrumbs';
 import { Snackbar } from './Snackbar';
 import { Select } from './Select';
+import { Tooltip } from './Tooltip';
 
 export {
   Button,
@@ -38,4 +39,5 @@ export {
   Breadcrumbs,
   Snackbar,
   Select,
+  Tooltip,
 };
