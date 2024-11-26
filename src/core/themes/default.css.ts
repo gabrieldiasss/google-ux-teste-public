@@ -289,12 +289,11 @@ export const themeTokens = {
   },
 
   breakpoints: {
-    xs: '320px',
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-    '2xl': '1536px',
+    xs: '336px',
+    sm: '351px',
+    md: '1232px',
+    lg: '1344px',
+    xl: '1824px',
   },
 };
 export const theme = createGlobalTheme(':root', {

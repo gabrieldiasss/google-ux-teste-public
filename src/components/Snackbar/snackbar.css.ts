@@ -68,7 +68,7 @@ export const snackbarInfoContent = style({
   alignItems: 'center',
   gap: theme.spacing.xl,
   '@media': {
-    [`screen and (max-width: ${themeTokens.breakpoints.sm})`]: {
+    [`screen and (max-width: ${themeTokens.breakpoints.md})`]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
       gap: theme.spacing.m,
