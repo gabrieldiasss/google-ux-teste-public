@@ -11,7 +11,7 @@ import {
   textAreaInputVariantColorsWithErrors,
   textAreaLabelErrorStyle,
 } from './textArea.css';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 interface TextAreaProps extends TextareaProps {
   label?: string;
   error?: string;

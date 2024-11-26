@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 import { Icon } from '../Icon';
 import { SymbolCodepoints } from '@/core/icons/types';
 import {

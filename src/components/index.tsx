@@ -18,6 +18,7 @@ import { Breadcrumbs } from './Breadcrumbs';
 import { Snackbar } from './Snackbar';
 import { Select } from './Select';
 import { Tooltip } from './Tooltip';
+import { Header } from './Header';
 
 export {
   Button,
@@ -40,4 +41,5 @@ export {
   Snackbar,
   Select,
   Tooltip,
+  Header,
 };

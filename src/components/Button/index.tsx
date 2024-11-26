@@ -12,7 +12,7 @@ import {
 } from './button.css';
 import { Icon } from '@/components/Icon';
 import { SymbolCodepoints } from './../../core/icons/types';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 import { ColorSchemeEnum } from '@/utils';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

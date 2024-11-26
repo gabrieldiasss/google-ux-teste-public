@@ -7,7 +7,7 @@ import {
   tooltipVariantColorScheme,
 } from './tooltip.css';
 import clsx from 'clsx';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 import arrowBlockDark from './../../assets/side-block-arrow-tooltip-dark.svg';
 import arrowBlockLight from './../../assets/side-block-arrow-tooltip-light.svg';
 import arrowInlineLight from './../../assets/side-inline-arrow-tooltip-light.svg';

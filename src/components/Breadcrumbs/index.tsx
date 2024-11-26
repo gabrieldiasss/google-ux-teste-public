@@ -7,7 +7,7 @@ import {
 } from './breadcrumbs.css';
 import { Icon } from '../Icon';
 import clsx from 'clsx';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 
 interface BreadcrumbItem {
   name: string;

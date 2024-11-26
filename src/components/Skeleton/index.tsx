@@ -1,7 +1,7 @@
 import React from 'react';
 import { skeletonBase, skeletonStyleVariants } from './skeleton.css';
 import clsx from 'clsx';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 
 type SkeletonProps = {
   width?: string | number;

@@ -16,7 +16,7 @@ import {
   passwordInputWrapperVariantColorsDisabled,
   passwordInputShowOrHideButtonStyle,
 } from './passwordInput.css';
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 import { Icon } from '@/components/Icon';
 import clsx from 'clsx';
 

@@ -7,7 +7,7 @@ import {
 } from '@headlessui/react';
 import clsx from 'clsx';
 
-import { useColorScheme } from '@/providers';
+import { useColorScheme } from '@/core/providers';
 import { Icon } from '@/components/Icon';
 import {
   selectInputStyle,
