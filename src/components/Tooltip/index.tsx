@@ -8,6 +8,16 @@ import {
 } from './tooltip.css';
 import clsx from 'clsx';
 import { useColorScheme } from '@/providers';
+import arrowBlockDark from './../../assets/side-block-arrow-tooltip-dark.svg';
+import arrowBlockLight from './../../assets/side-block-arrow-tooltip-light.svg';
+import arrowInlineLight from './../../assets/side-inline-arrow-tooltip-light.svg';
+import arrowInlineDark from './../../assets/side-inline-arrow-tooltip-dark.svg';
+import arrowCenterDark from './../../assets/center-arrow-tooltip-dark.svg';
+import arrowCenterLight from './../../assets/center-arrow-tooltip-light.svg';
+import arrowInlineCenterLight from './../../assets/center-inline-arrow-tooltip-light.svg';
+import arrowInlineCenterDark from './../../assets/center-inline-arrow-tooltip-dark.svg';
+
+import { ColorSchemeEnum } from '@/utils';
 
 type Position =
   | 'default'
@@ -71,7 +81,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         'aria-describedby': visible ? tooltipId.current : undefined,
       })}
 
-      {visible && (
+      {true && (
         <div
           id={tooltipId.current}
           role="tooltip"
@@ -82,14 +92,33 @@ const Tooltip: React.FC<TooltipProps> = ({
             tooltipVariantColorScheme[colorScheme],
           )}
         >
-          {content}
-          <div
-            className={clsx(
-              arrowBase,
-              arrowVariants[position],
-              tooltipVariantColorScheme[colorScheme],
-            )}
+          <img
+            src={
+              ['topRight', 'topLeft', 'bottomRight', 'bottomLeft'].includes(
+                position,
+              )
+                ? colorScheme === ColorSchemeEnum.Dark
+                  ? arrowBlockDark
+                  : arrowBlockLight
+                : ['rightTop', 'rightBottom', 'leftTop', 'leftBottom'].includes(
+                      position,
+                    )
+                  ? colorScheme === ColorSchemeEnum.Dark
+                    ? arrowInlineDark
+                    : arrowInlineLight
+                  : ['rightCenter', 'leftCenter'].includes(position)
+                    ? colorScheme === ColorSchemeEnum.Dark
+                      ? arrowInlineCenterDark
+                      : arrowInlineCenterLight
+                    : colorScheme === ColorSchemeEnum.Dark
+                      ? arrowCenterDark
+                      : arrowCenterLight
+            }
+            alt=""
+            aria-hidden="true"
+            className={clsx(arrowBase, arrowVariants[position])}
           />
+          {content}
         </div>
       )}
     </div>

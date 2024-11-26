@@ -20,56 +20,75 @@ export const positionVariants = styleVariants({
     marginTop: '8px',
   },
   topCenter: {
+    marginBottom: theme.spacing.xxxs,
     bottom: '100%',
     left: '50%',
     transform: 'translateX(-50%)',
   },
   topLeft: {
     bottom: '100%',
-    left: '0',
+    left: '100%',
+    borderBottomLeftRadius: '0',
   },
   topRight: {
     bottom: '100%',
-    right: '0',
+    right: '100%',
+    borderBottomRightRadius: '0',
   },
   bottomCenter: {
     top: '100%',
     left: '50%',
     transform: 'translateX(-50%)',
+    marginTop: theme.spacing.xxxs,
   },
   bottomLeft: {
     top: '100%',
-    left: '0',
+    left: '100%',
+    borderTopLeftRadius: '0',
+    marginTop: theme.spacing.xxxs,
   },
   bottomRight: {
     top: '100%',
-    right: '0',
+    right: '100%',
+    borderTopRightRadius: '0',
+    marginTop: theme.spacing.xxxs,
   },
   leftCenter: {
     right: '100%',
     top: '50%',
     transform: 'translateY(-50%)',
+    marginRight: theme.spacing.xxxs,
   },
   leftTop: {
     right: '100%',
     top: '0',
+    borderTopRightRadius: '0',
+
+    marginRight: theme.spacing.xxxs,
   },
   leftBottom: {
     right: '100%',
     bottom: '0',
+    borderBottomRightRadius: '0',
+    marginRight: theme.spacing.xxxs,
   },
   rightCenter: {
     left: '100%',
     top: '50%',
     transform: 'translateY(-50%)',
+    marginLeft: theme.spacing.xxxs,
   },
   rightTop: {
     left: '100%',
     top: '0',
+    borderTopLeftRadius: '0',
+    marginLeft: theme.spacing.xxxs,
   },
   rightBottom: {
     left: '100%',
     bottom: '0',
+    borderBottomLeftRadius: '0',
+    marginLeft: theme.spacing.xxxs,
   },
 });
 
@@ -87,10 +106,8 @@ export const tooltipVariantColorScheme = styleVariants({
 // Seta - Base
 export const arrowBase = style({
   position: 'absolute',
-  width: '10px',
-  height: '10px',
   borderRadius: '2px',
-  transform: 'rotate(45deg)', // Ajuste para a forma de triângulo
+  transform: '', // Ajuste para a forma de triângulo
   zIndex: 1000,
 });
 
@@ -102,67 +119,61 @@ export const arrowVariants = styleVariants({
   topCenter: {
     top: '100%',
     left: '50%',
-    transform: 'translateX(-50%) rotate(45deg)', // A seta rotacionada
+    transform: 'scaleY(-1) translateX(-50%)',
   },
   topLeft: {
     top: '100%',
-    left: '10px',
-    transform: 'rotate(45deg)',
+    left: '0',
+    transform: 'scaleY(-1)',
   },
   topRight: {
     top: '100%',
-    right: '10px',
-    transform: 'rotate(45deg)',
+    right: '0',
+    transform: 'scaleX(-1) scaleY(-1)',
   },
   bottomCenter: {
     bottom: '100%',
     left: '50%',
-    transform: 'translateX(-50%) rotate(45deg)',
+    transform: 'translateX(-50%)',
   },
   bottomLeft: {
     bottom: '100%',
-    left: '10px',
-    transform: 'rotate(45deg)',
+    left: '0px',
+    transform: '',
   },
   bottomRight: {
     bottom: '100%',
-    right: '10px',
-    transform: 'rotate(45deg)',
+    right: '0',
+    transform: 'scaleX(-1)',
   },
   leftCenter: {
     left: '100%',
     top: '50%',
-    transform: 'translateY(-50%) rotate(45deg)',
-    marginLeft: '-5px',
+    transform: 'scaleX(-1) translateY(-50%)',
   },
   leftTop: {
     left: '100%',
-    top: '10px',
-    transform: 'rotate(45deg)',
-    marginLeft: '-5px',
+    top: '0',
+    transform: 'scaleX(-1) scaleY(-1)',
   },
   leftBottom: {
     left: '100%',
-    bottom: '10px',
-    transform: 'rotate(45deg)',
-    marginLeft: '-5px',
+    bottom: '0',
+    transform: 'scaleX(-1)',
   },
   rightCenter: {
     right: '100%',
     top: '50%',
-    transform: 'translateY(-50%) rotate(45deg)',
-    marginRight: '-5px',
+    transform: 'translateY(-50%)',
   },
   rightTop: {
     right: '100%',
-    top: '10px',
-    transform: 'rotate(45deg)',
-    marginRight: '-5px',
+    top: '0',
+    transform: 'scaleY(-1)',
   },
   rightBottom: {
     right: '100%',
-    bottom: '10px',
-    transform: 'rotate(45deg)',
-    marginRight: '-5px',
+    bottom: '0',
+    transform: 'scaleX(1) scaleY(1)',
   },
 });
