@@ -7,8 +7,7 @@ import {
   snackbarContainer,
   snackbarVariantWrapper,
   snackbarContent,
-  snackbarTypeStylesLight,
-  snackbarTypeStylesDark,
+  snackbarTypeStyles,
   snackbarInfoContent,
   snackbarIconContainer,
   snackbarIconWrapper,
@@ -54,14 +53,7 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
     <div
       className={clsx(snackbarContainer, snackbarVariantWrapper[colorScheme])}
     >
-      <div
-        className={clsx(
-          snackbarContent,
-          colorScheme === 'light'
-            ? snackbarTypeStylesLight[type]
-            : snackbarTypeStylesDark[type],
-        )}
-      >
+      <div className={clsx(snackbarContent, snackbarTypeStyles[type])}>
         <div className={snackbarHeader}>
           <div
             className={clsx(

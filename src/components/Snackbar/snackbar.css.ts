@@ -7,11 +7,11 @@ export const snackbarContainer = style({
 
 export const snackbarVariantWrapper = styleVariants({
   light: {
-    backgroundColor: theme.colors.neutrals.light[100],
+    backgroundColor: theme.colors.neutrals.light[50],
     color: theme.colors.neutrals.light[500],
   },
   dark: {
-    backgroundColor: theme.colors.neutrals.dark[100],
+    backgroundColor: theme.colors.neutrals.dark[50],
     color: theme.colors.neutrals.dark[500],
   },
 });
@@ -26,35 +26,19 @@ export const snackbarContent = style({
   position: 'relative',
 });
 
-const radialBackground = (color: string, colorScheme: 'light' | 'dark') =>
-  `radial-gradient(circle at 1%, ${color} 1%, ${theme.colors.neutralsOverlay[colorScheme][100]} 30% 90%)`;
-
-export const snackbarTypeStylesLight = styleVariants({
+export const snackbarTypeStyles = styleVariants({
   success: {
-    background: radialBackground(theme.colors.successOverlay[200], 'light'),
+    background: theme.colors.gradient[6],
   },
   error: {
-    background: radialBackground(theme.colors.dangerOverlay[200], 'light'),
+    background: theme.colors.gradient[4],
   },
   warning: {
-    background: radialBackground(theme.colors.warningOverlay[200], 'light'),
+    background: theme.colors.gradient[5],
   },
   info: {
-    background: radialBackground(theme.colors.infoOverlay[200], 'light'),
+    background: theme.colors.gradient[3],
   },
-});
-
-export const snackbarTypeStylesDark = styleVariants({
-  success: {
-    background: radialBackground(theme.colors.successOverlay[200], 'dark'),
-  },
-  error: {
-    background: radialBackground(theme.colors.dangerOverlay[200], 'dark'),
-  },
-  warning: {
-    background: radialBackground(theme.colors.warningOverlay[200], 'dark'),
-  },
-  info: { background: radialBackground(theme.colors.infoOverlay[200], 'dark') },
 });
 
 export const snackbarHeader = style({

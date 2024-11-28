@@ -112,7 +112,7 @@ Se você deseja contribuir ou rodar o projeto localmente, siga os passos abaixo:
 1. Clone o repositório:
 
    ```bash
-   git clone https://CNI-STI@dev.azure.com/CNI-STI/Google-UX/_git/Google-UX
+   git clone [LINK DO REPOSITÓRIO]
    ```
 
 2. Acesse a pasta do projeto:
