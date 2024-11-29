@@ -15,7 +15,7 @@ import {
   textInputDisabledWrapperStyle,
   textInputWrapperVariantColorsDisabled,
 } from './textInput.css';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
 import { Icon } from '@/components/Icon';
 import clsx from 'clsx';

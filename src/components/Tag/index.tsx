@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { tagStyle, tagLightColors, tagDarkColors } from './tag.css';
 import { SymbolCodepoints } from './../../core/icons/types';
 import { Icon } from '../Icon';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 
 type IconProps = {
   icon: SymbolCodepoints;

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { logoSizes } from './logo.css';
 import logoLight from './../../assets/logo-light.svg';
 import logoDark from './../../assets/logo-dark.svg';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 interface LogoProps {
   size?: 'xs' | 'md' | 'xl';
 }

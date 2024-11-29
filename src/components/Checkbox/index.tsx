@@ -1,4 +1,4 @@
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 import clsx from 'clsx';
 import React from 'react';
 import {

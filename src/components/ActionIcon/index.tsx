@@ -12,7 +12,7 @@ import {
 } from './actionIcon.css';
 import { Icon } from '@/components/Icon';
 import { SymbolCodepoints } from './../../core/icons/types';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 import { ColorSchemeEnum } from '@/utils';
 
 interface ActionIconProps

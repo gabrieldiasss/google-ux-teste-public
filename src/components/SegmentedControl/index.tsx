@@ -10,7 +10,7 @@ import {
 } from './segmentedControl.css';
 import { Icon } from '@/components/Icon';
 import { SymbolCodepoints } from './../../core/icons/types';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 export interface SegmentedControlItem {
   label: string;
   value: string;

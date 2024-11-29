@@ -1,5 +1,5 @@
 import React from 'react';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 import { widgetBaseStyle, widgetVariantStyle } from './widget.css';
 import clsx from 'clsx';
 

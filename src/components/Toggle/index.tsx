@@ -12,7 +12,7 @@ import {
   toggleOuterStyleStateVariantsDark,
   toggleOuterStyleStateVariantsLight,
 } from './toggle.css';
-import { useColorScheme } from '@/core/providers';
+import { useColorScheme } from '@/providers';
 
 interface ToggleProps extends React.HTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'lg';
