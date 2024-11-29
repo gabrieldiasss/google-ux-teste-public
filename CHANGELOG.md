@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.20
+
+### Patch Changes
+
+- Add Snackbar component
+
 ## 1.0.19
 
 ### Patch Changes
