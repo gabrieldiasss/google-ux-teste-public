@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.13
+
+### Patch Changes
+
+- Adjust general style
+
 ## 1.0.12
 
 ### Patch Changes
