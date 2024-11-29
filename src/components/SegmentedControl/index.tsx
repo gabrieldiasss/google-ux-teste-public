@@ -23,12 +23,10 @@ export interface SegmentedControlItem {
 interface SegmentedControlProps {
   options: SegmentedControlItem[];
   activeValue?: string;
-  grow?: boolean;
 }
 export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   options,
   activeValue,
-  grow,
 }) => {
   const { colorScheme } = useColorScheme();
   const renderOptions = () => {
@@ -48,13 +46,6 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
               ? buttonStyleStateVariantsDark[buttonState]
               : buttonStyleStateVariantsLight[buttonState],
           ])}
-          style={
-            grow
-              ? {
-                  flex: 1,
-                }
-              : {}
-          }
           onClick={onClick}
         >
           {iconProps?.position === 'left' && renderIcon()}
@@ -70,13 +61,6 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
         segmentedWrapper,
         segmentedWrapperStateVariants[colorScheme],
       )}
-      style={
-        grow
-          ? {
-              flex: 1,
-            }
-          : {}
-      }
     >
       {renderOptions()}
     </div>

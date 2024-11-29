@@ -31,20 +31,13 @@ export const useColorScheme = (): ColorSchemeContextType => {
 
 interface ColorSchemeProviderProps {
   children: ReactNode;
-  defaultColorScheme?: ColorScheme;
 }
 
-export const ColorSchemeProvider = ({
-  children,
-  defaultColorScheme,
-}: ColorSchemeProviderProps) => {
+export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
   const getInitialColorScheme = (): ColorScheme => {
     const savedScheme = localColorScheme as ColorScheme;
     if (savedScheme) {
       return savedScheme;
-    }
-    if (defaultColorScheme) {
-      return defaultColorScheme;
     }
     return window.matchMedia('(prefers-color-scheme: dark)').matches
       ? ColorSchemeEnum.Dark

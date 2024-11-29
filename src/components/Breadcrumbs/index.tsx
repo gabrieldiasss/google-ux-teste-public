@@ -19,7 +19,7 @@ interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
-  breadcrumbItems = [],
+  breadcrumbItems,
 }) => {
   const { colorScheme } = useColorScheme();
   const renderArrow = () => (
@@ -43,19 +43,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       )}
       aria-current={isLast ? 'page' : undefined}
     >
-      {isLast ? (
-        item.name
-      ) : (
-        <a
-          href={item.link}
-          style={{
-            textDecoration: 'none',
-            color: 'inherit',
-          }}
-        >
-          {item.name}
-        </a>
-      )}
+      {isLast ? item.name : <a href={item.link}>{item.name}</a>}
     </li>
   );
 
@@ -63,7 +51,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     const collapsedItems = [
       breadcrumbItems[0],
       breadcrumbItems[1],
-      breadcrumbItems[breadcrumbItems?.length - 1],
+      breadcrumbItems[breadcrumbItems.length - 1],
     ];
 
     return (
@@ -93,9 +81,6 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       })}
     </>
   );
-  if (!breadcrumbItems?.length) {
-    return null;
-  }
   return (
     <nav aria-label="breadcrumb" className={breadcrumbNavBaseStyle}>
       <ul className={clsx(breadcrumbListStyle)}>

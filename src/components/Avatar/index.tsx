@@ -9,7 +9,7 @@ import {
   circleWrapperStyle,
 } from './avatar.css';
 
-export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'xs' | 'md' | 'xl';
   label?: string;
   image?: string | null;
