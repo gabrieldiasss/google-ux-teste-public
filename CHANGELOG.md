@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.14
+
+### Patch Changes
+
+- fix build target js build version
+
 ## 1.0.13
 
 ### Patch Changes
