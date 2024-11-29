@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.19
+
+### Patch Changes
+
+- Add Tooltip component
+
 ## 1.0.18
 
 ### Patch Changes
