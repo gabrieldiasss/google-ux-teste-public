@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.15
+
+### Patch Changes
+
+- Remove breaking hook
+
 ## 1.0.14
 
 ### Patch Changes
