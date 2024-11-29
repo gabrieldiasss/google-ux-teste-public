@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.17
+
+### Patch Changes
+
+- Add new styles and assets
+
 ## 1.0.16
 
 ### Patch Changes
