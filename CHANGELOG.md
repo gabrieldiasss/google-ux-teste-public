@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.16
+
+### Patch Changes
+
+- Rollback to the last zeroheight working version
+
 ## 1.0.15
 
 ### Patch Changes
