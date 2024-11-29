@@ -1,5 +1,6 @@
 export * from './components';
 export * from './providers';
+export * from './core/hooks';
 export { localColorScheme, setColorScheme, getColorScheme } from './utils';
 
 import { style } from '@vanilla-extract/css';

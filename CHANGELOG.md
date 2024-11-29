@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.22
+
+### Patch Changes
+
+- Add Header component
+
 ## 1.0.21
 
 ### Patch Changes

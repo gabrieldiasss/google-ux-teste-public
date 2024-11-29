@@ -17,8 +17,7 @@ import { Checkbox } from './Checkbox';
 import { Breadcrumbs } from './Breadcrumbs';
 import { Snackbar } from './Snackbar';
 import { Tooltip } from './Tooltip';
-import { Select } from './Select';
-
+import { Header } from './Header';
 export {
   Button,
   Avatar,
@@ -39,5 +38,5 @@ export {
   Breadcrumbs,
   Snackbar,
   Tooltip,
-  Select,
+  Header,
 };
