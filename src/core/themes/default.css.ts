@@ -3,7 +3,7 @@ import {
   globalFontFace,
   globalStyle,
 } from '@vanilla-extract/css';
-globalFontFace('OpenSans', [
+globalFontFace('Open Sans', [
   {
     src: "url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2) format('woff2')",
     fontStyle: 'normal',
@@ -17,9 +17,17 @@ globalFontFace('MaterialSymbolsRounded', [
   },
 ]);
 
+globalFontFace('Neo Sans Pro', [
+  {
+    src: "url('https://fonts.cdnfonts.com/s/40085/NeoSansProRegular.woff') format('woff')",
+    fontStyle: 'normal',
+  },
+]);
+
 globalStyle('html, body', {
-  fontFamily: 'OpenSans, sans-serif',
+  fontFamily: 'Open Sans, sans-serif',
 });
+
 export const themeTokens = {
   colors: {
     primary: {
@@ -254,8 +262,8 @@ export const themeTokens = {
     '4xl': '96px',
   },
   fontFamily: {
-    default: 'OpenSans',
-    heading: 'NeoSansPro',
+    default: 'Open Sans',
+    heading: 'Neo Sans Pro',
   },
   fontSizes: {
     xxs: '10px',
