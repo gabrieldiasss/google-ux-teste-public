@@ -6,12 +6,13 @@ import { SymbolCodepoints } from './../../core/icons/types';
 import { Icon } from '../Icon';
 import { useColorScheme } from '@/providers';
 
+type IconProps = {
+  icon: SymbolCodepoints;
+  position: 'right' | 'left';
+};
 interface tagProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof tagDarkColors;
-  iconProps?: {
-    icon: SymbolCodepoints;
-    position: 'right' | 'left';
-  };
+  iconProps?: IconProps;
   label: string;
 }
 
