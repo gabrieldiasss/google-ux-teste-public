@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.18
+
+### Patch Changes
+
+- Add new styles for ActionIcon, Breadcrumbs, Button, SegmentedControl and Tag
+
 ## 1.0.17
 
 ### Patch Changes
