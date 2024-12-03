@@ -4,8 +4,8 @@ import { style, styleVariants } from '@vanilla-extract/css';
 export const breadcrumbNavBaseStyle = style({
   display: 'flex',
   flexWrap: 'wrap',
-  padding: 0,
-  margin: 0,
+  padding: theme.spacing.none,
+  margin: theme.spacing.none,
   listStyle: 'none',
   overflow: 'hidden',
 });
@@ -15,8 +15,8 @@ export const breadcrumbListStyle = style({
   flexWrap: 'wrap',
   alignItems: 'center',
 
-  padding: 0,
-  margin: 0,
+  padding: theme.spacing.none,
+  margin: theme.spacing.none,
   listStyle: 'none',
   overflow: 'hidden',
   gap: theme.spacing.xxxs,

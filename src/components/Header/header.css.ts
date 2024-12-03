@@ -1,5 +1,14 @@
+import { keyframes, style } from '@vanilla-extract/css';
 import { theme } from '@/core/themes/default.css';
-import { style } from '@vanilla-extract/css';
+
+const fadeIn = keyframes({
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+  },
+});
 
 export const headerWrapperBaseStyle = style({
   display: 'flex',
@@ -10,7 +19,18 @@ export const headerWrapperBaseStyle = style({
 });
 export const headerNavWrapperBaseStyle = style({
   display: 'flex',
-  justifyContent: 'space-between',
   alignItems: 'center',
   gap: theme.spacing.xxs,
+});
+export const headerLoggedNavWrapperBaseStyle = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing.xxxs,
+});
+
+export const headerMenuOptionsBaseStyle = style({
+  display: 'flex',
+  gap: theme.spacing.xxxs,
+  borderRadius: theme.borders.radius.xs,
+  animation: `${fadeIn} 0.3s ease-in-out`,
 });

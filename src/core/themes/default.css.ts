@@ -249,6 +249,7 @@ export const themeTokens = {
   },
 
   spacing: {
+    none: '0px',
     '4xs': '2px',
     xxxs: '4px',
     xxs: '8px',

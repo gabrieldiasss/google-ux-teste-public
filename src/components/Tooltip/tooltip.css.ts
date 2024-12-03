@@ -1,7 +1,15 @@
 import { theme } from '@/core/themes/default.css';
-import { style, styleVariants } from '@vanilla-extract/css';
+import { keyframes, style, styleVariants } from '@vanilla-extract/css';
 
-// Base do Tooltip
+const fadeIn = keyframes({
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+  },
+});
+
 export const tooltipBase = style({
   position: 'absolute',
   paddingInline: theme.spacing.xs,
@@ -12,15 +20,16 @@ export const tooltipBase = style({
   fontSize: '12px',
   zIndex: 1000,
   whiteSpace: 'nowrap',
+  animation: `${fadeIn} 0.3s ease-in-out`,
 });
 
 // Variantes de posição para Tooltip
 export const positionVariants = styleVariants({
   default: {
-    marginTop: '8px',
+    marginTop: theme.spacing.xxs,
   },
   topCenter: {
-    marginBottom: theme.spacing.xxxs,
+    marginBottom: theme.spacing.xxs,
     bottom: '100%',
     left: '50%',
     transform: 'translateX(-50%)',
@@ -39,67 +48,69 @@ export const positionVariants = styleVariants({
     top: '100%',
     left: '50%',
     transform: 'translateX(-50%)',
-    marginTop: theme.spacing.xxxs,
+    marginTop: theme.spacing.xxs,
   },
   bottomLeft: {
     top: '100%',
     left: '100%',
     borderTopLeftRadius: '0',
-    marginTop: theme.spacing.xxxs,
+    marginTop: theme.spacing.xxs,
   },
   bottomRight: {
     top: '100%',
     right: '100%',
     borderTopRightRadius: '0',
-    marginTop: theme.spacing.xxxs,
+    marginTop: theme.spacing.xxs,
   },
   leftCenter: {
     right: '100%',
     top: '50%',
     transform: 'translateY(-50%)',
-    marginRight: theme.spacing.xxxs,
+    marginRight: theme.spacing.xxs,
   },
   leftTop: {
     right: '100%',
     top: '0',
     borderTopRightRadius: '0',
 
-    marginRight: theme.spacing.xxxs,
+    marginRight: theme.spacing.xxs,
   },
   leftBottom: {
     right: '100%',
     bottom: '0',
     borderBottomRightRadius: '0',
-    marginRight: theme.spacing.xxxs,
+    marginRight: theme.spacing.xxs,
   },
   rightCenter: {
     left: '100%',
     top: '50%',
     transform: 'translateY(-50%)',
-    marginLeft: theme.spacing.xxxs,
+    marginLeft: theme.spacing.xxs,
   },
   rightTop: {
     left: '100%',
     top: '0',
     borderTopLeftRadius: '0',
-    marginLeft: theme.spacing.xxxs,
+    marginLeft: theme.spacing.xxs,
   },
   rightBottom: {
     left: '100%',
     bottom: '0',
     borderBottomLeftRadius: '0',
-    marginLeft: theme.spacing.xxxs,
+    marginLeft: theme.spacing.xxs,
   },
 });
 
 export const tooltipVariantColorScheme = styleVariants({
   dark: {
-    backgroundColor: theme.colors.neutralsOverlay.dark[700],
+    backgroundColor: theme.colors.neutralsOverlay.dark[900],
     color: theme.colors.neutrals.dark[950],
+    filter: `drop-shadow(0 0 5px ${theme.colors.neutralsOverlay.light[100]})`,
   },
   light: {
-    backgroundColor: theme.colors.neutralsOverlay.light[700],
+    backgroundColor: theme.colors.neutralsOverlay.light[900],
     color: theme.colors.neutrals.light[950],
+    filter: `drop-shadow(0 0 5px ${theme.colors.neutralsOverlay.dark[100]})`,
   },
 });
 

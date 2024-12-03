@@ -1,8 +1,16 @@
 import { theme, themeTokens } from '@/core/themes/default.css';
-import { style, styleVariants } from '@vanilla-extract/css';
-
+import { keyframes, style, styleVariants } from '@vanilla-extract/css';
+const fadeIn = keyframes({
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+  },
+});
 export const snackbarContainer = style({
   borderRadius: theme.borders.radius.xl,
+  animation: `${fadeIn} 0.3s ease-in`,
 });
 
 export const snackbarVariantWrapper = styleVariants({
@@ -148,8 +156,8 @@ export const snackbarComplementButton = style({
   WebkitAppearance: 'none',
   border: 0,
   background: 'none',
-  padding: 0,
-  margin: 0,
+  padding: theme.spacing.none,
+  margin: theme.spacing.none,
   color: 'inherit',
 
   cursor: 'pointer',
@@ -160,8 +168,8 @@ export const snackbarCloseButton = style({
   WebkitAppearance: 'none',
   border: 0,
   background: 'none',
-  padding: 0,
-  margin: 0,
+  padding: theme.spacing.none,
+  margin: theme.spacing.none,
   color: 'inherit',
 
   cursor: 'pointer',

@@ -164,7 +164,7 @@ export const passwordInputShowOrHideButtonStyle = style({
   backgroundColor: 'transparent',
   border: 'none',
   cursor: 'pointer',
-  padding: 0,
+  padding: theme.spacing.none,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
