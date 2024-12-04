@@ -18,6 +18,7 @@ import { Breadcrumbs } from './Breadcrumbs';
 import { Snackbar } from './Snackbar';
 import { Tooltip } from './Tooltip';
 import { Header } from './Header';
+import { ListSectionItem } from './ListSectionItem';
 export {
   Button,
   Avatar,
@@ -39,4 +40,5 @@ export {
   Snackbar,
   Tooltip,
   Header,
+  ListSectionItem,
 };

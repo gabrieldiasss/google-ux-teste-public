@@ -12,7 +12,8 @@ import {
 } from './checkbox.css';
 import { Icon } from '@/components/Icon';
 
-interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: {
     text: string;
     position: 'left' | 'right';

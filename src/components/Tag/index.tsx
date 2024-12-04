@@ -10,13 +10,13 @@ type IconProps = {
   icon: SymbolCodepoints;
   position: 'right' | 'left';
 };
-interface tagProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof tagDarkColors;
   iconProps?: IconProps;
   label: string;
 }
 
-export const Tag: React.FC<tagProps> = ({
+export const Tag: React.FC<TagProps> = ({
   variant = 'info',
   iconProps,
   label,

@@ -15,7 +15,7 @@ import { SymbolCodepoints } from './../../core/icons/types';
 import { useColorScheme } from '@/providers';
 import { ColorSchemeEnum } from '@/utils';
 
-interface ActionIconProps
+export interface ActionIconProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   variant?: 'filled' | 'outline' | 'subtle';

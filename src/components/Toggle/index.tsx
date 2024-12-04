@@ -14,7 +14,7 @@ import {
 } from './toggle.css';
 import { useColorScheme } from '@/providers';
 
-interface ToggleProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ToggleProps extends React.HTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'lg';
   switched?: boolean;
   disabled?: boolean;

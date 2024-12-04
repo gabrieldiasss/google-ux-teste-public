@@ -45,8 +45,8 @@ const commonTagColors = {
   },
   outline: {
     background: 'transparent',
-    borderColor: theme.colors.neutrals.light[200],
-    color: theme.colors.neutrals.light[200],
+    borderColor: theme.colors.neutrals.light[600],
+    color: theme.colors.neutrals.light[600],
   },
 };
 
@@ -55,8 +55,8 @@ export const tagLightColors = styleVariants({
 
   outline: {
     background: 'transparent',
-    borderColor: theme.colors.neutrals.dark[800],
-    color: theme.colors.neutrals.dark[800],
+    borderColor: theme.colors.neutrals.light[600],
+    color: theme.colors.neutrals.light[600],
   },
 });
 

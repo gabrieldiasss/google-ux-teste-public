@@ -17,10 +17,12 @@ export const snackbarVariantWrapper = styleVariants({
   light: {
     backgroundColor: theme.colors.neutrals.light[50],
     color: theme.colors.neutrals.light[500],
+    filter: `drop-shadow(0 0 5px ${theme.colors.neutralsOverlay.dark[100]})`,
   },
   dark: {
     backgroundColor: theme.colors.neutrals.dark[50],
     color: theme.colors.neutrals.dark[500],
+    filter: `drop-shadow(0 0 5px ${theme.colors.neutralsOverlay.light[100]})`,
   },
 });
 
