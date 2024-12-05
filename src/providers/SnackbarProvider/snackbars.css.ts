@@ -1,9 +1,9 @@
-import { theme } from '@/core/themes/default.css';
+import { theme, themeTokens } from '@/core/themes/default.css';
 import { style } from '@vanilla-extract/css';
 
 export const snackbarsWrapper = style({
   position: 'fixed',
-  bottom: 0,
+  top: 0,
   right: 0,
   zIndex: 9999,
   padding: theme.spacing.xxs,
@@ -11,4 +11,11 @@ export const snackbarsWrapper = style({
   flexDirection: 'column',
   gap: theme.spacing.xxs,
   transition: 'all 0.2s ease',
+  width: '100%',
+  maxWidth: 400,
+  '@media': {
+    [`screen and (max-width: ${themeTokens.breakpoints.sm})`]: {
+      maxWidth: 293,
+    },
+  },
 });

@@ -19,6 +19,7 @@ import { Snackbar } from './Snackbar';
 import { Tooltip } from './Tooltip';
 import { Header } from './Header';
 import { ListSectionItem } from './ListSectionItem';
+import { AlertBox } from './AlertBox';
 export {
   Button,
   Avatar,
@@ -41,4 +42,5 @@ export {
   Tooltip,
   Header,
   ListSectionItem,
+  AlertBox,
 };
