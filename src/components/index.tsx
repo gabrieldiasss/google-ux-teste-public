@@ -20,6 +20,7 @@ import { Tooltip } from './Tooltip';
 import { Header } from './Header';
 import { ListSectionItem } from './ListSectionItem';
 import { AlertBox } from './AlertBox';
+import { EmojiListPicker } from './EmojiListPicker';
 export {
   Button,
   Avatar,
@@ -43,4 +44,5 @@ export {
   Header,
   ListSectionItem,
   AlertBox,
+  EmojiListPicker,
 };

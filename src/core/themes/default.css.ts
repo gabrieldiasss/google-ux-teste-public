@@ -10,7 +10,7 @@ globalFontFace('Open Sans', [
   },
 ]);
 
-globalFontFace('MaterialSymbolsRounded', [
+globalFontFace('Material Symbols Rounded', [
   {
     src: "url(https://fonts.gstatic.com/s/materialsymbolsrounded/v214/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2) format('woff2')",
     fontStyle: 'normal',
@@ -265,6 +265,8 @@ export const themeTokens = {
   fontFamily: {
     default: 'Open Sans',
     heading: 'Neo Sans Pro',
+    icon: 'Material Symbols Rounded',
+    emoji: 'Noto Color Emoji',
   },
   fontSizes: {
     xxs: '10px',
