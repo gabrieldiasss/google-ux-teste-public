@@ -15,7 +15,7 @@ export const alertBoxGlobalWrapperStyle = style({
 
 export const alertBoxGlobalWrapperColorSchemeVariantStyle = styleVariants({
   dark: {
-    backgroundColor: theme.colors.neutralsOverlay.dark[600],
+    backgroundColor: theme.colors.neutralsOverlay.dark[700],
   },
   light: {
     backgroundColor: theme.colors.neutralsOverlay.dark[600],

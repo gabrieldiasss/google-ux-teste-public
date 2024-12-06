@@ -35,6 +35,7 @@ export const Icon = forwardRef<HTMLSpanElement, IconProps>(
       fontSize: size,
       width: size,
       height: size,
+      userSelect: 'none',
       fontFamily: 'Material Symbols Rounded',
       fontVariationSettings: [
         fill && `"FILL" 1`,

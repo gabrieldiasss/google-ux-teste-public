@@ -25,7 +25,7 @@ globalFontFace('Neo Sans Pro', [
 ]);
 
 globalStyle('html, body', {
-  fontFamily: 'Open Sans, sans-serif',
+  fontFamily: "'Open Sans', 'Noto Color Emoji'",
 });
 
 export const themeTokens = {
@@ -263,8 +263,8 @@ export const themeTokens = {
     '4xl': '96px',
   },
   fontFamily: {
-    default: 'Open Sans',
-    heading: 'Neo Sans Pro',
+    default: "'Open Sans', 'Noto Color Emoji'",
+    heading: "'Neo Sans Pro', 'Noto Color Emoji'",
     icon: 'Material Symbols Rounded',
     emoji: 'Noto Color Emoji',
   },

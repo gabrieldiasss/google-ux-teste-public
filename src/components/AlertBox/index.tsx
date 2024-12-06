@@ -72,7 +72,7 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
       )}
     >
       <div
-        onClick={(e) => e.stopPropagation()} // Prevent click events inside the box from propagating
+        onClick={(e) => e.stopPropagation()}
         style={{
           width,
         }}

@@ -13,6 +13,7 @@ export const buttonStyle = style({
   height: 'max-content',
   fontWeight: theme.fontWeights.medium,
   fontFamily: theme.fontFamily.default,
+  userSelect: 'none',
 });
 
 export const buttonVariants = styleVariants({
