@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.23
+
+### Patch Changes
+
+- Create ListSectionItem and AlertBox components
+
 ## 1.0.22
 
 ### Patch Changes
