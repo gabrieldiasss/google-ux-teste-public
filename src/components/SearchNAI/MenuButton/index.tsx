@@ -7,7 +7,7 @@ import {
   menuButtonsWrapperStyle,
   menuChatPositionStyle,
   menuChatStyle,
-} from '../searchNAI.css';
+} from './menuButton.css';
 import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
 import { EmojiListPicker } from '../EmojiListPicker';
