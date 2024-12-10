@@ -9,6 +9,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({ ...props }) => {
         position: 'right',
         icon: 'search',
       }}
+      autoComplete="search"
+      type="search"
     />
   );
 };

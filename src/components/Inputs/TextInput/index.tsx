@@ -100,7 +100,15 @@ export const TextInput: React.FC<TextInputProps> = ({
         }}
       >
         {iconProps?.position === 'left' && !error && !isSuccess && renderIcon()}
-        <Input className={clsx(textInputStyle)} ref={inputRef} {...props} />
+        <Input
+          className={clsx(textInputStyle)}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
+          ref={inputRef}
+          {...props}
+        />
         {shouldRenderRightIcon && renderIcon()}
       </div>
       {error && <span className={clsx(textInputLabelErrorStyle)}>{error}</span>}

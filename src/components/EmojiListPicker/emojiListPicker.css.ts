@@ -2,10 +2,29 @@ import { theme } from '@/core/themes/default.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const emojiListPickerContainer = style({
-  padding: '1rem',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.spacing.xxxs,
+  padding: theme.spacing.xxxs,
+  borderRadius: theme.borders.radius.lg,
   width: '100%',
-  height: '40%',
+  height: '60%',
+});
+export const emojiListPickerContainerColorSchemeStyle = styleVariants({
+  dark: {
+    background: theme.colors.neutralsOverlay.dark[300],
+  },
+  light: {
+    background: theme.colors.neutralsOverlay.light[300],
+  },
+});
+export const emojiListPickerContainerScrollStyle = style({
   overflow: 'auto',
+  height: 'inherit',
+  flex: 1,
+  width: '100%',
+  padding: theme.spacing.xxxs,
+  borderRadius: theme.borders.radius.lg,
 
   '::-webkit-scrollbar': {
     width: 4,
@@ -27,18 +46,28 @@ export const emojiListPickerContainer = style({
 export const emojiListPickerContainerListStyle = style({
   display: 'flex',
   flexDirection: 'column',
+
+  borderRadius: theme.borders.radius.lg,
   gap: theme.spacing.xxs,
+  paddingInline: theme.spacing.xs,
+  paddingBlock: theme.spacing.xxs,
+  height: 'inherit',
+  flex: 1,
 });
 export const emojiListPickerContainerListColorSchemeStyle = styleVariants({
-  dark: {},
-  light: {},
+  dark: {
+    background: theme.colors.neutralsOverlay.dark[900],
+  },
+  light: {
+    background: theme.colors.neutralsOverlay.light[900],
+  },
 });
 
 //by category
 export const emojiListPickerCategoryStyle = style({
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(30px, 1fr))',
+  rowGap: theme.spacing['4xs'],
 });
 
 export const emojiListPickerCategoryTitleStyle = style({
@@ -58,10 +87,13 @@ export const emojiListPickerCategoryTitleColorSchemeStyle = styleVariants({
 });
 
 export const emojiListPickerItemStyle = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   cursor: 'pointer',
   fontSize: 18,
-  padding: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.xs,
+  padding: theme.spacing['4xs'],
+  borderRadius: theme.borders.radius.lg,
   userSelect: 'none',
 
   transition: 'all 0.2s ease',

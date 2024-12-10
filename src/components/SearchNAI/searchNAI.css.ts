@@ -2,12 +2,14 @@ import { theme } from '@/core/themes/default.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 export const inputWrapperStyle = style({
+  position: 'relative',
   display: 'flex',
   flexDirection: 'row',
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
   width: '100%',
   borderRadius: theme.borders.radius.lg,
+  transition: 'all 0.2s ease',
 });
 
 export const inputWrapperColorSchemeStyle = styleVariants({
@@ -81,5 +83,38 @@ export const historyWrapperColorSchemeStyle = styleVariants({
   },
   light: {
     color: theme.colors.neutrals.light[800],
+  },
+});
+
+export const menuButtonsWrapperStyle = style({
+  position: 'absolute',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.spacing.xxxs,
+  padding: theme.spacing.xxxs,
+  borderRadius: theme.borders.radius.lg,
+  right: 0,
+});
+
+export const menuButtonsWrapperColorSchemeStyle = styleVariants({
+  dark: {
+    color: theme.colors.neutrals.dark[800],
+    background: theme.colors.neutralsOverlay.dark[300],
+  },
+  light: {
+    color: theme.colors.neutrals.light[800],
+    background: theme.colors.neutralsOverlay.light[300],
+  },
+});
+export const menuButtonsPositionStyle = styleVariants({
+  top: {
+    top: 'unset',
+    bottom: '100%',
+    marginBottom: theme.spacing.xxxs,
+  },
+  bottom: {
+    top: '100%',
+    bottom: 'unset',
+    marginTop: theme.spacing.xxxs,
   },
 });

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { ActionIcon } from '../ActionIcon';
 import { useColorScheme } from '@/providers';
 import {
   attachmentUploaderWrapperColorSchemeStyle,
@@ -15,15 +14,24 @@ import {
 } from './searchNAI.css';
 import clsx from 'clsx';
 import { AudioRecordButton } from './AudioRecordButton';
+import { MenuButton } from './MenuButton';
 type SearchNAIProps = {
   onFileUpload: (file: File) => void;
   onEmojiSelect: (emoji: string) => void;
   onInputChange?: (value: string) => void;
+  historyData?: {
+    id: string;
+    title: string;
+    date: Date;
+  }[];
+  onHistoryClick?: (id: string) => void;
+  renderMenuPosition?: 'top' | 'bottom';
 };
 export const SearchNAI: React.FC<SearchNAIProps> = ({
   onFileUpload,
   onEmojiSelect,
   onInputChange,
+  renderMenuPosition,
 }) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -32,28 +40,6 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   >(undefined);
 
   const { colorScheme } = useColorScheme();
-  const menuItems = {
-    dock_to_bottom: {
-      icon: 'dock_to_bottom',
-      label: 'dock_to_bottom',
-      onClick: () => {},
-    },
-    attachment: {
-      icon: 'attachment',
-      label: 'attachment',
-      onClick: () => {},
-    },
-    emoji: {
-      icon: 'emoji',
-      label: 'emoji',
-      onClick: () => {},
-    },
-    settings: {
-      icon: 'chat',
-      label: 'chat',
-      onClick: () => {},
-    },
-  };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -115,7 +101,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             )
           )}
         </div>
-        <ActionIcon icon="add" size="xs" />
+        <MenuButton renderPosition={renderMenuPosition || 'top'} />
       </div>
       <div
         className={clsx(

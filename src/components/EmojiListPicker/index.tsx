@@ -5,8 +5,10 @@ import {
   emojiListPickerCategoryTitleColorSchemeStyle,
   emojiListPickerCategoryTitleStyle,
   emojiListPickerContainer,
+  emojiListPickerContainerColorSchemeStyle,
   emojiListPickerContainerListColorSchemeStyle,
   emojiListPickerContainerListStyle,
+  emojiListPickerContainerScrollStyle,
   emojiListPickerItemColorSchemeStyle,
   emojiListPickerItemStyle,
 } from './emojiListPicker.css';
@@ -88,12 +90,16 @@ export const EmojiListPicker: React.FC<EmojiListPickerProps> = ({
   }, [emojiSearchValue]);
 
   return (
-    <div className={emojiListPickerContainer}>
+    <div
+      className={clsx(
+        emojiListPickerContainer,
+
+        emojiListPickerContainerColorSchemeStyle[colorScheme],
+      )}
+    >
       <SearchInput
         placeholder="Pesquisar emoji"
         size="xs"
-        type="text"
-        autoComplete="off"
         value={emojiSearchValue}
         onChange={(e) => setEmojiSearchValue(e.target.value)}
       />
@@ -103,17 +109,19 @@ export const EmojiListPicker: React.FC<EmojiListPickerProps> = ({
           emojiListPickerContainerListColorSchemeStyle[colorScheme],
         )}
       >
-        {filteredEmojiList.map((category, index) =>
-          category.emojis.length > 0 ? (
-            <EmojiCategory
-              key={index}
-              categoryName={category.categoryName}
-              emojis={category.emojis}
-              colorScheme={colorScheme}
-              onEmojiSelect={onEmojiSelect}
-            />
-          ) : null,
-        )}
+        <div className={emojiListPickerContainerScrollStyle}>
+          {filteredEmojiList.map((category, index) =>
+            category.emojis.length > 0 ? (
+              <EmojiCategory
+                key={index}
+                categoryName={category.categoryName}
+                emojis={category.emojis}
+                colorScheme={colorScheme}
+                onEmojiSelect={onEmojiSelect}
+              />
+            ) : null,
+          )}
+        </div>
       </div>
     </div>
   );
