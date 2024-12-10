@@ -5,10 +5,12 @@ export function AudioRecordButton({
   listeningInSeconds,
   setListeningInSeconds,
   onAudioRecorded,
+  setInputValue,
 }: {
   listeningInSeconds: number | undefined;
   setListeningInSeconds: (value: number | undefined) => void;
   onAudioRecorded?: (audioObjectUrl: string) => void;
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -41,6 +43,7 @@ export function AudioRecordButton({
     }
 
     try {
+      setInputValue('');
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
       const recorder = new MediaRecorder(stream);

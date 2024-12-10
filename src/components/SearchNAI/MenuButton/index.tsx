@@ -5,14 +5,19 @@ import {
   menuButtonsPositionStyle,
   menuButtonsWrapperColorSchemeStyle,
   menuButtonsWrapperStyle,
+  menuChatPositionStyle,
+  menuChatStyle,
 } from '../searchNAI.css';
 import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
+import { EmojiListPicker } from '../EmojiListPicker';
 
 export function MenuButton({
   renderPosition = 'top',
+  setInputValue,
 }: {
   renderPosition?: 'top' | 'bottom';
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const menuItems: Record<
     string,
@@ -56,6 +61,20 @@ export function MenuButton({
     menuItems[feature].onClick();
   };
 
+  const renderEmojiMenu = () => {
+    return (
+      <div
+        className={clsx(menuChatStyle, menuChatPositionStyle[renderPosition])}
+      >
+        <EmojiListPicker
+          onEmojiSelect={(emoji) => {
+            setInputValue((prev) => prev + emoji);
+          }}
+        />
+      </div>
+    );
+  };
+
   return (
     <>
       <ActionIcon
@@ -85,6 +104,7 @@ export function MenuButton({
           ))}
         </div>
       )}
+      {currentFeature === 'emoji' && renderEmojiMenu()}
     </>
   );
 }

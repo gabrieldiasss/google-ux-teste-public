@@ -20,7 +20,6 @@ import { Tooltip } from './Tooltip';
 import { Header } from './Header';
 import { ListSectionItem } from './ListSectionItem';
 import { AlertBox } from './AlertBox';
-import { EmojiListPicker } from './EmojiListPicker';
 import { SearchNAI } from './SearchNAI';
 export {
   Button,
@@ -45,6 +44,5 @@ export {
   Header,
   ListSectionItem,
   AlertBox,
-  EmojiListPicker,
   SearchNAI,
 };

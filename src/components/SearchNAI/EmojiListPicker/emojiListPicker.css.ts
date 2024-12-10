@@ -8,7 +8,7 @@ export const emojiListPickerContainer = style({
   padding: theme.spacing.xxxs,
   borderRadius: theme.borders.radius.lg,
   width: '100%',
-  height: '60%',
+  height: '100%',
 });
 export const emojiListPickerContainerColorSchemeStyle = styleVariants({
   dark: {
@@ -47,12 +47,11 @@ export const emojiListPickerContainerListStyle = style({
   display: 'flex',
   flexDirection: 'column',
 
+  height: '30dvh',
   borderRadius: theme.borders.radius.lg,
   gap: theme.spacing.xxs,
   paddingInline: theme.spacing.xs,
   paddingBlock: theme.spacing.xxs,
-  height: 'inherit',
-  flex: 1,
 });
 export const emojiListPickerContainerListColorSchemeStyle = styleVariants({
   dark: {

@@ -14,10 +14,10 @@ import {
 } from './emojiListPicker.css';
 import { emojiList } from './emojiList';
 import { useColorScheme } from '@/providers';
-import { SearchInput } from '../Inputs/SearchInput';
+import { SearchInput } from '../../Inputs/SearchInput';
 
 interface EmojiListPickerProps {
-  onEmojiSelect: (emoji: string) => void;
+  onEmojiSelect?: (emoji: string) => void;
 }
 
 const loadGoogleFonts = () => {
@@ -42,7 +42,7 @@ const EmojiCategory: React.FC<{
   categoryName: string;
   emojis: { emoji: string; code: string }[];
   colorScheme: 'dark' | 'light';
-  onEmojiSelect: (emoji: string) => void;
+  onEmojiSelect?: (emoji: string) => void;
 }> = ({ categoryName, emojis, colorScheme, onEmojiSelect }) => (
   <div>
     <span
@@ -61,7 +61,7 @@ const EmojiCategory: React.FC<{
             emojiListPickerItemStyle,
             emojiListPickerItemColorSchemeStyle[colorScheme],
           )}
-          onClick={() => onEmojiSelect(emoji.emoji)}
+          onClick={() => onEmojiSelect?.(emoji.emoji)}
         >
           {renderEmoji(emoji.code)}
         </span>
@@ -93,7 +93,6 @@ export const EmojiListPicker: React.FC<EmojiListPickerProps> = ({
     <div
       className={clsx(
         emojiListPickerContainer,
-
         emojiListPickerContainerColorSchemeStyle[colorScheme],
       )}
     >

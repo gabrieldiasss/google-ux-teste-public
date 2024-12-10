@@ -118,3 +118,20 @@ export const menuButtonsPositionStyle = styleVariants({
     marginTop: theme.spacing.xxxs,
   },
 });
+export const menuChatStyle = style({
+  position: 'absolute',
+  zIndex: 50,
+  width: '100%',
+});
+export const menuChatPositionStyle = styleVariants({
+  top: {
+    top: 'unset',
+    bottom: '100%',
+    marginBottom: theme.spacing.xxxs,
+  },
+  bottom: {
+    top: '100%',
+    bottom: 'unset',
+    marginTop: theme.spacing.xxxs,
+  },
+});

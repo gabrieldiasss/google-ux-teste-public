@@ -65,6 +65,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           onAudioRecorded={(audioObjectUrl) => {}}
           setListeningInSeconds={setListeningInSeconds}
           listeningInSeconds={listeningInSeconds}
+          setInputValue={setInputValue}
         />
         <div className={placeholderWrapperStyle}>
           <input
@@ -101,20 +102,12 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             )
           )}
         </div>
-        <MenuButton renderPosition={renderMenuPosition || 'top'} />
+
+        <MenuButton
+          renderPosition={renderMenuPosition || 'top'}
+          setInputValue={setInputValue}
+        />
       </div>
-      <div
-        className={clsx(
-          attachmentUploaderWrapperStyle,
-          attachmentUploaderWrapperColorSchemeStyle[colorScheme],
-        )}
-      ></div>
-      <div
-        className={clsx(
-          historyWrapperStyle,
-          historyWrapperColorSchemeStyle[colorScheme],
-        )}
-      ></div>
     </>
   );
 };
