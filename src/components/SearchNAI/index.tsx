@@ -27,9 +27,9 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const [listeningInMs, setListeningInMs] = useState<number | undefined>(
-    undefined,
-  );
+  const [listeningInSeconds, setListeningInSeconds] = useState<
+    number | undefined
+  >(undefined);
 
   const { colorScheme } = useColorScheme();
   const menuItems = {
@@ -60,12 +60,12 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
     setInputValue(value);
     onInputChange?.(value);
   };
-  const listeningTimeRender = `${Math.floor((listeningInMs || 0) / 60)
+  const listeningTimeRender = `${Math.floor((listeningInSeconds || 0) / 60)
     .toString()
     .padStart(
       2,
       '0',
-    )}:${((listeningInMs || 0) % 60).toString().padStart(2, '0')}`;
+    )}:${((listeningInSeconds || 0) % 60).toString().padStart(2, '0')}`;
 
   return (
     <>
@@ -76,9 +76,9 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
         )}
       >
         <AudioRecordButton
-          setInputValue={setInputValue}
-          setListeningInMs={setListeningInMs}
-          listeningInMs={listeningInMs}
+          onAudioRecorded={(audioObjectUrl) => {}}
+          setListeningInSeconds={setListeningInSeconds}
+          listeningInSeconds={listeningInSeconds}
         />
         <div className={placeholderWrapperStyle}>
           <input
@@ -89,7 +89,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             onChange={handleInputChange}
           />
 
-          {listeningInMs !== undefined ? (
+          {listeningInSeconds !== undefined ? (
             <span
               className={placeholderTextStyle}
               onClick={() => {

@@ -1,30 +1,29 @@
 import { ActionIcon } from '@/components/ActionIcon';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export function AudioRecordButton({
-  setInputValue,
-  listeningInMs,
-  setListeningInMs,
+  listeningInSeconds,
+  setListeningInSeconds,
+  onAudioRecorded,
 }: {
-  listeningInMs: number | undefined;
-  setListeningInMs: (value: number | undefined) => void;
-  setInputValue: (value: string) => void;
+  listeningInSeconds: number | undefined;
+  setListeningInSeconds: (value: number | undefined) => void;
+  onAudioRecorded?: (audioObjectUrl: string) => void;
 }) {
-  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(
-    null,
-  );
-  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
-  const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
   const [isRecording, setIsRecording] = useState(false);
+  const streamRef = useRef<MediaStream | null>(null);
 
   useEffect(() => {
     let interval = null;
 
-    if (listeningInMs !== undefined && listeningInMs >= 0) {
+    if (listeningInSeconds !== undefined && listeningInSeconds >= 0) {
       interval = setInterval(() => {
-        setListeningInMs((prev: number | undefined) =>
-          prev !== undefined ? prev + 1 : prev,
-        );
+        // @ts-ignore
+        setListeningInSeconds((prev) => {
+          return prev !== undefined ? prev + 1 : 0;
+        });
       }, 1000);
     } else {
       if (interval) clearInterval(interval);
@@ -33,62 +32,59 @@ export function AudioRecordButton({
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [listeningInMs]);
+  }, [listeningInSeconds, setListeningInSeconds]);
 
-  const handleStartRecording = () => {
+  const handleStartRecording = async () => {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      alert('Your browser does not support audio recording');
+      alert('Seu navegador não suporta gravação de áudio.');
       return;
     }
 
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then((stream) => {
-        const recorder = new MediaRecorder(stream);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
+      const recorder = new MediaRecorder(stream);
 
-        recorder.ondataavailable = (event) => {
-          console.log('Data available:', event.data); // Log the data to check
-          if (event.data.size > 0) {
-            setAudioChunks((prev) => [...prev, event.data]);
-          }
-        };
+      audioChunksRef.current = []; // Resetar os chunks antes de iniciar
 
-        recorder.onstop = () => {
-          console.log('Recording stopped');
-          if (audioChunks.length > 0) {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-            console.log('Audio Blob created:', audioBlob); // Log the Blob to check
-            const audioObjectUrl = URL.createObjectURL(audioBlob);
-            setAudioUrl(audioObjectUrl);
-            setInputValue('Audio recorded successfully!');
-          } else {
-            setInputValue('No audio data available');
-          }
-        };
+      recorder.ondataavailable = (event) => {
+        console.log('Dados disponíveis:', event.data);
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
+      };
 
-        recorder.start();
-        setMediaRecorder(recorder);
-        setIsRecording(true);
-        setListeningInMs(0);
-      })
-      .catch((error) => {
-        console.error('Error accessing media devices:', error);
-      });
-  };
+      recorder.onstop = () => {
+        console.log('Gravação interrompida');
+        const audioBlob = new Blob(audioChunksRef.current, {
+          type: 'audio/wav',
+        });
+        console.log('Blob de áudio criado:', audioBlob);
+        const audioObjectUrl = URL.createObjectURL(audioBlob);
+        onAudioRecorded?.(audioObjectUrl);
+      };
 
-  const handleStopRecording = () => {
-    if (mediaRecorder) {
-      mediaRecorder.stop();
-      setIsRecording(false);
+      recorder.start();
+      mediaRecorderRef.current = recorder;
+      setIsRecording(true);
+      setListeningInSeconds(0);
+    } catch (error) {
+      console.error('Erro ao acessar dispositivos de mídia:', error);
     }
   };
 
-  const handleDownload = () => {
-    if (audioUrl) {
-      const link = document.createElement('a');
-      link.href = audioUrl;
-      link.download = 'recorded_audio.wav'; // Change if needed
-      link.click();
+  const handleStopRecording = () => {
+    if (
+      mediaRecorderRef.current &&
+      mediaRecorderRef.current.state !== 'inactive'
+    ) {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+      setListeningInSeconds(undefined);
+
+      // Parar todas as tracks do stream para liberar recursos
+      streamRef.current?.getTracks().forEach((track) => track.stop());
+      streamRef.current = null;
     }
   };
 
@@ -100,15 +96,6 @@ export function AudioRecordButton({
         variant={isRecording ? 'outline' : 'filled'}
         onClick={isRecording ? handleStopRecording : handleStartRecording}
       />
-      {audioUrl && (
-        <div>
-          <audio controls>
-            <source src={audioUrl} type="audio/wav" />
-            Your browser does not support the audio element.
-          </audio>
-          <button onClick={handleDownload}>Download Audio</button>
-        </div>
-      )}
     </div>
   );
 }
