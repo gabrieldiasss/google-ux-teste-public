@@ -30,6 +30,7 @@ type SearchNAIProps = {
 export const SearchNAI: React.FC<SearchNAIProps> = ({
   onFileUpload,
   onEmojiSelect,
+  historyData,
   onInputChange,
   renderMenuPosition,
 }) => {
@@ -106,6 +107,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
         <MenuButton
           renderPosition={renderMenuPosition || 'top'}
           setInputValue={setInputValue}
+          historyData={historyData}
         />
       </div>
     </>

@@ -11,37 +11,73 @@ import {
 import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
 import { EmojiListPicker } from '../EmojiListPicker';
+import { FileLoader } from '../FileLoader';
+import { ChatHistory } from '../ChatHistory';
 
 export function MenuButton({
   renderPosition = 'top',
   setInputValue,
+  historyData,
 }: {
   renderPosition?: 'top' | 'bottom';
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  historyData?: {
+    id: string;
+    title: string;
+    date: Date;
+  }[];
 }) {
   const menuItems: Record<
     string,
-    { icon: SymbolCodepoints; label: string; onClick: () => void }
+    {
+      icon: SymbolCodepoints;
+      label: string;
+      onClick: () => void;
+      render?: () => JSX.Element;
+    }
   > = {
     history: {
       icon: 'dock_to_bottom',
       label: 'history',
       onClick: () => {},
+      render: () => (
+        <ChatHistory
+          historyData={historyData}
+          onClick={function (chatId: string): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
+      ),
     },
     attachment: {
       icon: 'attach_file',
       label: 'attachment',
       onClick: () => {},
+      render: () => (
+        <FileLoader
+          onClose={function (): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
+      ),
     },
     emoji: {
       icon: 'mood',
       label: 'emoji',
       onClick: () => {},
+      render: () => (
+        <EmojiListPicker
+          onEmojiSelect={(emoji) => {
+            setInputValue((prev) => prev + emoji);
+          }}
+        />
+      ),
     },
     settings: {
       icon: 'add_comment',
       label: 'chat',
       onClick: () => {},
+      render: () => <div>Settings</div>,
     },
   };
 
@@ -61,16 +97,15 @@ export function MenuButton({
     menuItems[feature].onClick();
   };
 
-  const renderEmojiMenu = () => {
+  const renderSelectedFeature = () => {
+    if (!currentFeature) {
+      return null;
+    }
     return (
       <div
         className={clsx(menuChatStyle, menuChatPositionStyle[renderPosition])}
       >
-        <EmojiListPicker
-          onEmojiSelect={(emoji) => {
-            setInputValue((prev) => prev + emoji);
-          }}
-        />
+        {menuItems[currentFeature].render?.()}
       </div>
     );
   };
@@ -104,7 +139,7 @@ export function MenuButton({
           ))}
         </div>
       )}
-      {currentFeature === 'emoji' && renderEmojiMenu()}
+      {currentFeature !== undefined && renderSelectedFeature()}
     </>
   );
 }
