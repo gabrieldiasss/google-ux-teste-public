@@ -18,7 +18,7 @@ import { ColorSchemeEnum } from '@/utils';
 export interface ActionIconProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg';
-  variant?: 'filled' | 'outline' | 'subtle';
+  variant?: 'filled' | 'outline' | 'subtle' | 'light';
   icon: SymbolCodepoints;
 }
 export const ActionIcon: React.FC<ActionIconProps> = ({

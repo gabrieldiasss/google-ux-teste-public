@@ -13,7 +13,7 @@ import {
   placeholderWrapperStyle,
 } from './searchNAI.css';
 import clsx from 'clsx';
-import { AudioRecordButton } from './AudioRecordButton';
+import { SendMessageAndAudioRecordButton } from './SendMessageAndAudioRecordButton';
 import { MenuButton } from './MenuButton';
 type SearchNAIProps = {
   onFileUpload: (file: File) => void;
@@ -43,6 +43,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   const { colorScheme } = useColorScheme();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (listeningInSeconds !== undefined) return;
     const value = event.target.value;
     setInputValue(value);
     onInputChange?.(value);
@@ -62,11 +63,11 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           inputWrapperColorSchemeStyle[colorScheme],
         )}
       >
-        <AudioRecordButton
-          onAudioRecorded={(audioObjectUrl) => {}}
-          setListeningInSeconds={setListeningInSeconds}
-          listeningInSeconds={listeningInSeconds}
+        <MenuButton
+          renderPosition={renderMenuPosition || 'top'}
+          inputValue={inputValue}
           setInputValue={setInputValue}
+          historyData={historyData}
         />
         <div className={placeholderWrapperStyle}>
           <input
@@ -104,10 +105,13 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           )}
         </div>
 
-        <MenuButton
-          renderPosition={renderMenuPosition || 'top'}
+        <SendMessageAndAudioRecordButton
+          onSendMessage={() => {}}
+          inputValue={inputValue}
+          onAudioRecorded={(audioObjectUrl) => {}}
+          setListeningInSeconds={setListeningInSeconds}
+          listeningInSeconds={listeningInSeconds}
           setInputValue={setInputValue}
-          historyData={historyData}
         />
       </div>
     </>

@@ -8,7 +8,7 @@ export const menuButtonsWrapperStyle = style({
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
   borderRadius: theme.borders.radius.lg,
-  right: 0,
+  left: 0,
 });
 
 export const menuButtonsWrapperColorSchemeStyle = styleVariants({
@@ -34,19 +34,28 @@ export const menuButtonsPositionStyle = styleVariants({
   },
 });
 export const menuChatStyle = style({
+  overflow: 'auto',
   position: 'absolute',
   zIndex: 50,
   width: '100%',
+  //remove scroll bar
+  scrollbarWidth: 'none',
+  msOverflowStyle: 'none',
+  '::-webkit-scrollbar': {
+    display: 'none',
+  },
 });
 export const menuChatPositionStyle = styleVariants({
   top: {
     top: 'unset',
     bottom: '100%',
+    left: 0,
     marginBottom: theme.spacing.xxxs,
   },
   bottom: {
     top: '100%',
     bottom: 'unset',
+    left: 0,
     marginTop: theme.spacing.xxxs,
   },
 });

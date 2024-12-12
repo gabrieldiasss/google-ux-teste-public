@@ -15,30 +15,37 @@ import { FileLoader } from './FileLoader';
 import { ChatHistory } from './ChatHistory';
 
 export function MenuButton({
+  inputValue,
+  setInputValue,
   isFileLoaded,
   onClickAddNewChat,
   onClickChatHistory,
-
+  onUploadFile,
   renderPosition = 'top',
-  setInputValue,
   historyData,
 }: {
+  inputValue: string;
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
   isFileLoaded?: boolean;
   onClickAddNewChat?: () => void;
   onClickChatHistory?: (chatId: string) => void;
+  onUploadFile?: (file: File) => void;
+  onSendMessage?: () => void;
   renderPosition?: 'top' | 'bottom';
-  setInputValue: React.Dispatch<React.SetStateAction<string>>;
   historyData?: {
     id: string;
     title: string;
     date: Date;
   }[];
 }) {
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
   const menuItems: Record<
     string,
     {
       icon: SymbolCodepoints;
       label: string;
+      skipSetCurrentFeature?: boolean;
       onClick: () => void;
       render?: () => JSX.Element;
     }
@@ -59,6 +66,7 @@ export function MenuButton({
     attachment: {
       icon: 'attach_file',
       label: 'attachment',
+      skipSetCurrentFeature: true,
       onClick: () => {},
       render: () => (
         <FileLoader
@@ -103,8 +111,13 @@ export function MenuButton({
       return;
     }
     setVisible(false);
-    setCurrentFeature(feature);
-    menuItems[feature].onClick();
+    if (!menuItems[feature].skipSetCurrentFeature) setCurrentFeature(feature);
+
+    if (feature === 'attachment') {
+      fileInputRef.current?.click();
+    } else {
+      menuItems[feature].onClick();
+    }
   };
 
   const renderSelectedFeature = () => {
@@ -138,15 +151,46 @@ export function MenuButton({
             menuButtonsPositionStyle[renderPosition],
           )}
         >
-          {Object.keys(menuItems).map((key) => (
-            <ActionIcon
-              key={key}
-              variant="outline"
-              icon={menuItems[key as keyof typeof menuItems].icon}
-              size="xs"
-              onClick={() => handleMenuItemClick(key as keyof typeof menuItems)}
-            />
-          ))}
+          {Object.keys(menuItems).map((key) => {
+            if (key === 'attachment' && !isFileLoaded) {
+              return null;
+            }
+            return (
+              <ActionIcon
+                key={key}
+                variant="light"
+                icon={menuItems[key as keyof typeof menuItems].icon}
+                size="xs"
+                onClick={() =>
+                  handleMenuItemClick(key as keyof typeof menuItems)
+                }
+              />
+            );
+          })}
+
+          <input
+            ref={fileInputRef}
+            type="file"
+            id="file-loader"
+            style={{ display: 'none' }}
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) {
+                console.log('File uploaded:', file);
+                onUploadFile?.(file);
+                setCurrentFeature('attachment');
+                setVisible(false);
+              }
+            }}
+          />
+          <ActionIcon
+            icon="attach_file"
+            variant="light"
+            size="xs"
+            onClick={() => {
+              fileInputRef.current?.click();
+            }}
+          />
         </div>
       )}
       {currentFeature !== undefined && renderSelectedFeature()}

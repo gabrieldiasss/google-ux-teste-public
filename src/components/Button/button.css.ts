@@ -60,6 +60,19 @@ export const buttonVariants = styleVariants({
       backgroundColor: theme.colors.primaryOverlay[100],
     },
   },
+  light: {
+    border: 'solid transparent',
+    borderWidth: theme.borders.width.thin,
+
+    ':hover': {
+      color: theme.colors.neutrals.light[50],
+      backgroundColor: theme.colors.primary[600],
+    },
+    ':active': {
+      color: theme.colors.neutrals.light[50],
+      backgroundColor: theme.colors.primary[800],
+    },
+  },
 });
 
 export const buttonDarkVariants = styleVariants({
@@ -83,6 +96,16 @@ export const buttonDarkVariants = styleVariants({
       backgroundColor: 'transparent',
       cursor: 'not-allowed',
       color: theme.colors.neutrals.dark[700],
+    },
+  },
+  light: {
+    backgroundColor: theme.colors.neutralsOverlay.dark[700],
+    color: '#fff',
+
+    ':disabled': {
+      cursor: 'not-allowed',
+      backgroundColor: theme.colors.neutralsOverlay.dark[700],
+      color: '#fff',
     },
   },
 });
@@ -110,6 +133,16 @@ export const buttonLightVariants = styleVariants({
       backgroundColor: 'transparent',
       cursor: 'not-allowed',
       color: theme.colors.neutrals.light[700],
+    },
+  },
+  light: {
+    backgroundColor: theme.colors.neutralsOverlay.light[700],
+    color: theme.colors.primary[700],
+
+    ':disabled': {
+      cursor: 'not-allowed',
+      color: theme.colors.primary[700],
+      backgroundColor: theme.colors.neutralsOverlay.light[700],
     },
   },
 });

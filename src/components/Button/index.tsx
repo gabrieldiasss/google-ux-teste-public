@@ -18,7 +18,7 @@ import { ColorSchemeEnum } from '@/utils';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   grow?: boolean;
-  variant?: 'filled' | 'outline' | 'subtle';
+  variant?: 'filled' | 'outline' | 'subtle' | 'light';
   children: React.ReactNode;
   iconProps?: {
     icon: SymbolCodepoints;
@@ -59,7 +59,6 @@ export const Button: React.FC<ButtonProps> = ({
         grow
           ? {
               ...props.style,
-              flex: 1,
               width: '100%',
             }
           : {
