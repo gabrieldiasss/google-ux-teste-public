@@ -1,10 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useColorScheme } from '@/providers';
 import {
-  attachmentUploaderWrapperColorSchemeStyle,
-  attachmentUploaderWrapperStyle,
-  historyWrapperColorSchemeStyle,
-  historyWrapperStyle,
   inputStyle,
   inputWrapperColorSchemeStyle,
   inputWrapperStyle,
@@ -15,7 +11,7 @@ import {
 import clsx from 'clsx';
 import { SendMessageAndAudioRecordButton } from './SendMessageAndAudioRecordButton';
 import { MenuButton } from './MenuButton';
-type SearchNAIProps = {
+export type SearchNAIProps = {
   onFileUpload: (file: File) => void;
   onEmojiSelect: (emoji: string) => void;
   onInputChange?: (value: string) => void;
@@ -117,3 +113,5 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
     </>
   );
 };
+
+SearchNAI.displayName = 'SearchNAI';
