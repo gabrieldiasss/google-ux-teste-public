@@ -49,8 +49,8 @@ export const ChatHistory: React.FC<ChatHistoryProps> = ({
           >
             <span
               className={clsx(
-                chatHistoryTitleColorSchemeStyle[colorScheme],
                 chatHistoryTitleStyle,
+                chatHistoryTitleColorSchemeStyle[colorScheme],
               )}
             >
               {chat.title}

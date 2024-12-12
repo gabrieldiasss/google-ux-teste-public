@@ -7,7 +7,7 @@ export const emojiList: {
   }[];
 }[] = [
   {
-    categoryName: 'Smileys & Emotion',
+    categoryName: 'Smileys e emoções',
     emojis: [
       {
         code: 'U+1F600',
@@ -852,7 +852,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'People & Body',
+    categoryName: 'Pessoas e corpo',
     emojis: [
       {
         code: 'U+1F44B',
@@ -2787,7 +2787,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Component',
+    categoryName: 'Componentes',
     emojis: [
       {
         code: 'U+1F9B0',
@@ -2812,7 +2812,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Animals & Nature',
+    categoryName: 'Animais e natureza',
     emojis: [
       {
         code: 'U+1F435',
@@ -3582,7 +3582,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Food & Drink',
+    categoryName: 'Alimentos e bebidas',
     emojis: [
       {
         code: 'U+1F347',
@@ -4262,7 +4262,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Travel & Places',
+    categoryName: 'Viagem e lugares',
     emojis: [
       {
         code: 'U+1F30D',
@@ -5357,7 +5357,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Activities',
+    categoryName: 'Atividades',
     emojis: [
       {
         code: 'U+1F383',
@@ -5787,7 +5787,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Objects',
+    categoryName: 'Objetos',
     emojis: [
       {
         code: 'U+1F453',
@@ -7102,7 +7102,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Symbols',
+    categoryName: 'Símbolos',
     emojis: [
       {
         code: 'U+1F3E7',
@@ -8222,7 +8222,7 @@ export const emojiList: {
     ],
   },
   {
-    categoryName: 'Flags',
+    categoryName: 'Bandeiras',
     emojis: [
       {
         code: 'U+1F3C1',

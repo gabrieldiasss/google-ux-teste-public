@@ -14,7 +14,7 @@ import {
 } from './emojiListPicker.css';
 import { emojiList } from './emojiList';
 import { useColorScheme } from '@/providers';
-import { SearchInput } from '../../Inputs/SearchInput';
+import { SearchInput } from '../../../Inputs/SearchInput';
 
 interface EmojiListPickerProps {
   onEmojiSelect?: (emoji: string) => void;

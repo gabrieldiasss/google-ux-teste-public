@@ -56,20 +56,22 @@ export const chatHistoryTitleStyle = style({
   overflow: 'hidden',
   textOverflow: 'clip',
   width: 'inherit',
-  background:
-    'linear-gradient(95deg, #383E41 50.65%, rgba(29, 27, 32, 0.00) 88.62%)',
-  backgroundClip: 'text',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text !important',
+  WebkitBackgroundClip: 'text !important',
+  WebkitTextFillColor: 'transparent !important',
 });
-export const chatHistoryTitleColorSchemeStyle = styleVariants({
-  dark: {
+export const chatHistoryTitleColorSchemeStyle = {
+  dark: style({
     color: theme.colors.neutrals.dark[900],
-  },
-  light: {
+    background:
+      'linear-gradient(95deg, #F1F1F1 50.65%, rgba(29, 27, 32, 0.00) 88.62%)',
+  }),
+  light: style({
     color: theme.colors.neutrals.light[900],
-  },
-});
+    background:
+      'linear-gradient(95deg, #383E41 50.65%, rgba(29, 27, 32, 0.00) 88.62%)',
+  }),
+};
 
 export const chatHistoryItemDateStyle = style({
   fontSize: theme.fontSizes.xxs,

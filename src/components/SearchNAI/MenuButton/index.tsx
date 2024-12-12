@@ -10,15 +10,22 @@ import {
 } from './menuButton.css';
 import { useColorScheme } from '@/providers';
 import { SymbolCodepoints } from '@/core/icons/types';
-import { EmojiListPicker } from '../EmojiListPicker';
-import { FileLoader } from '../FileLoader';
-import { ChatHistory } from '../ChatHistory';
+import { EmojiListPicker } from './EmojiListPicker';
+import { FileLoader } from './FileLoader';
+import { ChatHistory } from './ChatHistory';
 
 export function MenuButton({
+  isFileLoaded,
+  onClickAddNewChat,
+  onClickChatHistory,
+
   renderPosition = 'top',
   setInputValue,
   historyData,
 }: {
+  isFileLoaded?: boolean;
+  onClickAddNewChat?: () => void;
+  onClickChatHistory?: (chatId: string) => void;
   renderPosition?: 'top' | 'bottom';
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
   historyData?: {
@@ -43,8 +50,8 @@ export function MenuButton({
       render: () => (
         <ChatHistory
           historyData={historyData}
-          onClick={function (chatId: string): void {
-            throw new Error('Function not implemented.');
+          onClick={(chatId) => {
+            onClickChatHistory?.(chatId);
           }}
         />
       ),
@@ -55,8 +62,9 @@ export function MenuButton({
       onClick: () => {},
       render: () => (
         <FileLoader
-          onClose={function (): void {
-            throw new Error('Function not implemented.');
+          isFileLoaded={!!isFileLoaded}
+          onClose={() => {
+            setCurrentFeature(undefined);
           }}
         />
       ),
@@ -76,8 +84,10 @@ export function MenuButton({
     settings: {
       icon: 'add_comment',
       label: 'chat',
-      onClick: () => {},
-      render: () => <div>Settings</div>,
+      onClick: () => {
+        onClickAddNewChat?.();
+        setCurrentFeature(undefined);
+      },
     },
   };
 
