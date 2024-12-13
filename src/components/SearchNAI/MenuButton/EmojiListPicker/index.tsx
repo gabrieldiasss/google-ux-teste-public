@@ -21,12 +21,14 @@ interface EmojiListPickerProps {
 }
 
 const loadGoogleFonts = () => {
-  if (!document.querySelector("link[href*='Noto+Color+Emoji']")) {
-    const link = document.createElement('link');
-    link.href =
-      'https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
+  if (typeof window !== 'undefined') {
+    if (!document.querySelector("link[href*='Noto+Color+Emoji']")) {
+      const link = document.createElement('link');
+      link.href =
+        'https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap';
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    }
   }
 };
 

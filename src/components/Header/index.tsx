@@ -29,10 +29,12 @@ export const Header: React.FC<HeaderProps> = ({ isLogged, avatarProps }) => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
+    if (typeof window !== 'undefined') {
+      document.addEventListener('mousedown', handleOutsideClick);
+      return () => {
+        document.removeEventListener('mousedown', handleOutsideClick);
+      };
+    }
   }, [handleOutsideClick]);
   const renderMenuOptions = () => {
     return (

@@ -14,8 +14,10 @@ type LoaderProps = {
 export const Loader: React.FC<LoaderProps> = ({ percentage }) => {
   const { colorScheme } = useColorScheme();
   useEffect(() => {
-    const canvas = document.getElementById('loader') as HTMLCanvasElement;
-    addStroke({ canvas, percentage });
+    if (typeof window !== 'undefined') {
+      const canvas = document.getElementById('loader') as HTMLCanvasElement;
+      addStroke({ canvas, percentage });
+    }
   }, [percentage]);
 
   const addStroke = ({

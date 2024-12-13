@@ -12,10 +12,10 @@ export const emojiListPickerContainer = style({
 });
 export const emojiListPickerContainerColorSchemeStyle = styleVariants({
   dark: {
-    background: theme.colors.neutralsOverlay.dark[300],
+    background: theme.colors.neutralsOverlay.light[50],
   },
   light: {
-    background: theme.colors.neutralsOverlay.light[300],
+    background: theme.colors.neutralsOverlay.dark[50],
   },
 });
 export const emojiListPickerContainerScrollStyle = style({

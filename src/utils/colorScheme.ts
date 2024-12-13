@@ -10,8 +10,6 @@ export const localColorScheme: ColorScheme =
     ? (window.localStorage.getItem(colorSchemeKey) as ColorScheme)
     : ColorSchemeEnum.Light;
 
-localStorage.getItem(colorSchemeKey);
-
 export const setColorScheme = (scheme: ColorScheme) => {
   typeof window !== 'undefined' &&
     window.localStorage.setItem(colorSchemeKey, scheme);

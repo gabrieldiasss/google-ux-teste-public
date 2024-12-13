@@ -31,6 +31,7 @@ export const avatarContentStyle = style({
   height: '100%',
   borderRadius: '50%',
   fontFamily: theme.fontFamily.default,
+  userSelect: 'none',
 });
 
 export const avatarSizes = styleVariants({

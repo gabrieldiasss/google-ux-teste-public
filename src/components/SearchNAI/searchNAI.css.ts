@@ -15,11 +15,11 @@ export const inputWrapperStyle = style({
 export const inputWrapperColorSchemeStyle = styleVariants({
   dark: {
     color: theme.colors.neutrals.dark[800],
-    background: theme.colors.neutralsOverlay.dark[300],
+    background: theme.colors.neutralsOverlay.light[50],
   },
   light: {
     color: theme.colors.neutrals.light[800],
-    background: theme.colors.neutralsOverlay.light[300],
+    background: theme.colors.neutralsOverlay.dark[50],
   },
 });
 

@@ -21,6 +21,7 @@ import { Header } from './Header';
 import { ListSectionItem } from './ListSectionItem';
 import { AlertBox } from './AlertBox';
 import { SearchNAI } from './SearchNAI';
+import { Chat } from './Chat';
 export {
   Button,
   Avatar,
@@ -45,4 +46,5 @@ export {
   ListSectionItem,
   AlertBox,
   SearchNAI,
+  Chat,
 };

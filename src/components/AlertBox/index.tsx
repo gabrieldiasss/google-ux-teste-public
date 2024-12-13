@@ -60,82 +60,86 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
   };
   if (!opened) return null;
 
-  return ReactDOM.createPortal(
-    <div
-      onClick={(e) => {
-        e.stopPropagation();
-        onClose();
-      }}
-      className={clsx(
-        alertBoxGlobalWrapperStyle,
-        alertBoxGlobalWrapperColorSchemeVariantStyle[colorScheme],
-      )}
-    >
+  if (typeof window !== 'undefined') {
+    return ReactDOM.createPortal(
       <div
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          width,
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
         }}
         className={clsx(
-          alertBoxWrapperBaseStyle,
-          alertBoxWrapperVariantStyle[colorScheme],
+          alertBoxGlobalWrapperStyle,
+          alertBoxGlobalWrapperColorSchemeVariantStyle[colorScheme],
         )}
       >
-        <div className={clsx(alertBoxWrapperContentBaseStyle)}>
-          <div
-            className={clsx(
-              alertBoxIconWrapperBaseStyle,
-              alertBoxIconWrapperVariantStyle[type],
-            )}
-          >
-            <Icon name={alertBoxIcon[type]} size={36} color="inherit" />
-          </div>
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            width,
+          }}
+          className={clsx(
+            alertBoxWrapperBaseStyle,
+            alertBoxWrapperVariantStyle[colorScheme],
+          )}
+        >
+          <div className={clsx(alertBoxWrapperContentBaseStyle)}>
+            <div
+              className={clsx(
+                alertBoxIconWrapperBaseStyle,
+                alertBoxIconWrapperVariantStyle[type],
+              )}
+            >
+              <Icon name={alertBoxIcon[type]} size={36} color="inherit" />
+            </div>
 
-          <div
-            className={clsx(
-              alertBoxWrapperTextBaseStyle,
-              alertBoxWrapperTextColorSchemeVariantStyle[colorScheme],
-            )}
-          >
-            <span className={clsx(alertBoxTitleStyle)}>{title}</span>
-            {description && (
-              <span className={clsx(alertBoxDescriptionStyle)}>
-                {description}
-              </span>
-            )}
+            <div
+              className={clsx(
+                alertBoxWrapperTextBaseStyle,
+                alertBoxWrapperTextColorSchemeVariantStyle[colorScheme],
+              )}
+            >
+              <span className={clsx(alertBoxTitleStyle)}>{title}</span>
+              {description && (
+                <span className={clsx(alertBoxDescriptionStyle)}>
+                  {description}
+                </span>
+              )}
+            </div>
+          </div>
+          <div className={clsx(alertBoxButtonWrapperStyle)}>
+            <Button
+              grow
+              size="sm"
+              variant={buttons?.leftButton?.variant || 'subtle'}
+              onClick={
+                buttons?.leftButton?.onClick
+                  ? buttons.leftButton.onClick
+                  : () => {
+                      onClose();
+                    }
+              }
+            >
+              {buttons?.leftButton?.label || 'Cancelar'}
+            </Button>
+
+            <Button
+              grow
+              size="sm"
+              variant={buttons?.rightButton?.variant || 'filled'}
+              onClick={
+                buttons?.rightButton?.onClick
+                  ? buttons.rightButton.onClick
+                  : () => {}
+              }
+            >
+              {buttons?.rightButton?.label || 'Confirmar'}
+            </Button>
           </div>
         </div>
-        <div className={clsx(alertBoxButtonWrapperStyle)}>
-          <Button
-            grow
-            size="sm"
-            variant={buttons?.leftButton?.variant || 'subtle'}
-            onClick={
-              buttons?.leftButton?.onClick
-                ? buttons.leftButton.onClick
-                : () => {
-                    onClose();
-                  }
-            }
-          >
-            {buttons?.leftButton?.label || 'Cancelar'}
-          </Button>
-
-          <Button
-            grow
-            size="sm"
-            variant={buttons?.rightButton?.variant || 'filled'}
-            onClick={
-              buttons?.rightButton?.onClick
-                ? buttons.rightButton.onClick
-                : () => {}
-            }
-          >
-            {buttons?.rightButton?.label || 'Confirmar'}
-          </Button>
-        </div>
-      </div>
-    </div>,
-    document.body,
-  );
+      </div>,
+      document.body,
+    );
+  } else {
+    return null;
+  }
 };

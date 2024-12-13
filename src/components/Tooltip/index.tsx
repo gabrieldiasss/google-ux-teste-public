@@ -58,15 +58,17 @@ const Tooltip: React.FC<TooltipProps> = ({
   };
 
   useEffect(() => {
-    if (visible) {
-      document.addEventListener('keydown', handleKeyDown as any);
-    } else {
-      document.removeEventListener('keydown', handleKeyDown as any);
-    }
+    if (typeof window !== 'undefined') {
+      if (visible) {
+        document.addEventListener('keydown', handleKeyDown as any);
+      } else {
+        document.removeEventListener('keydown', handleKeyDown as any);
+      }
 
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown as any);
-    };
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown as any);
+      };
+    }
   }, [visible]);
 
   return (

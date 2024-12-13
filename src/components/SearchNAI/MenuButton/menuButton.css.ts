@@ -14,11 +14,11 @@ export const menuButtonsWrapperStyle = style({
 export const menuButtonsWrapperColorSchemeStyle = styleVariants({
   dark: {
     color: theme.colors.neutrals.dark[800],
-    background: theme.colors.neutralsOverlay.dark[300],
+    background: theme.colors.neutralsOverlay.light[50],
   },
   light: {
     color: theme.colors.neutrals.light[800],
-    background: theme.colors.neutralsOverlay.light[300],
+    background: theme.colors.neutralsOverlay.dark[50],
   },
 });
 export const menuButtonsPositionStyle = styleVariants({
@@ -38,7 +38,7 @@ export const menuChatStyle = style({
   position: 'absolute',
   zIndex: 50,
   width: '100%',
-  //remove scroll bar
+
   scrollbarWidth: 'none',
   msOverflowStyle: 'none',
   '::-webkit-scrollbar': {
