@@ -11,6 +11,8 @@ import {
 import clsx from 'clsx';
 import { SendMessageAndAudioRecordButton } from './SendMessageAndAudioRecordButton';
 import { MenuButton } from './MenuButton';
+import { Textarea } from '@headlessui/react';
+
 export type SearchNAIProps = {
   onFileUpload: (file: File) => void;
   onEmojiSelect: (emoji: string) => void;
@@ -23,6 +25,7 @@ export type SearchNAIProps = {
   onHistoryClick?: (id: string) => void;
   renderMenuPosition?: 'top' | 'bottom';
 };
+
 export const SearchNAI: React.FC<SearchNAIProps> = ({
   onFileUpload,
   onEmojiSelect,
@@ -31,19 +34,21 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   renderMenuPosition,
 }) => {
   const [inputValue, setInputValue] = useState('');
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [isFocused, setIsFocused] = useState(false); // New state for focus
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [listeningInSeconds, setListeningInSeconds] = useState<
     number | undefined
   >(undefined);
 
   const { colorScheme } = useColorScheme();
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (listeningInSeconds !== undefined) return;
     const value = event.target.value;
     setInputValue(value);
     onInputChange?.(value);
   };
+
   const listeningTimeRender = `${Math.floor((listeningInSeconds || 0) / 60)
     .toString()
     .padStart(
@@ -66,12 +71,14 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           historyData={historyData}
         />
         <div className={placeholderWrapperStyle}>
-          <input
+          <Textarea
             ref={inputRef}
             className={clsx(inputStyle)}
             placeholder=" "
-            value={inputValue}
+            onFocus={() => setIsFocused(true)} // Set focus state
+            onBlur={() => setIsFocused(false)} // Reset focus state
             onChange={handleInputChange}
+            value={inputValue}
           />
 
           {listeningInSeconds !== undefined ? (
@@ -87,7 +94,8 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
               {` `} Solte para enviar
             </span>
           ) : (
-            inputValue.length === 0 && (
+            !isFocused &&
+            inputValue.length === 0 && ( // Check isFocused state
               <span
                 className={placeholderTextStyle}
                 onClick={() => {

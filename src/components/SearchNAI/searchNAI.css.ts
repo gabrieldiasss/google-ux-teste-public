@@ -4,6 +4,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 export const inputWrapperStyle = style({
   position: 'relative',
   display: 'flex',
+  alignItems: 'center',
   flexDirection: 'row',
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
@@ -24,6 +25,8 @@ export const inputWrapperColorSchemeStyle = styleVariants({
 });
 
 export const inputStyle = style({
+  boxSizing: 'border-box',
+  resize: 'none',
   width: '100%',
   border: 'none',
   outline: 'none',
@@ -31,6 +34,25 @@ export const inputStyle = style({
   color: 'inherit',
   fontFamily: theme.fontFamily.default,
   fontSize: theme.fontSizes.xs,
+  height: 36,
+  paddingBlock: theme.spacing.xxs,
+
+  '::-webkit-scrollbar': {
+    width: 4,
+    backgroundColor: 'transparent',
+  },
+  '::-webkit-scrollbar-thumb': {
+    WebkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.3)',
+    backgroundColor: theme.colors.primary[300],
+    borderRadius: 10,
+  },
+  '::-webkit-scrollbar-track': {
+    WebkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.3)',
+    backgroundColor: theme.colors.neutrals.light[150],
+    borderRadius: 10,
+    border: '1px solid transparent',
+    backgroundClip: 'content-box',
+  },
 });
 
 export const placeholderWrapperStyle = style({

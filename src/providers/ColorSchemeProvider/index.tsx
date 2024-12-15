@@ -31,17 +31,24 @@ export const useColorScheme = (): ColorSchemeContextType => {
 
 interface ColorSchemeProviderProps {
   children: ReactNode;
+  defaultColorScheme?: 'light' | 'dark' | undefined;
 }
 
-export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
+export const ColorSchemeProvider = ({
+  children,
+  defaultColorScheme,
+}: ColorSchemeProviderProps) => {
   const getInitialColorScheme = (): ColorScheme => {
-    const savedScheme = localColorScheme as ColorScheme;
+    const savedScheme = localColorScheme as ColorScheme; // LocalStorage-based scheme.
     if (savedScheme) {
-      return savedScheme;
+      return savedScheme; // Prioritize the saved scheme.
+    }
+    if (defaultColorScheme) {
+      return defaultColorScheme as ColorScheme; // Use provided default as fallback.
     }
     return window.matchMedia('(prefers-color-scheme: dark)').matches
       ? ColorSchemeEnum.Dark
-      : ColorSchemeEnum.Light;
+      : ColorSchemeEnum.Light; // System preference as the final fallback.
   };
 
   const [stateColorScheme, setStateColorScheme] = useState<ColorScheme>(

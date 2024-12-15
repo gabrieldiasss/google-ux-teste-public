@@ -3,15 +3,34 @@ import { SearchNAI, SearchNAIProps } from '../SearchNAI';
 import { Avatar } from '../Avatar';
 import clsx from 'clsx';
 import {
-  chatHeaderButtonItemStyle,
-  chatHeaderButtonsStyle,
-  chatHeaderColorSchemeStyle,
+  chatWrapperStyle,
+  chatWrapperColorSchemeStyle,
   chatHeaderStyle,
+  chatHeaderColorSchemeStyle,
+  chatHeaderContentStyle,
+  chatHeaderTitleWrapperStyle,
+  chatHeaderTitleStyle,
+  chatHeaderSubtitleStyle,
+  chatHeaderButtonsStyle,
+  chatHeaderButtonItemStyle,
   chatMainContentWrapperStyle,
+  chatMainContentColorSchemeStyle,
+  chatMessageStyle,
+  chatMessageUser,
+  chatMessageNAI,
+  chatMessageContentStyle,
+  chatMessageUserContent,
+  chatMessageNAIContent,
+  chatHeaderTitleColorSchemeStyle,
+  chatHeaderSubtitleColorSchemeStyle,
+  chatHeaderButtonsColorSchemeStyle,
+  chatMessageContentColorSchemeStyle,
+  chatBackgroundStyle,
+  chatBackgroundColorSchemeStyle,
 } from './chat.css';
-import { theme, themeTokens } from '@/core/themes/default.css';
 import { useColorScheme } from '@/providers';
 import { Icon } from '../Icon';
+import logoNai from './../../assets/nai-avatar.svg';
 
 interface ChatProps extends SearchNAIProps {
   onCloseChat?: () => void;
@@ -37,133 +56,86 @@ export const Chat: React.FC<ChatProps> = ({
   const { colorScheme } = useColorScheme();
   return (
     <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 1,
-        height: '100%',
-        background:
-          colorScheme === 'light'
-            ? theme.colors.neutralsOverlay.light[100]
-            : theme.colors.neutralsOverlay.dark[100],
-        padding: theme.spacing.xxs,
-        borderRadius: themeTokens.borders.radius.md,
-      }}
+      className={clsx(
+        chatBackgroundStyle,
+        chatBackgroundColorSchemeStyle[colorScheme],
+      )}
     >
       <div
         className={clsx(
-          chatHeaderStyle,
-          chatHeaderColorSchemeStyle[colorScheme],
+          chatWrapperStyle,
+          chatWrapperColorSchemeStyle[colorScheme],
         )}
       >
         <div
-          style={{
-            display: 'flex',
-            gap: theme.spacing.m,
-            alignItems: 'center',
-            flexDirection: 'row',
-          }}
+          className={clsx(
+            chatHeaderStyle,
+            chatHeaderColorSchemeStyle[colorScheme],
+          )}
         >
-          <Avatar label="NAI" />
+          <div className={chatHeaderContentStyle}>
+            <Avatar label="NAI" image={logoNai} />
+            <div className={chatHeaderTitleWrapperStyle}>
+              <span
+                className={clsx(
+                  chatHeaderTitleStyle,
+                  chatHeaderTitleColorSchemeStyle[colorScheme],
+                )}
+              >
+                Nai
+              </span>
+              <span
+                className={clsx(
+                  chatHeaderSubtitleStyle,
+                  chatHeaderSubtitleColorSchemeStyle[colorScheme],
+                )}
+              >
+                Assistente e amiga virtual
+              </span>
+            </div>
+          </div>
           <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'start',
-              gap: theme.spacing.none,
-            }}
+            className={clsx(
+              chatHeaderButtonsStyle,
+              chatHeaderButtonsColorSchemeStyle[colorScheme],
+            )}
           >
-            <span
-              style={{
-                fontSize: theme.fontSizes.lg,
-                fontWeight: theme.fontWeights.bold,
-                color:
-                  colorScheme === 'light'
-                    ? theme.colors.neutralsOverlay.dark[800]
-                    : theme.colors.neutralsOverlay.light[800],
-              }}
-            >
-              Nai
-            </span>
-            <span
-              style={{
-                fontSize: theme.fontSizes.sm,
-                color: theme.colors.neutralsOverlay.dark[500],
-              }}
-            >
-              Assistente e amiga virtual
-            </span>
+            <button className={chatHeaderButtonItemStyle}>
+              <Icon size={24} name="remove" color="inherit" />
+            </button>
+            <button className={chatHeaderButtonItemStyle}>
+              <Icon size={24} name="close" color="inherit" />
+            </button>
           </div>
         </div>
-        <div className={clsx(chatHeaderButtonsStyle)}>
-          <button className={chatHeaderButtonItemStyle}>
-            <Icon size={16} name="remove" color="inherit" />
-          </button>
-          <button className={chatHeaderButtonItemStyle}>
-            <Icon size={16} name="close" color="inherit" />
-          </button>
-        </div>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1,
-          height: '100%',
-          overflow: 'auto',
-          background:
-            colorScheme === 'light'
-              ? theme.colors.neutrals.light[50]
-              : theme.colors.neutrals.dark[50],
-          paddingInline: theme.spacing.xxs,
-          paddingBottom: theme.spacing.xxs,
-          borderBottomLeftRadius: themeTokens.borders.radius.md,
-          borderBottomRightRadius: themeTokens.borders.radius.md,
-        }}
-      >
-        <div className={clsx(chatMainContentWrapperStyle)}>
-          {chatMessages?.map((message) => {
-            return (
+        <div
+          className={clsx(
+            chatMainContentWrapperStyle,
+            chatMainContentColorSchemeStyle[colorScheme],
+          )}
+        >
+          <div className={clsx(chatMainContentWrapperStyle)}>
+            {chatMessages?.map((message) => (
               <div
                 key={message.id}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: theme.spacing.xxs,
-                  alignItems: 'center',
-                  justifyContent:
-                    message.from === 'user' ? 'flex-end' : 'flex-start',
-                  marginBlock: theme.spacing.xxs,
-                }}
+                className={clsx(
+                  chatMessageStyle,
+                  message.from === 'user' ? chatMessageUser : chatMessageNAI,
+                )}
               >
-                <Avatar label={message.from} />
+                {message.from === 'nai' && (
+                  <Avatar label={message.from} size="md" image={logoNai} />
+                )}
                 <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: theme.spacing.xxxs,
-                    padding: theme.spacing.xxxs,
-                    borderRadius: themeTokens.borders.radius.md,
-                    backgroundColor:
-                      message.from === 'user'
-                        ? theme.colors.neutralsOverlay.light[100]
-                        : theme.colors.neutralsOverlay.dark[100],
-                  }}
-                >
-                  {message.type === 'text' && (
-                    <span
-                      style={{
-                        fontSize: theme.fontSizes.sm,
-                        color:
-                          message.from === 'user'
-                            ? theme.colors.neutralsOverlay.dark[800]
-                            : theme.colors.neutralsOverlay.light[800],
-                      }}
-                    >
-                      {message.message}
-                    </span>
+                  className={clsx(
+                    chatMessageContentStyle,
+                    chatMessageContentColorSchemeStyle[colorScheme],
+                    message.from === 'user'
+                      ? chatMessageUserContent
+                      : chatMessageNAIContent,
                   )}
+                >
+                  {message.type === 'text' && <span>{message.message}</span>}
                   {message.type === 'audio' && (
                     <audio controls>
                       <source src={message.file} type="audio/mpeg" />
@@ -176,23 +148,26 @@ export const Chat: React.FC<ChatProps> = ({
                     </a>
                   )}
                 </div>
+                {message.from === 'user' && (
+                  <Avatar label={message.from} size="md" />
+                )}
               </div>
-            );
-          })}
-        </div>
-        <div
-          style={{
-            height: 'fit-content',
-          }}
-        >
-          <SearchNAI
-            onEmojiSelect={onEmojiSelect}
-            onFileUpload={onFileUpload}
-            historyData={historyData}
-            onHistoryClick={onHistoryClick}
-            onInputChange={onInputChange}
-            renderMenuPosition={renderMenuPosition}
-          />
+            ))}
+          </div>
+          <div
+            style={{
+              height: 'fit-content',
+            }}
+          >
+            <SearchNAI
+              onEmojiSelect={onEmojiSelect}
+              onFileUpload={onFileUpload}
+              historyData={historyData}
+              onHistoryClick={onHistoryClick}
+              onInputChange={onInputChange}
+              renderMenuPosition={renderMenuPosition}
+            />
+          </div>
         </div>
       </div>
     </div>

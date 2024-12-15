@@ -83,7 +83,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         'aria-describedby': visible ? tooltipId.current : undefined,
       })}
 
-      {visible && (
+      {true && (
         <div
           id={tooltipId.current}
           role="tooltip"
