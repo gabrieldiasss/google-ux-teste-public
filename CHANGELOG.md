@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.24
+
+### Patch Changes
+
+- Add SearchNAI and Chat components
+
 ## 1.0.23
 
 ### Patch Changes
