@@ -21,3 +21,5 @@ export const Dotsloader = (): JSX.Element => {
     </div>
   );
 };
+
+Dotsloader.displayName = 'Dotsloader';

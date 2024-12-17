@@ -100,9 +100,7 @@ export const FileRender = ({
           </>
         ) : (
           <>
-            <span>
-              Nome do arquivo: <strong>{file}</strong>
-            </span>
+            <span>{file}</span>
             <span
               className={clsx(
                 fileRenderDescriptionStyle,
@@ -117,3 +115,5 @@ export const FileRender = ({
     </div>
   );
 };
+
+FileRender.displayName = 'FileRender';

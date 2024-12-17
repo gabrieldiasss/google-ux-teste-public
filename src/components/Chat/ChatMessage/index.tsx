@@ -94,3 +94,5 @@ export const ChatMessage = ({
     </div>
   );
 };
+
+ChatMessage.displayName = 'ChatMessage';
