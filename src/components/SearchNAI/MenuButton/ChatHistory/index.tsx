@@ -27,6 +27,9 @@ export const ChatHistory: React.FC<ChatHistoryProps> = ({
   historyData = [],
 }) => {
   const { colorScheme } = useColorScheme();
+  if (!historyData.length) {
+    return null;
+  }
   return (
     <div
       className={clsx(

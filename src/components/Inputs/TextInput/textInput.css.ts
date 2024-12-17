@@ -30,7 +30,7 @@ export const textInputGlobalWrapperStyle = style({
   display: 'flex',
   flexDirection: 'column',
   gap: theme.spacing.xxxs,
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontFamily: theme.fontFamily.default,
 });
 
@@ -48,12 +48,12 @@ export const textInputWrapperSizesStyles = styleVariants({
   xs: {
     paddingInline: theme.spacing.xs,
     paddingBlock: theme.spacing.xxs,
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.xxs,
   },
   lg: {
     paddingInline: theme.spacing.xs,
     paddingBlock: theme.spacing.xs,
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.xxs,
   },
 });
 
@@ -145,14 +145,14 @@ export const textInputLabelAsteriskStyle = style({
 
 export const textInputLabelErrorStyle = style({
   color: theme.colors.danger[500],
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
 });
 
 export const textInputStyle = style({
   flex: 1,
   border: 'none',
   outline: 'none',
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   backgroundColor: 'transparent',
   color: 'inherit',
   fontFamily: theme.fontFamily.default,

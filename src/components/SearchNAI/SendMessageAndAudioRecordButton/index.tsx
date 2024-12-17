@@ -2,6 +2,7 @@ import { ActionIcon } from '@/components/ActionIcon';
 import React, { useState, useEffect, useRef } from 'react';
 
 export function SendMessageAndAudioRecordButton({
+  disabled,
   listeningInSeconds,
   setListeningInSeconds,
   onAudioRecorded,
@@ -9,12 +10,13 @@ export function SendMessageAndAudioRecordButton({
   setInputValue,
   onSendMessage,
 }: {
+  disabled?: boolean;
   listeningInSeconds: number | undefined;
   setListeningInSeconds: (value: number | undefined) => void;
   onAudioRecorded?: (audioObjectUrl: string) => void;
   inputValue: string;
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
-  onSendMessage?: () => void;
+  onSendMessage?: (message: string) => void;
 }) {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -98,16 +100,20 @@ export function SendMessageAndAudioRecordButton({
   return (
     <div>
       <ActionIcon
+        disabled={disabled}
         icon={inputValue?.length > 0 ? 'send' : 'mic'}
         size="xs"
         variant={isRecording ? 'filled' : 'light'}
-        onClick={
-          inputValue?.length > 0
-            ? onSendMessage
-            : isRecording
-              ? handleStopRecording
-              : handleStartRecording
-        }
+        onClick={() => {
+          if (inputValue?.length > 0) {
+            onSendMessage?.(inputValue);
+            setInputValue('');
+          } else if (isRecording) {
+            handleStopRecording();
+          } else {
+            handleStartRecording();
+          }
+        }}
       />
     </div>
   );

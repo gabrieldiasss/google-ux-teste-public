@@ -33,7 +33,7 @@ export const inputStyle = style({
   background: 'transparent',
   color: 'inherit',
   fontFamily: theme.fontFamily.default,
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   height: 36,
   paddingBlock: theme.spacing.xxs,
 
@@ -69,9 +69,13 @@ export const placeholderTextStyle = style({
   transform: 'translateY(-50%)',
 
   fontFamily: theme.fontFamily.default,
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   userSelect: 'none',
   cursor: 'text',
+});
+
+export const placeholderTextAudioStyle = style({
+  fontSize: theme.fontSizes.xxs,
 });
 
 export const placeholderHighlightStyle = style({

@@ -14,8 +14,21 @@ import { EmojiListPicker } from './EmojiListPicker';
 import { FileLoader } from './FileLoader';
 import { ChatHistory } from './ChatHistory';
 
+export type MenuButtonProps = {
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  isFileLoaded?: boolean;
+  onClickAddNewChat?: () => void;
+  onClickChatHistory?: (chatId: string) => void;
+  onUploadFile?: (file: File) => void;
+  renderPosition?: 'top' | 'bottom';
+  historyData?: {
+    id: string;
+    title: string;
+    date: Date;
+  }[];
+};
+
 export function MenuButton({
-  inputValue,
   setInputValue,
   isFileLoaded,
   onClickAddNewChat,
@@ -23,21 +36,7 @@ export function MenuButton({
   onUploadFile,
   renderPosition = 'top',
   historyData,
-}: {
-  inputValue: string;
-  setInputValue: React.Dispatch<React.SetStateAction<string>>;
-  isFileLoaded?: boolean;
-  onClickAddNewChat?: () => void;
-  onClickChatHistory?: (chatId: string) => void;
-  onUploadFile?: (file: File) => void;
-  onSendMessage?: () => void;
-  renderPosition?: 'top' | 'bottom';
-  historyData?: {
-    id: string;
-    title: string;
-    date: Date;
-  }[];
-}) {
+}: MenuButtonProps): JSX.Element {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const menuItems: Record<
@@ -124,6 +123,8 @@ export function MenuButton({
     if (!currentFeature) {
       return null;
     }
+    if (historyData?.length === 0 && currentFeature === 'history') return null;
+
     return (
       <div
         className={clsx(menuChatStyle, menuChatPositionStyle[renderPosition])}
@@ -139,8 +140,12 @@ export function MenuButton({
         icon={currentFeature ? menuItems[currentFeature].icon : 'add'}
         size="xs"
         onClick={() => {
-          setCurrentFeature(undefined);
-          setVisible(!visible);
+          if (currentFeature) {
+            setVisible(false);
+            setCurrentFeature(undefined);
+          } else {
+            setVisible(!visible);
+          }
         }}
       />
       {visible && (

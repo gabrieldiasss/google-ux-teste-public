@@ -67,7 +67,7 @@ export const fileLoaderTextContentStyle = style({
 });
 
 export const fileLoaderTitleStyle = style({
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
 });
 export const fileLoaderTitleColorSchemeStyle = styleVariants({
   dark: {

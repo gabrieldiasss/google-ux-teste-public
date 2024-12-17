@@ -22,7 +22,7 @@ export const breadcrumbListStyle = style({
   gap: theme.spacing.xxxs,
 
   fontFamily: theme.fontFamily.default,
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.normal,
 
   transition: 'all 0.2s ease',

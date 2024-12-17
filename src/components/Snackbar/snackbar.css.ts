@@ -123,7 +123,7 @@ export const snackbarBody = style({
 });
 
 export const snackbarBaseTitleStyle = {
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.bold,
 };
 
@@ -138,7 +138,7 @@ export const snackbarTitleVariantColorScheme = styleVariants({
   },
 });
 export const snackbarBaseMessageStyle = {
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.normal,
 };
 

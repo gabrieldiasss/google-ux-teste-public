@@ -150,22 +150,22 @@ export const buttonLightVariants = styleVariants({
 export const buttonSizes = styleVariants({
   xs: {
     padding: `${theme.spacing['xxs']} ${theme.spacing['xs']}`,
-    fontSize: theme.fontSizes.xs,
+    fontSize: theme.fontSizes.xxs,
     gap: theme.spacing.xxxs,
   },
   sm: {
     padding: `${theme.spacing['xxs']} ${theme.spacing['xs']} `,
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.xxs,
     gap: theme.spacing.xxs,
   },
   md: {
     padding: `${theme.spacing['xs']} ${theme.spacing['s']}`,
-    fontSize: theme.fontSizes.md,
+    fontSize: theme.fontSizes.s,
     gap: theme.spacing.xxs,
   },
   lg: {
     padding: `${theme.spacing['s']} ${theme.spacing['m']}`,
-    fontSize: theme.fontSizes.lg,
+    fontSize: theme.fontSizes.m,
     gap: theme.spacing.xxs,
   },
 });

@@ -8,6 +8,7 @@ export const chatBackgroundStyle = style({
   height: '100%',
   padding: theme.spacing.xxs,
   borderRadius: theme.borders.radius.md,
+  fontFamily: theme.fontFamily.default,
 });
 export const chatBackgroundColorSchemeStyle = styleVariants({
   light: {
@@ -77,7 +78,7 @@ export const chatHeaderTitleWrapperStyle = style({
 });
 
 export const chatHeaderTitleStyle = style({
-  fontSize: theme.fontSizes.lg,
+  fontSize: theme.fontSizes.m,
   fontWeight: theme.fontWeights.bold,
 });
 export const chatHeaderTitleColorSchemeStyle = styleVariants({
@@ -90,7 +91,7 @@ export const chatHeaderTitleColorSchemeStyle = styleVariants({
 });
 
 export const chatHeaderSubtitleStyle = style({
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   color: theme.colors.neutralsOverlay.dark[500],
 });
 export const chatHeaderSubtitleColorSchemeStyle = styleVariants({
@@ -131,6 +132,7 @@ export const chatHeaderButtonItemStyle = style({
 
 // Corpo principal
 export const chatMainContentWrapperStyle = style({
+  paddingBlock: theme.spacing.xxs,
   display: 'flex',
   flexDirection: 'column',
   flex: 1,
@@ -155,43 +157,3 @@ export const chatMainContentColorSchemeStyle = styleVariants({
     background: theme.colors.neutrals.dark[50],
   },
 });
-
-// Mensagem
-export const chatMessageStyle = style({
-  display: 'flex',
-  flexDirection: 'row',
-  gap: theme.spacing.xxs,
-  alignItems: 'center',
-  marginBlock: theme.spacing.xxs,
-});
-
-export const chatMessageUser = style({
-  justifyContent: 'flex-end',
-});
-
-export const chatMessageNAI = style({
-  justifyContent: 'flex-start',
-});
-
-export const chatMessageContentStyle = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: theme.spacing.xxxs,
-  paddingInline: theme.spacing.xxs,
-  paddingBlock: theme.spacing.xs,
-  borderRadius: theme.borders.radius.md,
-});
-
-export const chatMessageContentColorSchemeStyle = styleVariants({
-  dark: {
-    backgroundColor: theme.colors.neutralsOverlay.light[50],
-    color: theme.colors.neutrals.dark[950],
-  },
-  light: {
-    backgroundColor: theme.colors.neutralsOverlay.dark[50],
-    color: theme.colors.neutrals.light[950],
-  },
-});
-
-export const chatMessageUserContent = style({});
-export const chatMessageNAIContent = style({});

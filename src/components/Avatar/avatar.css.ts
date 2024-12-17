@@ -38,12 +38,12 @@ export const avatarSizes = styleVariants({
   xs: {
     width: '32px',
     height: '32px',
-    fontSize: theme.fontSizes.md,
+    fontSize: theme.fontSizes.s,
   },
   md: {
     width: '48px',
     height: '48px',
-    fontSize: theme.fontSizes.md,
+    fontSize: theme.fontSizes.s,
   },
   xl: {
     width: '64px',

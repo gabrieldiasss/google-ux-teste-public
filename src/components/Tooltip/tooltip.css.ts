@@ -116,8 +116,9 @@ export const tooltipVariantColorScheme = styleVariants({
 
 // Seta - Base
 export const arrowBase = style({
+  userSelect: 'none',
   position: 'absolute',
-  transform: '', // Ajuste para a forma de triângulo
+  transform: '',
   zIndex: 1000,
 });
 

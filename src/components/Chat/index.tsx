@@ -15,22 +15,16 @@ import {
   chatHeaderButtonItemStyle,
   chatMainContentWrapperStyle,
   chatMainContentColorSchemeStyle,
-  chatMessageStyle,
-  chatMessageUser,
-  chatMessageNAI,
-  chatMessageContentStyle,
-  chatMessageUserContent,
-  chatMessageNAIContent,
   chatHeaderTitleColorSchemeStyle,
   chatHeaderSubtitleColorSchemeStyle,
   chatHeaderButtonsColorSchemeStyle,
-  chatMessageContentColorSchemeStyle,
   chatBackgroundStyle,
   chatBackgroundColorSchemeStyle,
 } from './chat.css';
 import { useColorScheme } from '@/providers';
 import { Icon } from '../Icon';
 import logoNai from './../../assets/nai-avatar.svg';
+import { ChatMessage } from './ChatMessage';
 
 interface ChatProps extends SearchNAIProps {
   onCloseChat?: () => void;
@@ -42,16 +36,21 @@ interface ChatProps extends SearchNAIProps {
     from: 'user' | 'nai';
     type: 'text' | 'audio' | 'file';
   }[];
+  isNaiTyping?: boolean;
 }
 
 export const Chat: React.FC<ChatProps> = ({
-  onEmojiSelect,
   onFileUpload,
   historyData,
   onHistoryClick,
   onInputChange,
+  onAudioRecorded,
+  onCloseChat,
+  onMinimizeChat,
+  onSendMessage,
   renderMenuPosition,
   chatMessages,
+  isNaiTyping,
 }): JSX.Element => {
   const { colorScheme } = useColorScheme();
   return (
@@ -116,43 +115,18 @@ export const Chat: React.FC<ChatProps> = ({
         >
           <div className={clsx(chatMainContentWrapperStyle)}>
             {chatMessages?.map((message) => (
-              <div
-                key={message.id}
-                className={clsx(
-                  chatMessageStyle,
-                  message.from === 'user' ? chatMessageUser : chatMessageNAI,
-                )}
-              >
-                {message.from === 'nai' && (
-                  <Avatar label={message.from} size="md" image={logoNai} />
-                )}
-                <div
-                  className={clsx(
-                    chatMessageContentStyle,
-                    chatMessageContentColorSchemeStyle[colorScheme],
-                    message.from === 'user'
-                      ? chatMessageUserContent
-                      : chatMessageNAIContent,
-                  )}
-                >
-                  {message.type === 'text' && <span>{message.message}</span>}
-                  {message.type === 'audio' && (
-                    <audio controls>
-                      <source src={message.file} type="audio/mpeg" />
-                      Your browser does not support the audio element.
-                    </audio>
-                  )}
-                  {message.type === 'file' && (
-                    <a href={message.file} download>
-                      Download file
-                    </a>
-                  )}
-                </div>
-                {message.from === 'user' && (
-                  <Avatar label={message.from} size="md" />
-                )}
-              </div>
+              <ChatMessage key={message.id} message={message} />
             ))}
+            {isNaiTyping && (
+              <ChatMessage
+                message={{
+                  id: 'typing',
+                  from: 'nai',
+                  type: 'text',
+                }}
+                isNaiTyping
+              />
+            )}
           </div>
           <div
             style={{
@@ -160,11 +134,13 @@ export const Chat: React.FC<ChatProps> = ({
             }}
           >
             <SearchNAI
-              onEmojiSelect={onEmojiSelect}
+              isNaiTyping={isNaiTyping}
               onFileUpload={onFileUpload}
               historyData={historyData}
               onHistoryClick={onHistoryClick}
               onInputChange={onInputChange}
+              onAudioRecorded={onAudioRecorded}
+              onSendMessage={onSendMessage}
               renderMenuPosition={renderMenuPosition}
             />
           </div>

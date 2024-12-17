@@ -5,30 +5,40 @@ import {
   inputWrapperColorSchemeStyle,
   inputWrapperStyle,
   placeholderHighlightStyle,
+  placeholderTextAudioStyle,
   placeholderTextStyle,
   placeholderWrapperStyle,
 } from './searchNAI.css';
 import clsx from 'clsx';
 import { SendMessageAndAudioRecordButton } from './SendMessageAndAudioRecordButton';
-import { MenuButton } from './MenuButton';
+import { MenuButton, MenuButtonProps } from './MenuButton';
 import { Textarea } from '@headlessui/react';
 
-export type SearchNAIProps = {
-  onFileUpload: (file: File) => void;
-  onEmojiSelect: (emoji: string) => void;
+export interface SearchNAIProps
+  extends Omit<
+    MenuButtonProps,
+    'isFileLoaded' | 'renderPosition' | 'setInputValue'
+  > {
+  isNaiTyping?: boolean;
   onInputChange?: (value: string) => void;
+  onSendMessage?: (message: string) => void;
+  onAudioRecorded?: (audioObjectUrl: string) => void;
   historyData?: {
     id: string;
     title: string;
     date: Date;
   }[];
-  onHistoryClick?: (id: string) => void;
   renderMenuPosition?: 'top' | 'bottom';
-};
+  onUploadFile?: (file: File) => void;
+}
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
-  onFileUpload,
-  onEmojiSelect,
+  isNaiTyping,
+  onUploadFile,
+  onSendMessage,
+  onAudioRecorded,
+  onClickAddNewChat,
+  onClickChatHistory,
   historyData,
   onInputChange,
   renderMenuPosition,
@@ -66,24 +76,27 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
       >
         <MenuButton
           renderPosition={renderMenuPosition || 'top'}
-          inputValue={inputValue}
           setInputValue={setInputValue}
           historyData={historyData}
+          onUploadFile={onUploadFile}
+          isFileLoaded={false}
+          onClickAddNewChat={onClickAddNewChat}
+          onClickChatHistory={onClickChatHistory}
         />
         <div className={placeholderWrapperStyle}>
           <Textarea
             ref={inputRef}
             className={clsx(inputStyle)}
             placeholder=" "
-            onFocus={() => setIsFocused(true)} // Set focus state
-            onBlur={() => setIsFocused(false)} // Reset focus state
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
             onChange={handleInputChange}
             value={inputValue}
           />
 
           {listeningInSeconds !== undefined ? (
             <span
-              className={placeholderTextStyle}
+              className={clsx(placeholderTextStyle, placeholderTextAudioStyle)}
               onClick={() => {
                 inputRef.current?.focus();
               }}
@@ -95,7 +108,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             </span>
           ) : (
             !isFocused &&
-            inputValue.length === 0 && ( // Check isFocused state
+            inputValue.length === 0 && (
               <span
                 className={placeholderTextStyle}
                 onClick={() => {
@@ -110,9 +123,10 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
         </div>
 
         <SendMessageAndAudioRecordButton
-          onSendMessage={() => {}}
+          disabled={isNaiTyping}
+          onSendMessage={onSendMessage}
           inputValue={inputValue}
-          onAudioRecorded={(audioObjectUrl) => {}}
+          onAudioRecorded={onAudioRecorded}
           setListeningInSeconds={setListeningInSeconds}
           listeningInSeconds={listeningInSeconds}
           setInputValue={setInputValue}

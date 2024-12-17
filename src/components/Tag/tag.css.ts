@@ -17,7 +17,7 @@ export const tagStyle = style({
   paddingBlock: theme.spacing.xxxs,
 
   lineHeight: 1.5,
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   fontFamily: theme.fontFamily.default,
   fontWeight: theme.fontWeights.normal,
 });

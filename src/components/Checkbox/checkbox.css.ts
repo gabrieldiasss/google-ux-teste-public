@@ -80,7 +80,7 @@ export const checkboxInputStyle = style({
 });
 
 export const checkboxLabelStyle = style({
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.normal,
   fontFamily: theme.fontFamily.default,
   color: 'inherit',

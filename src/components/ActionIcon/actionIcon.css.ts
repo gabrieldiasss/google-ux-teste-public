@@ -145,22 +145,22 @@ export const actionIconLightVariants = styleVariants({
 export const actionIconSizes = styleVariants({
   xs: {
     padding: 8,
-    fontSize: theme.fontSizes.xs,
+    fontSize: theme.fontSizes.xxs,
     gap: theme.spacing.xxxs,
   },
   sm: {
     padding: 9,
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.xxs,
     gap: theme.spacing.xxs,
   },
   md: {
     padding: 14,
-    fontSize: theme.fontSizes.md,
+    fontSize: theme.fontSizes.s,
     gap: theme.spacing.xxs,
   },
   lg: {
     padding: 18,
-    fontSize: theme.fontSizes.lg,
+    fontSize: theme.fontSizes.m,
     gap: theme.spacing.xxs,
   },
 });

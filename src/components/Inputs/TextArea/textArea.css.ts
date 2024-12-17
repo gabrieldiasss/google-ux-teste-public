@@ -19,14 +19,14 @@ const sharedFocusWithinStyles = (color: string) => ({
 const sharedWrapperBase = {
   display: 'flex',
   gap: theme.spacing.xxxs,
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontFamily: theme.fontFamily.default,
 };
 
 const sharedInputBase = {
   display: 'flex',
   alignItems: 'center',
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   fontFamily: theme.fontFamily.default,
   fontWeight: theme.fontWeights.normal,
   border: 'none',
@@ -64,7 +64,7 @@ export const textAreaLabelAsteriskStyle = style({
 
 export const textAreaLabelErrorStyle = style({
   color: theme.colors.danger[500],
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
 });
 
 // Input styles

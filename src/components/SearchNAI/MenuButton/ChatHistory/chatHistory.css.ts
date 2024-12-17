@@ -51,7 +51,7 @@ export const chatHistoryItemColorSchemeStyle = styleVariants({
 });
 
 export const chatHistoryTitleStyle = style({
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'clip',

@@ -41,14 +41,14 @@ export const listSectionGeneralInfoTextWrapperStyle = style({
   gap: theme.spacing.xxxs,
 });
 export const listSectionTitleStyle = style({
-  fontSize: theme.fontSizes.md,
+  fontSize: theme.fontSizes.s,
   fontWeight: theme.fontWeights.bold,
 });
 export const listSectionDescriptionStyle = style({
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.normal,
 });
 export const listSectionSubdescriptionStyle = style({
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.normal,
 });

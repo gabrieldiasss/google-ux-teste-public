@@ -38,7 +38,7 @@ export const buttonSegmentedStyle = style({
 
   lineHeight: 1.5,
   fontFamily: theme.fontFamily.default,
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.medium,
 });
 

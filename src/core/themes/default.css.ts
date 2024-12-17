@@ -269,14 +269,16 @@ export const themeTokens = {
     emoji: 'Noto Color Emoji',
   },
   fontSizes: {
-    xxs: '10px',
-    xs: '12px',
-    sm: '14px',
-    md: '16px',
-    lg: '18px',
+    xxxs: '10px',
+    xxs: '12px',
+    xs: '14px',
+    s: '16px',
+    m: '18px',
+    l: '20px',
     xl: '24px',
-    '2xl': '32px',
-    '3xl': '48px',
+    xxl: '34px',
+    xxxl: '48px',
+    '4xl': '60px',
   },
 
   fontWeights: {

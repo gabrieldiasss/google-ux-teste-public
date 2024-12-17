@@ -8,14 +8,14 @@ import {
 } from './tooltip.css';
 import clsx from 'clsx';
 import { useColorScheme } from '@/providers';
-import arrowBlockDark from './../../assets/side-block-arrow-tooltip-dark.svg';
-import arrowBlockLight from './../../assets/side-block-arrow-tooltip-light.svg';
-import arrowInlineLight from './../../assets/side-inline-arrow-tooltip-light.svg';
-import arrowInlineDark from './../../assets/side-inline-arrow-tooltip-dark.svg';
-import arrowCenterDark from './../../assets/center-arrow-tooltip-dark.svg';
-import arrowCenterLight from './../../assets/center-arrow-tooltip-light.svg';
-import arrowInlineCenterLight from './../../assets/center-inline-arrow-tooltip-light.svg';
-import arrowInlineCenterDark from './../../assets/center-inline-arrow-tooltip-dark.svg';
+import arrowBlockDark from './../../assets/tooltip/side-block-arrow-tooltip-dark.svg';
+import arrowBlockLight from './../../assets/tooltip/side-block-arrow-tooltip-light.svg';
+import arrowInlineLight from './../../assets/tooltip/side-inline-arrow-tooltip-light.svg';
+import arrowInlineDark from './../../assets/tooltip/side-inline-arrow-tooltip-dark.svg';
+import arrowCenterDark from './../../assets/tooltip/center-arrow-tooltip-dark.svg';
+import arrowCenterLight from './../../assets/tooltip/center-arrow-tooltip-light.svg';
+import arrowInlineCenterLight from './../../assets/tooltip/center-inline-arrow-tooltip-light.svg';
+import arrowInlineCenterDark from './../../assets/tooltip/center-inline-arrow-tooltip-dark.svg';
 
 import { ColorSchemeEnum } from '@/utils';
 
@@ -83,7 +83,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         'aria-describedby': visible ? tooltipId.current : undefined,
       })}
 
-      {true && (
+      {visible && (
         <div
           id={tooltipId.current}
           role="tooltip"

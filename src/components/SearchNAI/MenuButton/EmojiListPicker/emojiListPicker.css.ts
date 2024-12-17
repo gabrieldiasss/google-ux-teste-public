@@ -70,7 +70,7 @@ export const emojiListPickerCategoryStyle = style({
 });
 
 export const emojiListPickerCategoryTitleStyle = style({
-  fontSize: theme.fontSizes.xs,
+  fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.normal,
   fontStyle: 'normal',
   lineHeight: '150%',
