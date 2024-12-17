@@ -40,9 +40,9 @@ interface ChatProps extends SearchNAIProps {
 }
 
 export const Chat: React.FC<ChatProps> = ({
-  onFileUpload,
+  onUploadFile,
   historyData,
-  onHistoryClick,
+  onClickChatHistory,
   onInputChange,
   onAudioRecorded,
   onCloseChat,
@@ -99,10 +99,13 @@ export const Chat: React.FC<ChatProps> = ({
               chatHeaderButtonsColorSchemeStyle[colorScheme],
             )}
           >
-            <button className={chatHeaderButtonItemStyle}>
+            <button
+              className={chatHeaderButtonItemStyle}
+              onClick={onMinimizeChat}
+            >
               <Icon size={24} name="remove" color="inherit" />
             </button>
-            <button className={chatHeaderButtonItemStyle}>
+            <button className={chatHeaderButtonItemStyle} onClick={onCloseChat}>
               <Icon size={24} name="close" color="inherit" />
             </button>
           </div>
@@ -135,9 +138,9 @@ export const Chat: React.FC<ChatProps> = ({
           >
             <SearchNAI
               isNaiTyping={isNaiTyping}
-              onFileUpload={onFileUpload}
+              onUploadFile={onUploadFile}
               historyData={historyData}
-              onHistoryClick={onHistoryClick}
+              onClickChatHistory={onClickChatHistory}
               onInputChange={onInputChange}
               onAudioRecorded={onAudioRecorded}
               onSendMessage={onSendMessage}
