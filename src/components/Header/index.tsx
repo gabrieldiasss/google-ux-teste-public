@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({ isLogged, avatarProps }) => {
     <header className={headerWrapperBaseStyle}>
       <Logo size={isMobile ? 'xs' : 'md'} />
       <nav className={headerNavWrapperBaseStyle}>
-        {isLogged ? (
+        {!isLogged ? (
           <>
             <Button size={isMobile ? 'sm' : 'md'} variant="subtle">
               Login

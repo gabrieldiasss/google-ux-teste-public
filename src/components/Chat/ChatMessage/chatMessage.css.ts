@@ -27,8 +27,8 @@ export const chatMessageContentStyle = style({
 
   maxWidth: '65%',
   gap: theme.spacing.xxxs,
-  paddingInline: theme.spacing.xxs,
-  paddingBlock: theme.spacing.xs,
+  paddingInline: theme.spacing.xs,
+  paddingBlock: theme.spacing.xxs,
   borderRadius: theme.borders.radius.md,
   marginBottom: 22,
 });

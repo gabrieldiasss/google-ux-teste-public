@@ -15,11 +15,9 @@ import { MenuButton, MenuButtonProps } from './MenuButton';
 import { Textarea } from '@headlessui/react';
 
 export interface SearchNAIProps
-  extends Omit<
-    MenuButtonProps,
-    'isFileLoaded' | 'renderPosition' | 'setInputValue'
-  > {
+  extends Omit<MenuButtonProps, 'renderPosition' | 'setInputValue'> {
   isNaiTyping?: boolean;
+
   onInputChange?: (value: string) => void;
   onSendMessage?: (message: string) => void;
   onAudioRecorded?: (audioObjectUrl: string) => void;
@@ -34,6 +32,7 @@ export interface SearchNAIProps
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
   isNaiTyping,
+  isFileLoaded,
   onUploadFile,
   onSendMessage,
   onAudioRecorded,
@@ -79,7 +78,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           setInputValue={setInputValue}
           historyData={historyData}
           onUploadFile={onUploadFile}
-          isFileLoaded={false}
+          isFileLoaded={isFileLoaded}
           onClickAddNewChat={onClickAddNewChat}
           onClickChatHistory={onClickChatHistory}
         />

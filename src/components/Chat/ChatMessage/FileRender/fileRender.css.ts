@@ -30,7 +30,6 @@ export const fileRenderStyle = style({
   alignItems: 'center',
 
   gap: theme.spacing.xs,
-  padding: theme.spacing.xxxs,
 });
 
 export const fileRenderContent = style({

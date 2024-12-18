@@ -50,6 +50,7 @@ export const Chat: React.FC<ChatProps> = ({
   onSendMessage,
   renderMenuPosition,
   chatMessages,
+  onClickAddNewChat,
   isNaiTyping,
 }): JSX.Element => {
   const { colorScheme } = useColorScheme();
@@ -140,6 +141,7 @@ export const Chat: React.FC<ChatProps> = ({
               isNaiTyping={isNaiTyping}
               onUploadFile={onUploadFile}
               historyData={historyData}
+              onClickAddNewChat={onClickAddNewChat}
               onClickChatHistory={onClickChatHistory}
               onInputChange={onInputChange}
               onAudioRecorded={onAudioRecorded}
