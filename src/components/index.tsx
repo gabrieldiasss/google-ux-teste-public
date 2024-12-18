@@ -22,6 +22,8 @@ import { ListSectionItem } from './ListSectionItem';
 import { AlertBox } from './AlertBox';
 import { SearchNAI } from './SearchNAI';
 import { Chat } from './Chat';
+import { Select } from './Select';
+
 export {
   Button,
   Avatar,
@@ -47,4 +49,5 @@ export {
   AlertBox,
   SearchNAI,
   Chat,
+  Select,
 };
