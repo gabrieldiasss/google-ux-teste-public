@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SearchNAI, SearchNAIProps } from '../SearchNAI';
 import { Avatar } from '../Avatar';
 import clsx from 'clsx';
@@ -54,6 +54,14 @@ export const Chat: React.FC<ChatProps> = ({
   isNaiTyping,
 }): JSX.Element => {
   const { colorScheme } = useColorScheme();
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const chatWrapper = document.getElementById('chat-wrapper');
+    if (chatWrapper) {
+      chatWrapper.scrollTop = chatWrapper.scrollHeight;
+    }
+  }, [chatMessages]);
   return (
     <div
       className={clsx(
@@ -117,7 +125,7 @@ export const Chat: React.FC<ChatProps> = ({
             chatMainContentColorSchemeStyle[colorScheme],
           )}
         >
-          <div className={clsx(chatMainContentWrapperStyle)}>
+          <div className={clsx(chatMainContentWrapperStyle)} id="chat-wrapper">
             {chatMessages?.map((message) => (
               <ChatMessage key={message.id} message={message} />
             ))}
