@@ -30,7 +30,7 @@ const sharedInputBase = {
   fontFamily: theme.fontFamily.default,
   fontWeight: theme.fontWeights.normal,
   border: 'none',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   outlineStyle: 'solid',
   outlineWidth: theme.borders.width.thin,
   paddingInline: theme.spacing.xs,

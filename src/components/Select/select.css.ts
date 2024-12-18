@@ -60,7 +60,7 @@ export const selectInputStyle = style({
   fontFamily: theme.fontFamily.default,
   fontWeight: theme.fontWeights.normal,
   border: 'none',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   outlineStyle: 'solid',
   outlineWidth: theme.borders.width.thin,
   paddingInline: theme.spacing.xs,
@@ -122,7 +122,7 @@ const sharedOptionsWrapperBase = {
   paddingInline: theme.spacing.xxs,
   paddingTop: theme.spacing.xxs,
   paddingBottom: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   width: 'var(--button-width)',
   maxWidth: 'var(--button-width)',
 };
@@ -145,7 +145,7 @@ export const selectOptionsWrapperStyleVariants = styleVariants({
 const sharedOptionBaseStyle = {
   padding: theme.spacing.xxs,
   cursor: 'pointer',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   marginBottom: theme.spacing.xxxs,
   backgroundColor: 'transparent',
   ':hover': {

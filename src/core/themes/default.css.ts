@@ -288,12 +288,15 @@ export const themeTokens = {
   },
 
   borders: {
-    radius: {
-      xs: '2px',
-      sm: '4px',
-      md: '8px',
-      lg: '12px',
-      xl: '16px',
+    corner: {
+      none: '0px',
+      '4xs': '2px',
+      xxxs: '4px',
+      xxs: '8px',
+      xs: '12px',
+      s: '16px',
+      m: '24px',
+      full: '1000px',
     },
     width: {
       thin: '1.5px',

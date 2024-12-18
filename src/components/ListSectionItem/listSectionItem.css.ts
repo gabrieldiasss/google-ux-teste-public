@@ -9,7 +9,7 @@ export const listSectionItemWrapperBaseStyle = style({
   gap: theme.spacing.xxs,
 
   padding: theme.spacing.xs,
-  borderRadius: theme.borders.radius.xl,
+  borderRadius: theme.borders.corner.s,
 });
 export const listSectionItemWrapperVariantStyle = styleVariants({
   light: {

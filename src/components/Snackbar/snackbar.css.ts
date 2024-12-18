@@ -9,7 +9,7 @@ const fadeIn = keyframes({
   },
 });
 export const snackbarContainer = style({
-  borderRadius: theme.borders.radius.xl,
+  borderRadius: theme.borders.corner.s,
   animation: `${fadeIn} 0.3s ease-in`,
 });
 
@@ -31,7 +31,7 @@ export const snackbarContent = style({
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: theme.spacing.m,
-  borderRadius: theme.borders.radius.xl,
+  borderRadius: theme.borders.corner.s,
   padding: `${theme.spacing.xs} ${theme.spacing.s}`,
   position: 'relative',
 });

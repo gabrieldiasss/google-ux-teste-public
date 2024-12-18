@@ -9,7 +9,7 @@ const checkboxWrapperBaseStyle = {
   cursor: 'pointer',
   userSelect: 'none' as const,
   transition: 'all 0.2s ease',
-  borderRadius: theme.borders.radius.sm,
+  borderRadius: theme.borders.corner.xxxs,
 };
 
 export const checkboxWrapperVariantStyles = styleVariants({
@@ -43,7 +43,7 @@ export const checkboxInputStyle = style({
   height: 16,
   transition: 'all 0.2s ease',
 
-  borderRadius: theme.borders.radius.sm,
+  borderRadius: theme.borders.corner.xxxs,
   backgroundColor: theme.colors.neutrals.light[50],
   borderStyle: 'solid',
   borderWidth: theme.borders.width.thin,

@@ -9,7 +9,7 @@ export const segmentedWrapper = style({
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
 
-  borderRadius: theme.borders.radius.xl,
+  borderRadius: theme.borders.corner.s,
 });
 
 export const segmentedWrapperStateVariants = styleVariants({
@@ -29,7 +29,7 @@ export const buttonSegmentedStyle = style({
 
   cursor: 'pointer',
   transition: 'all 0.2s ease',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   borderWidth: theme.borders.width.thin,
   border: 'solid transparent',
 

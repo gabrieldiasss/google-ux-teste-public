@@ -18,7 +18,7 @@ export const fileLoaderContainerStyle = style({
   flexDirection: 'row',
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   width: '100%',
   height: '100%',
 });
@@ -37,7 +37,7 @@ export const fileLoaderInnerContainerStyle = style({
   padding: theme.spacing.xxs,
   justifyContent: 'space-between',
   alignItems: 'center',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
 });
 
 export const fileLoaderInnerContainerColorSchemeStyle = styleVariants({

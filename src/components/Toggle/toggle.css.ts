@@ -8,7 +8,7 @@ export const toggleOuterStyle = style({
   outlineWidth: 1,
   outlineStyle: 'solid',
   cursor: 'pointer',
-  borderRadius: theme.borders.radius.xl,
+  borderRadius: theme.borders.corner.s,
   paddingLeft: 1,
   paddingRight: 1,
   transition: 'all 0.2s ease',

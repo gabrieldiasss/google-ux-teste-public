@@ -8,7 +8,7 @@ export const buttonStyle = style({
   gap: theme.spacing.xxs,
   cursor: 'pointer',
   transition: 'all 0.2s ease',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   borderWidth: theme.borders.width.thin,
   height: 'max-content',
   fontWeight: theme.fontWeights.medium,

@@ -13,7 +13,7 @@ const loading = keyframes({
 export const skeletonBase = style({
   width: '100%',
   height: '100%',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
 });
 
 export const skeletonStyleVariants = styleVariants({

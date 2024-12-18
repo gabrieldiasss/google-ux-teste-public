@@ -7,7 +7,7 @@ export const chatBackgroundStyle = style({
   flex: 1,
   height: '100%',
   padding: theme.spacing.xxs,
-  borderRadius: theme.borders.radius.md,
+  borderRadius: theme.borders.corner.xxs,
   fontFamily: theme.fontFamily.default,
 });
 export const chatBackgroundColorSchemeStyle = styleVariants({
@@ -25,7 +25,7 @@ export const chatWrapperStyle = style({
   flexDirection: 'column',
   flex: 1,
   height: '100%',
-  borderRadius: theme.borders.radius.md,
+  borderRadius: theme.borders.corner.xxs,
 });
 
 export const chatWrapperColorSchemeStyle = styleVariants({
@@ -44,8 +44,8 @@ export const chatHeaderStyle = style({
   alignItems: 'center',
   paddingInline: theme.spacing.s,
   paddingBlock: theme.spacing.xxs,
-  borderTopLeftRadius: theme.borders.radius.md,
-  borderTopRightRadius: theme.borders.radius.md,
+  borderTopLeftRadius: theme.borders.corner.xxs,
+  borderTopRightRadius: theme.borders.corner.xxs,
   borderBottomWidth: '1px',
   borderBottomStyle: 'solid',
 });
@@ -140,8 +140,8 @@ export const chatMainContentWrapperStyle = style({
   overflow: 'auto',
   paddingInline: theme.spacing.xxs,
   paddingBottom: theme.spacing.xxs,
-  borderBottomLeftRadius: theme.borders.radius.md,
-  borderBottomRightRadius: theme.borders.radius.md,
+  borderBottomLeftRadius: theme.borders.corner.xxs,
+  borderBottomRightRadius: theme.borders.corner.xxs,
   scrollbarWidth: 'none',
   msOverflowStyle: 'none',
   '::-webkit-scrollbar': {

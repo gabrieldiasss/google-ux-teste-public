@@ -15,7 +15,7 @@ export const tooltipBase = style({
   paddingInline: theme.spacing.xs,
   paddingBlock: theme.spacing.xxs,
 
-  borderRadius: theme.borders.radius.md,
+  borderRadius: theme.borders.corner.xxs,
 
   fontSize: '12px',
   zIndex: 1000,

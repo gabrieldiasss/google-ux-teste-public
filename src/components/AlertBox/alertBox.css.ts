@@ -24,7 +24,7 @@ export const alertBoxGlobalWrapperColorSchemeVariantStyle = styleVariants({
 
 export const alertBoxWrapperBaseStyle = style({
   padding: theme.spacing.m,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   display: 'flex',
   flexDirection: 'column',
   gap: '8px',

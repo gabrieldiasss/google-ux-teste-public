@@ -6,7 +6,7 @@ export const chatHistoryContainerStyle = style({
   flexDirection: 'row',
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   width: 'fit-content',
   height: '100%',
 });
@@ -24,7 +24,7 @@ export const chatHistoryItemStyle = style({
   flexDirection: 'column',
   gap: theme.spacing.none,
   padding: theme.spacing.xxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   width: '100%',
   height: '100%',
   maxWidth: 136,

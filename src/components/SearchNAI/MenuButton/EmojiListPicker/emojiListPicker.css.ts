@@ -6,7 +6,7 @@ export const emojiListPickerContainer = style({
   flexDirection: 'column',
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   width: '100%',
   height: '100%',
 });
@@ -24,7 +24,7 @@ export const emojiListPickerContainerScrollStyle = style({
   flex: 1,
   width: '100%',
   padding: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
 
   '::-webkit-scrollbar': {
     width: 4,
@@ -48,7 +48,7 @@ export const emojiListPickerContainerListStyle = style({
   flexDirection: 'column',
 
   height: '30dvh',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   gap: theme.spacing.xxs,
   paddingInline: theme.spacing.xs,
   paddingBlock: theme.spacing.xxs,
@@ -92,7 +92,7 @@ export const emojiListPickerItemStyle = style({
   cursor: 'pointer',
   fontSize: 18,
   padding: theme.spacing['4xs'],
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   userSelect: 'none',
 
   transition: 'all 0.2s ease',

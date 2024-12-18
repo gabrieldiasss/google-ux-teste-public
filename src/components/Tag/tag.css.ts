@@ -11,7 +11,7 @@ export const tagStyle = style({
   borderColor: 'transparent',
   borderWidth: theme.borders.width.thin,
   borderStyle: 'solid',
-  borderRadius: theme.borders.radius.md,
+  borderRadius: theme.borders.corner.xxs,
 
   paddingInline: theme.spacing.xxs,
   paddingBlock: theme.spacing.xxxs,

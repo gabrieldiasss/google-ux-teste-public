@@ -9,7 +9,7 @@ export const inputWrapperStyle = style({
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
   width: '100%',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   transition: 'all 0.2s ease',
 });
 

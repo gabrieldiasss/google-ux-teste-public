@@ -7,7 +7,7 @@ export const menuButtonsWrapperStyle = style({
   flexDirection: 'column',
   gap: theme.spacing.xxxs,
   padding: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   left: 0,
 });
 

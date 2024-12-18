@@ -8,7 +8,7 @@ export const actionIconStyle = style({
   gap: theme.spacing.xxs,
   cursor: 'pointer',
   transition: 'all 0.2s ease',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xxs,
   borderWidth: theme.borders.width.thin,
   height: 'max-content',
   fontFamily: theme.fontFamily.default,

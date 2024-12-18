@@ -5,7 +5,7 @@ const sharedWrapperBase = {
   display: 'flex',
   alignItems: 'center',
   border: 'none',
-  borderRadius: theme.borders.radius.lg,
+  borderRadius: theme.borders.corner.xs,
   gap: theme.spacing.xxs,
   transition: 'all 0.2s ease',
   outlineStyle: 'solid',
