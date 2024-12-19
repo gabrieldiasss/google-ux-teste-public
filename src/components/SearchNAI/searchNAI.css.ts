@@ -6,7 +6,7 @@ export const inputWrapperStyle = style({
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'row',
-  gap: theme.spacing.xxxs,
+  gap: theme.spacing.xs,
   padding: theme.spacing.xxxs,
   width: '100%',
   borderRadius: theme.borders.corner.xs,

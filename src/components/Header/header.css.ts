@@ -31,6 +31,6 @@ export const headerLoggedNavWrapperBaseStyle = style({
 export const headerMenuOptionsBaseStyle = style({
   display: 'flex',
   gap: theme.spacing.xxxs,
-  borderRadius: theme.borders.radius['4xs'],
+  borderRadius: theme.borders.corner['4xs'],
   animation: `${fadeIn} 0.3s ease-in-out`,
 });
