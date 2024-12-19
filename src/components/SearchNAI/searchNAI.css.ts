@@ -1,8 +1,14 @@
 import { theme } from '@/core/themes/default.css';
 import { style, styleVariants } from '@vanilla-extract/css';
-
-export const inputWrapperStyle = style({
+export const globalWrapperStyle = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'row',
   position: 'relative',
+  gap: theme.spacing.xxs,
+});
+export const inputWrapperStyle = style({
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'row',
@@ -12,7 +18,16 @@ export const inputWrapperStyle = style({
   borderRadius: theme.borders.corner.xs,
   transition: 'all 0.2s ease',
 });
-
+export const buttonsWrapperStyle = style({
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'row',
+  gap: theme.spacing.xxxs,
+  padding: theme.spacing.xxxs,
+  width: 'min-content',
+  borderRadius: theme.borders.corner.xs,
+  transition: 'all 0.2s ease',
+});
 export const inputWrapperColorSchemeStyle = styleVariants({
   dark: {
     color: theme.colors.neutrals.dark[800],

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useColorScheme } from '@/providers';
 import {
+  buttonsWrapperStyle,
+  globalWrapperStyle,
   inputStyle,
   inputWrapperColorSchemeStyle,
   inputWrapperStyle,
@@ -13,6 +15,7 @@ import clsx from 'clsx';
 import { SendMessageAndAudioRecordButton } from './SendMessageAndAudioRecordButton';
 import { MenuButton, MenuButtonProps } from './MenuButton';
 import { Textarea } from '@headlessui/react';
+import { ActionIcon } from '../ActionIcon';
 
 export interface SearchNAIProps
   extends Omit<MenuButtonProps, 'renderPosition' | 'setInputValue'> {
@@ -28,6 +31,7 @@ export interface SearchNAIProps
   }[];
   renderMenuPosition?: 'top' | 'bottom';
   onUploadFile?: (file: File) => void;
+  shouldShowButtons?: boolean;
 }
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
@@ -41,6 +45,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   historyData,
   onInputChange,
   renderMenuPosition,
+  shouldShowButtons,
 }) => {
   const [inputValue, setInputValue] = useState('');
   const [isFocused, setIsFocused] = useState(false); // New state for focus
@@ -66,7 +71,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
     )}:${((listeningInSeconds || 0) % 60).toString().padStart(2, '0')}`;
 
   return (
-    <>
+    <div className={globalWrapperStyle}>
       <div
         className={clsx(
           inputWrapperStyle,
@@ -131,7 +136,18 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           setInputValue={setInputValue}
         />
       </div>
-    </>
+      {shouldShowButtons && (
+        <div
+          className={clsx(
+            buttonsWrapperStyle,
+            inputWrapperColorSchemeStyle[colorScheme],
+          )}
+        >
+          <ActionIcon variant="light" icon="dashboard" size="xs" />
+          <ActionIcon variant="light" icon="menu" size="xs" />
+        </div>
+      )}
+    </div>
   );
 };
 

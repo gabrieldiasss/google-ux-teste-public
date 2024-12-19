@@ -21,6 +21,7 @@ import {
   chatBackgroundStyle,
   chatBackgroundColorSchemeStyle,
 } from './chat.css';
+
 import { useColorScheme } from '@/providers';
 import { Icon } from '../Icon';
 import logoNai from './../../assets/nai-avatar.svg';
@@ -155,6 +156,7 @@ export const Chat: React.FC<ChatProps> = ({
               onAudioRecorded={onAudioRecorded}
               onSendMessage={onSendMessage}
               renderMenuPosition={renderMenuPosition}
+              shouldShowButtons={false}
             />
           </div>
         </div>
