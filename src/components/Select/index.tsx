@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/react';
+import { Listbox } from '@headlessui/react';
 import clsx from 'clsx';
 
 import { useColorScheme } from '@/providers';
@@ -75,8 +70,8 @@ export const Select: React.FC<SelectProps> = ({
           )}
         </span>
       )}
-      <Listbox value={value} onChange={onChange} disabled={disabled}>
-        <ListboxButton
+      <Listbox value={value} onChange={onChange} disabled={disabled} as={'div'}>
+        <Listbox.Button
           disabled={disabled}
           className={clsx(
             selectInputStyle,
@@ -99,21 +94,21 @@ export const Select: React.FC<SelectProps> = ({
                 : themeTokens.colors.primary[primaryShade]
             }
           />
-        </ListboxButton>
-        <ListboxOptions
+        </Listbox.Button>
+        <Listbox.Options
           anchor={{ to: 'bottom start', gap: theme.spacing.xxs }}
           className={clsx(selectOptionsWrapperStyleVariants[colorScheme])}
         >
           {options.map((option) => (
-            <ListboxOption
+            <Listbox.Option
               key={option.value}
               value={option.value}
               className={clsx(selectOptionStyle[colorScheme])}
             >
               {option.label}
-            </ListboxOption>
+            </Listbox.Option>
           ))}
-        </ListboxOptions>
+        </Listbox.Options>
       </Listbox>
       {error && <span className={clsx(selectLabelErrorStyle)}>{error}</span>}
     </div>

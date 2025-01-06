@@ -39,16 +39,16 @@ export const ColorSchemeProvider = ({
   defaultColorScheme,
 }: ColorSchemeProviderProps) => {
   const getInitialColorScheme = (): ColorScheme => {
-    const savedScheme = localColorScheme as ColorScheme; // LocalStorage-based scheme.
+    const savedScheme = localColorScheme as ColorScheme;
     if (savedScheme) {
-      return savedScheme; // Prioritize the saved scheme.
+      return savedScheme;
     }
     if (defaultColorScheme) {
-      return defaultColorScheme as ColorScheme; // Use provided default as fallback.
+      return defaultColorScheme as ColorScheme;
     }
     return window.matchMedia('(prefers-color-scheme: dark)').matches
       ? ColorSchemeEnum.Dark
-      : ColorSchemeEnum.Light; // System preference as the final fallback.
+      : ColorSchemeEnum.Light;
   };
 
   const [stateColorScheme, setStateColorScheme] = useState<ColorScheme>(

@@ -10,6 +10,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
 const packageJson = require('./package.json');
 
 export default [
+  // JavaScript and TypeScript build configuration
   {
     input: 'src/index.ts',
     output: [
@@ -28,9 +29,9 @@ export default [
       vanillaExtractPlugin({
         identifiers: ({ hash }) => `design-system-senai_${hash}`,
       }),
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
+      peerDepsExternal(), // Exclude peer dependencies like react and react-dom
+      resolve(), // Resolve ESM and CJS modules
+      commonjs(), // Convert CJS modules to ESM
       typescript({
         tsconfig: './tsconfig.json',
       }),
@@ -42,10 +43,11 @@ export default [
         },
       }),
       image(),
-      terser(),
+      terser(), // Minify output
     ],
-    external: ['react', 'react-dom'], // Define React e ReactDOM como externas
+    external: ['react', 'react-dom'], // Ensure React and React DOM are not bundled
   },
+  // TypeScript definitions build configuration
   {
     input: 'dist/esm/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],

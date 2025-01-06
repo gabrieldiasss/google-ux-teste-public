@@ -48,7 +48,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   shouldShowButtons,
 }) => {
   const [inputValue, setInputValue] = useState('');
-  const [isFocused, setIsFocused] = useState(false); // New state for focus
+  const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [listeningInSeconds, setListeningInSeconds] = useState<
     number | undefined
