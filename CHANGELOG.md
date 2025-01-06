@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.28
+
+### Patch Changes
+
+- Adjust Select component build
+
 ## 1.0.27
 
 ### Patch Changes

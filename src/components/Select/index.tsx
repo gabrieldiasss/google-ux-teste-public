@@ -70,7 +70,7 @@ export const Select: React.FC<SelectProps> = ({
           )}
         </span>
       )}
-      <Listbox value={value} onChange={onChange} disabled={disabled} as={'div'}>
+      <Listbox value={value} onChange={onChange} disabled={disabled} by={'div'}>
         <Listbox.Button
           disabled={disabled}
           className={clsx(
