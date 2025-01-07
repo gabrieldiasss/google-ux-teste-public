@@ -44,6 +44,27 @@ interface SelectProps {
   width?: string | number;
 }
 
+const CustomButton = forwardRef<HTMLButtonElement, any>(
+  ({ options, value, placeholder, error, disabled, ...props }, ref) => (
+    <button ref={ref} {...props}>
+      <span>
+        {options.find((opt: Option) => opt.value === value)?.label ||
+          placeholder}
+      </span>
+      <Icon
+        name="keyboard_arrow_down"
+        size={18}
+        color={
+          error || disabled
+            ? 'inherit'
+            : themeTokens.colors.primary[primaryShade]
+        }
+      />
+    </button>
+  ),
+);
+CustomButton.displayName = 'CustomButton';
+
 export const Select: React.FC<SelectProps> = ({
   options = [],
   value,
@@ -60,26 +81,6 @@ export const Select: React.FC<SelectProps> = ({
 }) => {
   const { colorScheme } = useColorScheme();
 
-  if (!forwardRef) return null;
-
-  let CustomButton = forwardRef<HTMLButtonElement, any>(function (props, ref) {
-    return (
-      <button ref={ref} {...props}>
-        <span>
-          {options.find((opt) => opt.value === value)?.label || placeholder}
-        </span>
-        <Icon
-          name="keyboard_arrow_down"
-          size={18}
-          color={
-            error || disabled
-              ? 'inherit'
-              : themeTokens.colors.primary[primaryShade]
-          }
-        />
-      </button>
-    );
-  });
   return (
     <div className={clsx(selectWrapperStyle)} style={{ width }}>
       {label && (
@@ -95,7 +96,7 @@ export const Select: React.FC<SelectProps> = ({
           )}
         </span>
       )}
-      <Listbox value={value} onChange={onChange} disabled={disabled} by={'div'}>
+      <Listbox value={value} onChange={onChange} disabled={disabled} as="div">
         <ListboxButton
           disabled={disabled}
           className={clsx(
@@ -107,6 +108,10 @@ export const Select: React.FC<SelectProps> = ({
             className,
           )}
           as={CustomButton}
+          options={options}
+          value={value}
+          placeholder={placeholder}
+          error={error}
         />
 
         <ListboxOptions
