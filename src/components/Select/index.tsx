@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Listbox } from '@headlessui/react';
 import clsx from 'clsx';
 
@@ -54,7 +54,24 @@ export const Select: React.FC<SelectProps> = ({
   ...props
 }) => {
   const { colorScheme } = useColorScheme();
-
+  let CustomButton = forwardRef<HTMLButtonElement, any>(function (props, ref) {
+    return (
+      <button ref={ref} {...props}>
+        <span>
+          {options.find((opt) => opt.value === value)?.label || placeholder}
+        </span>
+        <Icon
+          name="keyboard_arrow_down"
+          size={18}
+          color={
+            error || disabled
+              ? 'inherit'
+              : themeTokens.colors.primary[primaryShade]
+          }
+        />
+      </button>
+    );
+  });
   return (
     <div className={clsx(selectWrapperStyle)} style={{ width }}>
       {label && (
@@ -81,20 +98,9 @@ export const Select: React.FC<SelectProps> = ({
             selectInputWrapperSizesStyles[size],
             className,
           )}
-        >
-          <span>
-            {options.find((opt) => opt.value === value)?.label || placeholder}
-          </span>
-          <Icon
-            name="keyboard_arrow_down"
-            size={18}
-            color={
-              error || disabled
-                ? 'inherit'
-                : themeTokens.colors.primary[primaryShade]
-            }
-          />
-        </Listbox.Button>
+          as={CustomButton}
+        />
+
         <Listbox.Options
           anchor={{ to: 'bottom start', gap: theme.spacing.xxs }}
           className={clsx(selectOptionsWrapperStyleVariants[colorScheme])}

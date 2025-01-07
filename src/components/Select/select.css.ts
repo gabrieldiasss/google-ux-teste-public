@@ -120,8 +120,7 @@ export const selectInputVariantColorsWithErrors = styleVariants({
 
 const sharedOptionsWrapperBase = {
   paddingInline: theme.spacing.xxs,
-  paddingTop: theme.spacing.xxs,
-  paddingBottom: theme.spacing.xxxs,
+  paddingBlock: theme.spacing.xxxs,
   borderRadius: theme.borders.corner.xs,
   width: 'var(--button-width)',
   maxWidth: 'var(--button-width)',

@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.29
+
+### Patch Changes
+
+- Adjust Select component build with forwardRef
+
 ## 1.0.28
 
 ### Patch Changes
