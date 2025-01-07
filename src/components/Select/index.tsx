@@ -1,9 +1,19 @@
-import React from 'react';
-import { Listbox, ListboxOption, ListboxOptions } from '@headlessui/react';
+import React, { forwardRef } from 'react';
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
+} from '@headlessui/react';
 import clsx from 'clsx';
 
 import { useColorScheme } from '@/providers';
+import { Icon } from '@/components/Icon';
 import {
+  selectInputStyle,
+  selectInputVariantColors,
+  selectInputVariantColorsWithErrors,
+  selectInputWrapperSizesStyles,
   selectLabelAsteriskStyle,
   selectLabelErrorStyle,
   selectLabelStyle,
@@ -12,7 +22,7 @@ import {
   selectOptionsWrapperStyleVariants,
   selectWrapperStyle,
 } from './select.css';
-import { theme } from '@/core/themes/default.css';
+import { primaryShade, theme, themeTokens } from '@/core/themes/default.css';
 
 interface Option {
   value: string;
@@ -49,24 +59,27 @@ export const Select: React.FC<SelectProps> = ({
   ...props
 }) => {
   const { colorScheme } = useColorScheme();
-  // let CustomButton = forwardRef<HTMLButtonElement, any>(function (props, ref) {
-  //   return (
-  //     <button ref={ref} {...props}>
-  //       <span>
-  //         {options.find((opt) => opt.value === value)?.label || placeholder}
-  //       </span>
-  //       <Icon
-  //         name="keyboard_arrow_down"
-  //         size={18}
-  //         color={
-  //           error || disabled
-  //             ? 'inherit'
-  //             : themeTokens.colors.primary[primaryShade]
-  //         }
-  //       />
-  //     </button>
-  //   );
-  // });
+
+  if (!forwardRef) return null;
+
+  let CustomButton = forwardRef<HTMLButtonElement, any>(function (props, ref) {
+    return (
+      <button ref={ref} {...props}>
+        <span>
+          {options.find((opt) => opt.value === value)?.label || placeholder}
+        </span>
+        <Icon
+          name="keyboard_arrow_down"
+          size={18}
+          color={
+            error || disabled
+              ? 'inherit'
+              : themeTokens.colors.primary[primaryShade]
+          }
+        />
+      </button>
+    );
+  });
   return (
     <div className={clsx(selectWrapperStyle)} style={{ width }}>
       {label && (
@@ -83,7 +96,7 @@ export const Select: React.FC<SelectProps> = ({
         </span>
       )}
       <Listbox value={value} onChange={onChange} disabled={disabled} by={'div'}>
-        {/* <ListboxButton
+        <ListboxButton
           disabled={disabled}
           className={clsx(
             selectInputStyle,
@@ -94,7 +107,7 @@ export const Select: React.FC<SelectProps> = ({
             className,
           )}
           as={CustomButton}
-        /> */}
+        />
 
         <ListboxOptions
           anchor={{ to: 'bottom start', gap: theme.spacing.xxs }}
