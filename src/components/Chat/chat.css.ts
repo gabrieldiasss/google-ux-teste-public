@@ -73,7 +73,7 @@ export const chatHeaderTitleWrapperStyle = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'start',
+  alignItems: 'flex-start',
   gap: theme.spacing.none,
 });
 

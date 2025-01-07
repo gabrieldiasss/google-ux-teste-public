@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.30
+
+### Patch Changes
+
+- Remove Select button for tests
+
 ## 1.0.29
 
 ### Patch Changes
