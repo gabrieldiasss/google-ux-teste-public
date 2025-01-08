@@ -1,5 +1,7 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import {
+  Field,
+  Label,
   Listbox,
   ListboxButton,
   ListboxOption,
@@ -20,6 +22,7 @@ import {
   selectLabelVariantStyle,
   selectOptionStyle,
   selectOptionsWrapperStyleVariants,
+  selectPlaceholderStyle,
   selectWrapperStyle,
 } from './select.css';
 import { primaryShade, theme, themeTokens } from '@/core/themes/default.css';
@@ -44,25 +47,37 @@ interface SelectProps {
   width?: string | number;
 }
 
-const CustomButton = forwardRef<HTMLButtonElement, any>(
-  ({ options, value, placeholder, error, disabled, ...props }, ref) => (
-    <button ref={ref} {...props}>
-      <span>
-        {options.find((opt: Option) => opt.value === value)?.label ||
-          placeholder}
-      </span>
-      <Icon
-        name="keyboard_arrow_down"
-        size={18}
-        color={
-          error || disabled
-            ? 'inherit'
-            : themeTokens.colors.primary[primaryShade]
-        }
-      />
-    </button>
-  ),
+interface CustomButtonProps {
+  options: Option[];
+  value: string;
+  placeholder?: string;
+  error?: string;
+  disabled: boolean;
+  className?: string;
+}
+
+const CustomButton = ({
+  options,
+  value,
+  placeholder,
+  error,
+  disabled,
+  ...props
+}: CustomButtonProps) => (
+  <button {...props}>
+    <span className={selectPlaceholderStyle}>
+      {options.find((opt: Option) => opt.value === value)?.label || placeholder}
+    </span>
+    <Icon
+      name="keyboard_arrow_down"
+      size={18}
+      color={
+        error || disabled ? 'inherit' : themeTokens.colors.primary[primaryShade]
+      }
+    />
+  </button>
 );
+
 CustomButton.displayName = 'CustomButton';
 
 export const Select: React.FC<SelectProps> = ({
@@ -82,21 +97,24 @@ export const Select: React.FC<SelectProps> = ({
   const { colorScheme } = useColorScheme();
 
   return (
-    <div className={clsx(selectWrapperStyle)} style={{ width }}>
-      {label && (
-        <span
-          className={clsx(
-            selectLabelStyle,
-            selectLabelVariantStyle[colorScheme],
-          )}
-        >
-          {label}
-          {(withAsterisk || props.required) && (
-            <b className={clsx(selectLabelAsteriskStyle)}>*</b>
-          )}
-        </span>
-      )}
-      <Listbox value={value} onChange={onChange} disabled={disabled} as="div">
+    <Field className={clsx(selectWrapperStyle)} style={{ width }}>
+      <Label>
+        {label && (
+          <span
+            className={clsx(
+              selectLabelStyle,
+              selectLabelVariantStyle[colorScheme],
+            )}
+          >
+            {label}
+            {(withAsterisk || props.required) && (
+              <b className={clsx(selectLabelAsteriskStyle)}>*</b>
+            )}
+          </span>
+        )}
+      </Label>
+
+      <Listbox value={value} onChange={onChange} disabled={disabled}>
         <ListboxButton
           disabled={disabled}
           className={clsx(
@@ -117,9 +135,11 @@ export const Select: React.FC<SelectProps> = ({
         <ListboxOptions
           anchor={{ to: 'bottom start', gap: theme.spacing.xxs }}
           className={clsx(selectOptionsWrapperStyleVariants[colorScheme])}
+          as="ul"
         >
           {options.map((option) => (
             <ListboxOption
+              as="li"
               key={option.value}
               value={option.value}
               className={clsx(selectOptionStyle[colorScheme])}
@@ -130,7 +150,7 @@ export const Select: React.FC<SelectProps> = ({
         </ListboxOptions>
       </Listbox>
       {error && <span className={clsx(selectLabelErrorStyle)}>{error}</span>}
-    </div>
+    </Field>
   );
 };
 

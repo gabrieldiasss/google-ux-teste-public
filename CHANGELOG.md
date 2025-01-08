@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.33
+
+### Patch Changes
+
+- Create Pagination component
+
 ## 1.0.32
 
 ### Patch Changes

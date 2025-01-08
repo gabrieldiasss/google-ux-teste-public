@@ -119,8 +119,10 @@ export const selectInputVariantColorsWithErrors = styleVariants({
 });
 
 const sharedOptionsWrapperBase = {
+  outlineStyle: 'solid',
+  outlineWidth: theme.borders.width.thin,
   paddingInline: theme.spacing.xxs,
-  paddingBlock: theme.spacing.xxxs,
+  paddingBlock: theme.spacing.xxs,
   borderRadius: theme.borders.corner.xs,
   width: 'var(--button-width)',
   maxWidth: 'var(--button-width)',
@@ -132,12 +134,22 @@ export const selectOptionsWrapperStyleVariants = styleVariants({
     background: theme.colors.neutrals.light[50],
     outlineColor: theme.colors.neutrals.light[150],
     color: theme.colors.neutrals.light[800],
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
+    '::-webkit-scrollbar': {
+      display: 'none',
+    },
   },
   dark: {
     ...sharedOptionsWrapperBase,
     background: theme.colors.neutrals.dark[50],
     outlineColor: theme.colors.neutrals.dark[150],
     color: theme.colors.neutrals.dark[800],
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
+    '::-webkit-scrollbar': {
+      display: 'none',
+    },
   },
 });
 
@@ -174,4 +186,9 @@ export const selectInputWrapperSizesStyles = styleVariants({
     paddingBlock: theme.spacing.xs,
     fontSize: theme.fontSizes.s,
   },
+});
+export const selectPlaceholderStyle = style({
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
 });

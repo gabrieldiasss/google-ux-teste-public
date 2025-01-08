@@ -23,6 +23,7 @@ import { AlertBox } from './AlertBox';
 import { SearchNAI } from './SearchNAI';
 import { Chat } from './Chat';
 import { Select } from './Select';
+import { Pagination } from './Pagination';
 
 export {
   Button,
@@ -50,4 +51,5 @@ export {
   SearchNAI,
   Chat,
   Select,
+  Pagination,
 };
