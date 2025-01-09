@@ -27,7 +27,8 @@ import { Icon } from '../Icon';
 import logoNai from './../../assets/nai-avatar.svg';
 import { ChatMessage } from './ChatMessage';
 
-interface ChatProps extends SearchNAIProps {
+interface ChatProps
+  extends Omit<SearchNAIProps, 'renderMenuPosition' | 'shouldShowButtons'> {
   onCloseChat?: () => void;
   onMinimizeChat?: () => void;
   chatMessages?: {
@@ -42,6 +43,7 @@ interface ChatProps extends SearchNAIProps {
 
 export const Chat: React.FC<ChatProps> = ({
   onUploadFile,
+  isFileLoaded,
   historyData,
   onClickChatHistory,
   onInputChange,
@@ -49,7 +51,6 @@ export const Chat: React.FC<ChatProps> = ({
   onCloseChat,
   onMinimizeChat,
   onSendMessage,
-  renderMenuPosition,
   chatMessages,
   onClickAddNewChat,
   isNaiTyping,
@@ -147,6 +148,7 @@ export const Chat: React.FC<ChatProps> = ({
             }}
           >
             <SearchNAI
+              isFileLoaded={isFileLoaded}
               isNaiTyping={isNaiTyping}
               onUploadFile={onUploadFile}
               historyData={historyData}
@@ -155,7 +157,7 @@ export const Chat: React.FC<ChatProps> = ({
               onInputChange={onInputChange}
               onAudioRecorded={onAudioRecorded}
               onSendMessage={onSendMessage}
-              renderMenuPosition={renderMenuPosition}
+              renderMenuPosition={'top'}
               shouldShowButtons={false}
             />
           </div>

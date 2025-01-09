@@ -7,13 +7,17 @@ import {
   avatarSizes,
   circleOuterStyle,
   circleWrapperStyle,
+  circleInnerPaddingSizes,
 } from './avatar.css';
+import { AvatarCircle } from './AvatarCircle';
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
-  size?: 'xs' | 'md' | 'xl';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   label?: string;
   image?: string | null;
   hasNotification?: boolean;
+  isSelected?: boolean;
+  selectedCircleBgColor?: string;
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
@@ -21,20 +25,34 @@ export const Avatar: React.FC<AvatarProps> = ({
   label = '',
   image = null,
   hasNotification = false,
+  isSelected = false,
+  selectedCircleBgColor,
 }) => {
   const char = label?.trim()?.charAt(0)?.toUpperCase() || '';
 
   return (
     <div className={circleWrapperStyle}>
-      {hasNotification && (
+      {isSelected ? (
+        <AvatarCircle
+          circleStrokeColor={selectedCircleBgColor}
+          aria-hidden="true"
+          className={clsx(circleOuterStyle, avatarSizes[size])}
+        />
+      ) : hasNotification ? (
         <img
           src={circleGradient}
           alt="circle gradient"
           aria-hidden="true"
           className={clsx(circleOuterStyle, avatarSizes[size])}
         />
-      )}
-      <div className={clsx(circleInnerStyle, avatarSizes[size])}>
+      ) : null}
+      <div
+        className={clsx(
+          circleInnerStyle,
+          circleInnerPaddingSizes[size],
+          avatarSizes[size],
+        )}
+      >
         {image ? (
           <img className={avatarContentStyle} src={image} alt="avatar" />
         ) : (

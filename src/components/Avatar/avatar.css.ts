@@ -18,7 +18,6 @@ export const circleInnerStyle = style({
   justifyContent: 'center',
   borderRadius: '50%',
   backgroundColor: 'inherit',
-  padding: 2,
 });
 
 export const avatarContentStyle = style({
@@ -40,14 +39,42 @@ export const avatarSizes = styleVariants({
     height: '32px',
     fontSize: theme.fontSizes.s,
   },
+  sm: {
+    width: '40px',
+    height: '40px',
+    fontSize: theme.fontSizes.s,
+  },
   md: {
     width: '48px',
     height: '48px',
-    fontSize: theme.fontSizes.s,
+    fontSize: theme.fontSizes.xl,
+  },
+  lg: {
+    width: '70px',
+    height: '70px',
+    fontSize: theme.fontSizes.xxl,
   },
   xl: {
-    width: '64px',
-    height: '64px',
-    fontSize: theme.fontSizes.xl,
+    width: '100px',
+    height: '100px',
+    fontSize: theme.fontSizes.xxxl,
+  },
+});
+
+export const circleInnerPaddingSizes = styleVariants({
+  xs: {
+    padding: '2px',
+  },
+  sm: {
+    padding: '2px',
+  },
+  md: {
+    padding: '3px',
+  },
+  lg: {
+    padding: '4px',
+  },
+  xl: {
+    padding: '5px',
   },
 });
