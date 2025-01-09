@@ -62,7 +62,7 @@ export const fileLoaderTextContentStyle = style({
   flexDirection: 'column',
   gap: theme.spacing.none,
   justifyContent: 'center',
-  alignItems: 'start',
+  alignItems: 'flex-start',
   textAlign: 'start',
 });
 

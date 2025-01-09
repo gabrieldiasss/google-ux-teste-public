@@ -94,11 +94,13 @@ export const Pagination: React.FC<PaginationProps> = ({
           onClick={() => handlePageChange(pageCurrent + 1)}
         />
       </div>
-      <PaginationSetter
-        pageCurrent={pageCurrent}
-        totalPagesNumber={totalPagesNumber}
-        onPaginate={onPaginate}
-      />
+      {totalPagesNumber > 5 && (
+        <PaginationSetter
+          pageCurrent={pageCurrent}
+          totalPagesNumber={totalPagesNumber}
+          onPaginate={onPaginate}
+        />
+      )}
     </div>
   );
 };

@@ -153,5 +153,3 @@ export const Select: React.FC<SelectProps> = ({
     </Field>
   );
 };
-
-Select.displayName = 'Select';
