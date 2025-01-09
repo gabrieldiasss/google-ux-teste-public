@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.34
+
+### Patch Changes
+
+- Add new properties to Avatar component
+
 ## 1.0.33
 
 ### Patch Changes
