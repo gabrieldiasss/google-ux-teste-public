@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.35
+
+### Patch Changes
+
+- Add validation to Pagination by totalPagesNumber
+
 ## 1.0.34
 
 ### Patch Changes
