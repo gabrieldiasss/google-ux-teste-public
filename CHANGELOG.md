@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.37
+
+### Patch Changes
+
+- Add forwardRef to Select component
+
 ## 1.0.36
 
 ### Patch Changes
