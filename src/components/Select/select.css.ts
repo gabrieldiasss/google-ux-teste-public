@@ -10,7 +10,7 @@ const sharedDisabledStyles = {
 const sharedFocusWithinStyles = (color: string) => ({
   selectors: {
     '&:focus-within': {
-      outlineColor: color,
+      borderColor: color,
     },
   },
 });
@@ -59,10 +59,9 @@ export const selectInputStyle = style({
   fontSize: theme.fontSizes.s,
   fontFamily: theme.fontFamily.default,
   fontWeight: theme.fontWeights.normal,
-  border: 'none',
   borderRadius: theme.borders.corner.xs,
-  outlineStyle: 'solid',
-  outlineWidth: theme.borders.width.thin,
+  borderStyle: 'solid !important',
+  borderWidth: `${theme.borders.width.thin} !important`,
   paddingInline: theme.spacing.xs,
   paddingBlock: theme.spacing.xs,
   cursor: 'pointer',
@@ -76,7 +75,7 @@ export const selectInputVariantColors = styleVariants({
   light: {
     backgroundColor: theme.colors.neutralsOverlay.light[900],
     color: theme.colors.neutrals.light[800],
-    outlineColor: theme.colors.neutrals.light[100],
+    borderColor: theme.colors.neutrals.light[100],
     ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
     ':disabled': {
       backgroundColor: theme.colors.neutralsOverlay.light[800],
@@ -86,7 +85,7 @@ export const selectInputVariantColors = styleVariants({
   dark: {
     backgroundColor: theme.colors.neutralsOverlay.dark[900],
     color: theme.colors.neutrals.dark[800],
-    outlineColor: theme.colors.neutrals.dark[100],
+    borderColor: theme.colors.neutrals.dark[100],
     ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
     ':disabled': {
       backgroundColor: theme.colors.neutralsOverlay.dark[900],
@@ -99,7 +98,7 @@ export const selectInputVariantColorsWithErrors = styleVariants({
   light: {
     backgroundColor: theme.colors.neutralsOverlay.light[900],
     color: theme.colors.danger[500],
-    outlineColor: theme.colors.danger[500],
+    borderColor: theme.colors.danger[500],
     ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
     ':disabled': {
       backgroundColor: theme.colors.neutralsOverlay.light[800],
@@ -109,7 +108,7 @@ export const selectInputVariantColorsWithErrors = styleVariants({
   dark: {
     backgroundColor: theme.colors.neutralsOverlay.dark[900],
     color: theme.colors.danger[500],
-    outlineColor: theme.colors.danger[500],
+    borderColor: theme.colors.danger[500],
     ...sharedFocusWithinStyles(theme.colors.primary[primaryShade]),
     ':disabled': {
       backgroundColor: theme.colors.neutralsOverlay.dark[900],
@@ -119,8 +118,9 @@ export const selectInputVariantColorsWithErrors = styleVariants({
 });
 
 const sharedOptionsWrapperBase = {
-  outlineStyle: 'solid',
-  outlineWidth: theme.borders.width.thin,
+  marginTop: theme.spacing.xxxs,
+  borderStyle: 'solid',
+  borderWidth: theme.borders.width.thin,
   paddingInline: theme.spacing.xxs,
   paddingBlock: theme.spacing.xxs,
   borderRadius: theme.borders.corner.xs,
@@ -132,24 +132,14 @@ export const selectOptionsWrapperStyleVariants = styleVariants({
   light: {
     ...sharedOptionsWrapperBase,
     background: theme.colors.neutrals.light[50],
-    outlineColor: theme.colors.neutrals.light[150],
+    borderColor: theme.colors.neutrals.light[150],
     color: theme.colors.neutrals.light[800],
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-    '::-webkit-scrollbar': {
-      display: 'none',
-    },
   },
   dark: {
     ...sharedOptionsWrapperBase,
     background: theme.colors.neutrals.dark[50],
-    outlineColor: theme.colors.neutrals.dark[150],
+    borderColor: theme.colors.neutrals.dark[150],
     color: theme.colors.neutrals.dark[800],
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-    '::-webkit-scrollbar': {
-      display: 'none',
-    },
   },
 });
 
@@ -186,9 +176,4 @@ export const selectInputWrapperSizesStyles = styleVariants({
     paddingBlock: theme.spacing.xs,
     fontSize: theme.fontSizes.s,
   },
-});
-export const selectPlaceholderStyle = style({
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
 });

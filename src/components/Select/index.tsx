@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  Field,
-  Label,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/react';
+import ReactSelect from 'react-select';
 import clsx from 'clsx';
 
 import { useColorScheme } from '@/providers';
-import { Icon } from '@/components/Icon';
 import {
   selectInputStyle,
   selectInputVariantColors,
@@ -22,10 +14,10 @@ import {
   selectLabelVariantStyle,
   selectOptionStyle,
   selectOptionsWrapperStyleVariants,
-  selectPlaceholderStyle,
   selectWrapperStyle,
 } from './select.css';
-import { primaryShade, theme, themeTokens } from '@/core/themes/default.css';
+import { Icon } from '../Icon';
+import { primaryShade, themeTokens } from '@/core/themes/default.css';
 
 interface Option {
   value: string;
@@ -47,41 +39,8 @@ interface SelectProps {
   width?: string | number;
 }
 
-interface CustomButtonProps {
-  options: Option[];
-  value: string;
-  placeholder?: string;
-  error?: string;
-  disabled: boolean;
-  className?: string;
-}
-
-const CustomButton = ({
-  options,
-  value,
-  placeholder,
-  error,
-  disabled,
-  ...props
-}: CustomButtonProps) => (
-  <button {...props}>
-    <span className={selectPlaceholderStyle}>
-      {options.find((opt: Option) => opt.value === value)?.label || placeholder}
-    </span>
-    <Icon
-      name="keyboard_arrow_down"
-      size={18}
-      color={
-        error || disabled ? 'inherit' : themeTokens.colors.primary[primaryShade]
-      }
-    />
-  </button>
-);
-
-CustomButton.displayName = 'CustomButton';
-
 export const Select: React.FC<SelectProps> = ({
-  options = [],
+  options,
   value,
   placeholder,
   onChange,
@@ -92,64 +51,60 @@ export const Select: React.FC<SelectProps> = ({
   disabled = false,
   className,
   width = '100%',
-  ...props
 }) => {
   const { colorScheme } = useColorScheme();
 
   return (
-    <Field className={clsx(selectWrapperStyle)} style={{ width }}>
-      <Label>
-        {label && (
-          <span
-            className={clsx(
-              selectLabelStyle,
-              selectLabelVariantStyle[colorScheme],
-            )}
-          >
-            {label}
-            {(withAsterisk || props.required) && (
-              <b className={clsx(selectLabelAsteriskStyle)}>*</b>
-            )}
-          </span>
-        )}
-      </Label>
-
-      <Listbox value={value} onChange={onChange} disabled={disabled}>
-        <ListboxButton
-          disabled={disabled}
+    <div className={clsx(selectWrapperStyle)} style={{ width }}>
+      {label && (
+        <label
           className={clsx(
-            selectInputStyle,
-            error
-              ? selectInputVariantColorsWithErrors[colorScheme]
-              : selectInputVariantColors[colorScheme],
-            selectInputWrapperSizesStyles[size],
-            className,
+            selectLabelStyle,
+            selectLabelVariantStyle[colorScheme],
           )}
-          as={CustomButton}
-          options={options}
-          value={value}
-          placeholder={placeholder}
-          error={error}
-        />
-
-        <ListboxOptions
-          anchor={{ to: 'bottom start', gap: theme.spacing.xxs }}
-          className={clsx(selectOptionsWrapperStyleVariants[colorScheme])}
-          as="ul"
         >
-          {options.map((option) => (
-            <ListboxOption
-              as="li"
-              key={option.value}
-              value={option.value}
-              className={clsx(selectOptionStyle[colorScheme])}
-            >
-              {option.label}
-            </ListboxOption>
-          ))}
-        </ListboxOptions>
-      </Listbox>
+          {label}
+          {withAsterisk && <span className={selectLabelAsteriskStyle}>*</span>}
+        </label>
+      )}
+      <ReactSelect
+        options={options}
+        value={options.find((opt) => opt.value === value) || null}
+        placeholder={placeholder || 'Selecione um item'}
+        unstyled
+        loadingMessage={() => 'Carregando...'}
+        noOptionsMessage={() => 'Nenhum resultado encontrado'}
+        onChange={(option: any) => onChange(option?.value)}
+        isDisabled={disabled}
+        classNamePrefix={'design-system-senai'}
+        components={{
+          DropdownIndicator: () => (
+            <Icon
+              name="keyboard_arrow_down"
+              size={18}
+              color={
+                error || disabled
+                  ? 'inherit'
+                  : themeTokens.colors.primary[primaryShade]
+              }
+            />
+          ),
+        }}
+        classNames={{
+          control: () =>
+            clsx(
+              selectInputStyle,
+              error
+                ? selectInputVariantColorsWithErrors[colorScheme]
+                : selectInputVariantColors[colorScheme],
+              selectInputWrapperSizesStyles[size],
+              className,
+            ),
+          menu: () => clsx(selectOptionsWrapperStyleVariants[colorScheme]),
+          option: () => clsx(selectOptionStyle[colorScheme]),
+        }}
+      />
       {error && <span className={clsx(selectLabelErrorStyle)}>{error}</span>}
-    </Field>
+    </div>
   );
 };
