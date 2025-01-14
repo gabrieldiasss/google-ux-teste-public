@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.38
+
+### Patch Changes
+
+- Change Select to CustomSelect
+
 ## 1.0.37
 
 ### Patch Changes
