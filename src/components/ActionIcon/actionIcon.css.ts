@@ -12,6 +12,10 @@ export const actionIconStyle = style({
   borderWidth: theme.borders.width.thin,
   height: 'max-content',
   fontFamily: theme.fontFamily.default,
+  backgroundSize: 'auto',
+  //align in the center
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
 });
 
 export const actionIconVariants = styleVariants({
