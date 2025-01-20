@@ -22,7 +22,7 @@ import { ListSectionItem } from './ListSectionItem';
 import { AlertBox } from './AlertBox';
 import { SearchNAI } from './SearchNAI';
 import { Chat } from './Chat';
-import { CustomSelect } from './Select';
+// import { CustomSelect } from './Select';
 import { Pagination } from './Pagination';
 
 export {
@@ -50,6 +50,6 @@ export {
   AlertBox,
   SearchNAI,
   Chat,
-  CustomSelect,
+  // CustomSelect,
   Pagination,
 };
