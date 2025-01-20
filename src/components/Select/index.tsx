@@ -38,10 +38,7 @@ interface SelectProps {
   className?: string;
   width?: string | number;
 }
-export const CustomSelect = forwardRef<
-  SelectInstance<Option, false>,
-  SelectProps
->(
+export const Select = forwardRef<SelectInstance<Option, false>, SelectProps>(
   (
     {
       onChange,
