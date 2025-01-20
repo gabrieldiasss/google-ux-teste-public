@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.39
+
+### Patch Changes
+
+- Remove CustomSelect component
+
 ## 1.0.38
 
 ### Patch Changes
