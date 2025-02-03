@@ -42,7 +42,16 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
       )}
       onClick={onClick}
     >
-      {label && <p color="inherit">{label}</p>}
+      {label && (
+        <p
+          color="inherit"
+          style={{
+            margin: 0,
+          }}
+        >
+          {label}
+        </p>
+      )}
       {iconName && <Icon size={24} color="inherit" name={iconName} />}
     </BTN>
   );

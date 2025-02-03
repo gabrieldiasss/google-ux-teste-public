@@ -24,6 +24,7 @@ export const paginationDotWrapperStyle = style({
   justifyContent: 'center',
   alignItems: 'center',
   gap: 2,
+  margin: 0,
   paddingInline: theme.spacing.xxs,
   userSelect: 'none',
 });
