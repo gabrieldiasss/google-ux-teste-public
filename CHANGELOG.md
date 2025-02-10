@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.41
+
+### Patch Changes
+
+- Change SENAI Logo
+
 ## 1.0.40
 
 ### Patch Changes
