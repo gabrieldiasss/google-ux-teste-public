@@ -1,6 +1,6 @@
 # design-system-senai-react
 
-## 1.0.42
+## 1.0.44
 
 ### Patch Changes
 
