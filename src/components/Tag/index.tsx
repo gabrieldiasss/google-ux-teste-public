@@ -31,7 +31,6 @@ export const Tag: React.FC<TagProps> = ({
     <span
       className={clsx(
         tagStyle,
-
         colorScheme === 'dark'
           ? tagDarkColors[variant]
           : tagLightColors[variant],

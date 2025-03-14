@@ -22,44 +22,58 @@ export const tagStyle = style({
   fontWeight: theme.fontWeights.normal,
 });
 
-const commonTagColors = {
+export const tagLightColors = styleVariants({
   success: {
-    background: theme.colors.success[100],
-    color: theme.colors.success[800],
+    background: theme.colors.successOverlay[100],
+    color: theme.colors.neutrals.light[900],
   },
   info: {
-    background: theme.colors.info[100],
-    color: theme.colors.info[800],
+    background: theme.colors.infoOverlay[100],
+    color: theme.colors.neutrals.light[900],
   },
   warning: {
-    background: theme.colors.warning[100],
-    color: theme.colors.warning[800],
+    background: theme.colors.warningOverlay[100],
+    color: theme.colors.neutrals.light[900],
   },
   error: {
-    background: theme.colors.danger[100],
-    color: theme.colors.danger[800],
+    background: theme.colors.dangerOverlay[100],
+    color: theme.colors.neutrals.light[900],
   },
   neutral: {
-    background: theme.colors.neutrals.light[200],
-    color: theme.colors.neutrals.light[950],
+    background: theme.colors.neutralsOverlay.light[50],
+    color: theme.colors.neutrals.light[900],
   },
   outline: {
     background: 'transparent',
-    borderColor: theme.colors.neutrals.light[600],
-    color: theme.colors.neutrals.light[600],
-  },
-};
-
-export const tagLightColors = styleVariants({
-  ...commonTagColors,
-
-  outline: {
-    background: 'transparent',
-    borderColor: theme.colors.neutrals.light[600],
-    color: theme.colors.neutrals.light[600],
+    borderColor: theme.colors.neutrals.light[700],
+    color: theme.colors.neutrals.light[700],
   },
 });
 
 export const tagDarkColors = styleVariants({
-  ...commonTagColors,
+  success: {
+    background: theme.colors.successOverlay[100],
+    color: theme.colors.neutrals.dark[900],
+  },
+  info: {
+    background: theme.colors.infoOverlay[100],
+    color: theme.colors.neutrals.dark[900],
+  },
+  warning: {
+    background: theme.colors.warningOverlay[100],
+    color: theme.colors.neutrals.dark[900],
+  },
+  error: {
+    background: theme.colors.dangerOverlay[100],
+    color: theme.colors.neutrals.dark[900],
+  },
+  neutral: {
+    background: theme.colors.neutralsOverlay.dark[50],
+    color: theme.colors.neutrals.dark[900],
+  },
+  outline: {
+    background: 'transparent',
+    borderColor: theme.colors.neutrals.dark[700],
+    color: theme.colors.neutrals.dark[700],
+  },
 });
