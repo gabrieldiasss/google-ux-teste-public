@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.47
+
+### Patch Changes
+
+- new nai button component
+
 ## 1.0.45
 
 ### Patch Changes
