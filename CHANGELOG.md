@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.52
+
+### Patch Changes
+
+- add select
+
 ## 1.0.51
 
 ### Patch Changes
