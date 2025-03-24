@@ -24,6 +24,7 @@ import { SearchNAI } from './SearchNAI';
 import { Chat } from './Chat';
 import { Select } from './Select';
 import { Pagination } from './Pagination';
+import { NAIButton } from './NAIButton';
 
 export {
   Button,
@@ -52,4 +53,5 @@ export {
   Chat,
   Select,
   Pagination,
+  NAIButton,
 };
