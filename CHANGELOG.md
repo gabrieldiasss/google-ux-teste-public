@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.51
+
+### Patch Changes
+
+- fix: nai button text position
+
 ## 1.0.50
 
 ### Patch Changes
