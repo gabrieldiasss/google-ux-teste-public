@@ -1,5 +1,17 @@
 # design-system-senai-react
 
+## 1.0.50
+
+### Patch Changes
+
+- add select
+
+## 1.0.49
+
+### Patch Changes
+
+- 8c9e7b2: fix nai button text
+
 ## 1.0.48
 
 ### Patch Changes
