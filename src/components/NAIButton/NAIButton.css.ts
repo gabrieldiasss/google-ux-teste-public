@@ -34,9 +34,6 @@ export const naiButtonBarStyle = style({
   textAlign: 'start',
   paddingLeft: theme.spacing.xs,
   color: theme.colors.neutrals.light[100],
-  display: 'flex',
-  flexDirection: 'column',
-
 })
 
 globalStyle(`${naiButtonStyle}:is(:focus, :active)`, {
@@ -48,25 +45,25 @@ globalStyle(`${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar`, {
   transition: 'width 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
 })
 
-globalStyle(`${naiButtonBarStyle} > p`, {
+export const naiButtonBarTextParagraphStyle = style({
   fontSize: theme.fontSizes.xxs,
   opacity: '0',
   transition: 'opacity 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
   zIndex: '10',
   animationDelay: '0.8s',
-  height: 'fit-content',
+  margin: '0.75rem 0',
 })
 
-globalStyle(`${naiButtonBarStyle} > b`, {
+export const naiButtonBarTextBoldStyle = style({
   fontSize: theme.fontSizes.s,
   fontWeight: theme.fontWeights.bold,
   opacity: '0',
   transition: 'opacity 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
   animationDelay: '0.8s',
-  height: 'fit-content',
+  margin: '0.75rem 0',
 })
 
-globalStyle(`${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar > p, ${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar > b`, {
+globalStyle(`${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar ${naiButtonBarTextParagraphStyle}, ${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar ${naiButtonBarTextBoldStyle}`, {
   opacity: '1',
   animationDelay: '0.8s',
   transition: 'opacity 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',

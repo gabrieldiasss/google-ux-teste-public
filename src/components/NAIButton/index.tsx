@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import {
   naiButtonBarStyle,
+  naiButtonBarTextBoldStyle,
+  naiButtonBarTextParagraphStyle,
   naiButtonContainerStyle,
   naiButtonImageStyle,
   naiButtonStyle,
@@ -19,8 +21,8 @@ export const NAIButton: React.FC<NaiButtonProps> = ({ onClick, ...props }) => {
           <div>
             <img src={naiImage} className={clsx(naiButtonImageStyle)} />
           </div>
-          <p>Fale</p>
-          <b>comigo</b>
+          <div className={naiButtonBarTextParagraphStyle}>Fale</div>
+          <div className={naiButtonBarTextBoldStyle}>comigo</div>
         </div>
       </button>
     </div>
