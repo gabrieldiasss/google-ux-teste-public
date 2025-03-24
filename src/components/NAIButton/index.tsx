@@ -16,7 +16,9 @@ export const NAIButton: React.FC<NaiButtonProps> = ({ onClick, ...props }) => {
     <div className={clsx(naiButtonContainerStyle)}>
       <button onClick={onClick} {...props} className={clsx(naiButtonStyle)}>
         <div id="nai-button-bar" className={clsx(naiButtonBarStyle)}>
-          <img src={naiImage} className={clsx(naiButtonImageStyle)} />
+          <div>
+            <img src={naiImage} className={clsx(naiButtonImageStyle)} />
+          </div>
           <p>Fale</p>
           <b>comigo</b>
         </div>

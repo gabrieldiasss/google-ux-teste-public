@@ -25,7 +25,7 @@ export const naiButtonStyle = style({
 
 export const naiButtonBarStyle = style({
   backgroundColor: theme.colors.primary[700],
-  width: '70%',
+  width: '5.5rem',
   height: '2.438rem',
   borderRadius: `${theme.borders.corner.xs} 0 0 ${theme.borders.corner.xs}`,
   transition: 'width 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
@@ -34,6 +34,9 @@ export const naiButtonBarStyle = style({
   textAlign: 'start',
   paddingLeft: theme.spacing.xs,
   color: theme.colors.neutrals.light[100],
+  display: 'flex',
+  flexDirection: 'column',
+
 })
 
 globalStyle(`${naiButtonStyle}:is(:focus, :active)`, {
@@ -41,7 +44,7 @@ globalStyle(`${naiButtonStyle}:is(:focus, :active)`, {
 })
 
 globalStyle(`${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar`, {
-  width: '120%',
+  width: '8.313rem',
   transition: 'width 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
 })
 
@@ -51,6 +54,7 @@ globalStyle(`${naiButtonBarStyle} > p`, {
   transition: 'opacity 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
   zIndex: '10',
   animationDelay: '0.8s',
+  height: 'fit-content',
 })
 
 globalStyle(`${naiButtonBarStyle} > b`, {
@@ -59,6 +63,7 @@ globalStyle(`${naiButtonBarStyle} > b`, {
   opacity: '0',
   transition: 'opacity 0.8s cubic-bezier( 0.68, -0.55, 0.265, 1.55 )',
   animationDelay: '0.8s',
+  height: 'fit-content',
 })
 
 globalStyle(`${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar > p, ${naiButtonStyle}:is(:hover, :focus) > #nai-button-bar > b`, {
