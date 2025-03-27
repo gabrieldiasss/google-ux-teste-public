@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import ReactMarkdown from 'react-markdown';
 import React from 'react';
 import {
   arrowBase,
@@ -19,6 +20,7 @@ import arrowInlineDark from './../../../assets/chat/side-inline-arrow-tooltip-da
 import arrowInlineLight from './../../../assets/chat/side-inline-arrow-tooltip-light.svg';
 import { FileRender } from './FileRender';
 import { Dotsloader } from './DotsLoader';
+
 type ChatMessageProps = {
   isNaiTyping?: boolean;
   message: {
@@ -35,6 +37,17 @@ export const ChatMessage = ({
   isNaiTyping,
 }: ChatMessageProps): JSX.Element => {
   const { colorScheme } = useColorScheme();
+
+  const sanitizeMessage = (message: string) => {
+    const regexBoldText = /\*\*(.*?)\*\*/g;
+
+    const sanitizedMessage = message;
+    sanitizedMessage
+      .replace(/\n/g, '<br/>')
+      .replace(regexBoldText, '<b>$1</b>');
+
+    return sanitizedMessage;
+  };
 
   return (
     <div
@@ -79,7 +92,9 @@ export const ChatMessage = ({
           <Dotsloader />
         ) : (
           <>
-            {message.type === 'text' && <span>{message.message}</span>}
+            {message.type === 'text' && (
+              <ReactMarkdown>{message.message}</ReactMarkdown>
+            )}
 
             {message.type === 'audio' && (
               <FileRender type="audio" file={message.file} />

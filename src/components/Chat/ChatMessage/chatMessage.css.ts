@@ -1,5 +1,5 @@
 import { theme } from '@/core/themes/default.css';
-import { style, styleVariants } from '@vanilla-extract/css';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
 export const chatMessageStyle = style({
   position: 'relative',
@@ -31,6 +31,11 @@ export const chatMessageContentStyle = style({
   paddingBlock: theme.spacing.xxs,
   borderRadius: theme.borders.corner.xxs,
   marginBottom: 22,
+});
+
+globalStyle(`${chatMessageContentStyle} > p`, {
+  margin: 0,
+  padding: 0,
 });
 
 export const chatMessageContentColorSchemeStyle = styleVariants({

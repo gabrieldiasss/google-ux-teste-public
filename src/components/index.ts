@@ -22,7 +22,8 @@ import { ListSectionItem } from './ListSectionItem';
 import { AlertBox } from './AlertBox';
 import { SearchNAI } from './SearchNAI';
 import { Chat } from './Chat';
-import { Select } from './Select';
+import { ChatMessage } from './Chat/ChatMessage';
+//import { Select } from './Select';
 import { Pagination } from './Pagination';
 import { NAIButton } from './NAIButton';
 
@@ -51,7 +52,8 @@ export {
   AlertBox,
   SearchNAI,
   Chat,
-  Select,
+  //Select,
   Pagination,
+  ChatMessage,
   NAIButton,
 };
