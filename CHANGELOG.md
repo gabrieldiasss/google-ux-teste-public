@@ -1,5 +1,17 @@
 # design-system-senai-react
 
+## 1.0.54
+
+### Patch Changes
+
+- add select
+
+## 1.0.53
+
+### Patch Changes
+
+- add chat message, remove select
+
 ## 1.0.52
 
 ### Patch Changes
