@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.55
+
+### Patch Changes
+
+- chat handle table in message
+
 ## 1.0.54
 
 ### Patch Changes
