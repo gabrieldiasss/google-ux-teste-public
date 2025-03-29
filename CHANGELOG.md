@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.58
+
+### Patch Changes
+
+- fix: remove bgImage with svg in chat, remove select
+
 ## 1.0.57
 
 ### Patch Changes
