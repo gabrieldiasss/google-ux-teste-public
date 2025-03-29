@@ -139,6 +139,7 @@ export function MenuButton({
       <ActionIcon
         icon={currentFeature ? menuItems[currentFeature].icon : 'add'}
         size="xs"
+        variant={currentFeature ? 'filled' : 'light'}
         onClick={() => {
           if (currentFeature) {
             setVisible(false);

@@ -1,5 +1,7 @@
 import { theme } from '@/core/themes/default.css';
 import { style, styleVariants } from '@vanilla-extract/css';
+import bgChatLight from '@/assets/chat/background-chat.svg';
+import bgChatDark from '@/assets/chat/background-chat-dark.svg';
 
 export const chatBackgroundStyle = style({
   display: 'flex',
@@ -151,9 +153,17 @@ export const chatMainContentWrapperStyle = style({
 
 export const chatMainContentColorSchemeStyle = styleVariants({
   light: {
-    background: theme.colors.neutrals.light[50],
+    backgroundImage: `url(${bgChatLight})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundBlendMode: 'lighten',
   },
   dark: {
-    background: theme.colors.neutrals.dark[50],
+    backgroundImage: `url(${bgChatDark})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundBlendMode: 'lighten',
   },
 });

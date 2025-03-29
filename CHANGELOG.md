@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.56
+
+### Patch Changes
+
+- change searchnai button color, add background to chat container, remove select
+
 ## 1.0.55
 
 ### Patch Changes
