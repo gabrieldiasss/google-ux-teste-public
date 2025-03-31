@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.60
+
+### Patch Changes
+
+- add onClick events for additinal button in SearchNAI
+
 ## 1.0.59
 
 ### Patch Changes

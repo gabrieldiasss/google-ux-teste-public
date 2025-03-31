@@ -32,6 +32,8 @@ export interface SearchNAIProps
   renderMenuPosition?: 'top' | 'bottom';
   onUploadFile?: (file: File) => void;
   shouldShowButtons?: boolean;
+  onClickDashboardButton?: () => void;
+  onClickMenuButton?: () => void;
 }
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
@@ -46,6 +48,8 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   onInputChange,
   renderMenuPosition,
   shouldShowButtons,
+  onClickDashboardButton,
+  onClickMenuButton,
 }) => {
   const [inputValue, setInputValue] = useState('');
   const [isFocused, setIsFocused] = useState(false);
@@ -143,8 +147,18 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             inputWrapperColorSchemeStyle[colorScheme],
           )}
         >
-          <ActionIcon variant="light" icon="dashboard" size="xs" />
-          <ActionIcon variant="light" icon="menu" size="xs" />
+          <ActionIcon
+            variant="light"
+            icon="dashboard"
+            size="xs"
+            onClick={onClickDashboardButton}
+          />
+          <ActionIcon
+            variant="light"
+            icon="menu"
+            size="xs"
+            onClick={onClickMenuButton}
+          />
         </div>
       )}
     </div>
