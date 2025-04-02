@@ -1,5 +1,5 @@
 import { theme } from '@/core/themes/default.css';
-import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 export const tagStyle = style({
   display: 'flex',
