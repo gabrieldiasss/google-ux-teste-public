@@ -1,5 +1,5 @@
 import { theme } from '@/core/themes/default.css';
-import { style, styleVariants } from '@vanilla-extract/css';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
 export const tagStyle = style({
   display: 'flex',
@@ -7,6 +7,8 @@ export const tagStyle = style({
   justifyContent: 'center',
   gap: theme.spacing.xxxs,
   color: theme.colors.neutrals.light[50],
+
+  width: 'fit-content',
 
   borderColor: 'transparent',
   borderWidth: theme.borders.width.thin,
@@ -77,3 +79,58 @@ export const tagDarkColors = styleVariants({
     color: theme.colors.neutrals.dark[700],
   },
 });
+
+export const tagIconButton = style({
+  background: 'none',
+  color: 'inherit',
+  border: 'none',
+  padding: 0,
+  cursor: 'pointer',
+  outline: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  transition: 'background-color 0.2s ease-in-out',
+  borderRadius: theme.borders.corner.xxxs,
+  ':hover': {
+    borderRadius: theme.borders.corner.xxxs,
+    boxSizing: 'border-box',
+    transition: 'background-color 0.2s ease-in-out',
+  },
+  ':active': {
+    borderRadius: theme.borders.corner.xxxs,
+    boxSizing: 'border-box',
+    transition: 'background-color 0.2s ease-in-out',
+  }
+})
+
+export const tagIconButtonColorScheme = styleVariants({
+  light: {
+    ':hover': {
+      backgroundColor: theme.colors.neutralsOverlay.dark[100],
+      borderRadius: theme.borders.corner.xxxs,
+      boxSizing: 'border-box',
+      transition: 'background-color 0.2s ease-in-out',
+    },
+    ':active': {
+      backgroundColor: theme.colors.neutralsOverlay.dark[100],
+      borderRadius: theme.borders.corner.xxxs,
+      boxSizing: 'border-box',
+      transition: 'background-color 0.2s ease-in-out',
+    }
+  },
+  dark: {
+    ':hover': {
+      backgroundColor: theme.colors.neutralsOverlay.light[100],
+      borderRadius: theme.borders.corner.xxxs,
+      boxSizing: 'border-box',
+      transition: 'background-color 0.2s ease-in-out',
+    },
+    ':active': {
+      backgroundColor: theme.colors.neutralsOverlay.light[100],
+      borderRadius: theme.borders.corner.xxxs,
+      boxSizing: 'border-box',
+      transition: 'background-color 0.2s ease-in-out',
+    }
+  },
+})

@@ -1,7 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { tagStyle, tagLightColors, tagDarkColors } from './tag.css';
+import {
+  tagStyle,
+  tagLightColors,
+  tagDarkColors,
+  tagIconButton,
+  tagIconButtonColorScheme,
+} from './tag.css';
 import { SymbolCodepoints } from './../../core/icons/types';
 import { Icon } from '../Icon';
 import { useColorScheme } from '@/providers';
@@ -9,6 +15,7 @@ import { useColorScheme } from '@/providers';
 type IconProps = {
   icon: SymbolCodepoints;
   position: 'right' | 'left';
+  onClick?: () => void;
 };
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: keyof typeof tagDarkColors;
@@ -24,6 +31,16 @@ export const Tag: React.FC<TagProps> = ({
   const { colorScheme } = useColorScheme();
   const renderIcon = () => {
     if (!iconProps) return null;
+    if (iconProps.onClick) {
+      return (
+        <button
+          className={`${tagIconButton} ${tagIconButtonColorScheme[colorScheme]}`}
+          onClick={iconProps.onClick}
+        >
+          <Icon name={iconProps?.icon} size={16} color="inherit" />
+        </button>
+      );
+    }
     return <Icon name={iconProps?.icon} size={16} color="inherit" />;
   };
 

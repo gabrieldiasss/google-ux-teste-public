@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.62
+
+### Patch Changes
+
+- feat: add clickable icon in tag
+
 ## 1.0.61
 
 ### Patch Changes
