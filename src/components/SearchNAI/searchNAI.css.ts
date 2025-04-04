@@ -31,11 +31,11 @@ export const buttonsWrapperStyle = style({
 export const inputWrapperColorSchemeStyle = styleVariants({
   dark: {
     color: theme.colors.neutrals.dark[800],
-    background: theme.colors.neutralsOverlay.light[50],
+    background: theme.colors.neutralsOverlay.dark[300],
   },
   light: {
     color: theme.colors.neutrals.light[800],
-    background: theme.colors.neutralsOverlay.dark[50],
+    background: theme.colors.neutralsOverlay.light[300],
   },
 });
 
