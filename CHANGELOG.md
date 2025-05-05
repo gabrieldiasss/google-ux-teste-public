@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.67
+
+### Patch Changes
+
+- add change color for dark chat message
+
 ## 1.0.66
 
 ### Patch Changes
