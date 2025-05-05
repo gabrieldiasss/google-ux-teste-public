@@ -49,6 +49,15 @@ export const chatMessageContentColorSchemeStyle = styleVariants({
   },
 });
 
+export const chatMessageNAIBg = styleVariants({
+  light: {
+    backgroundColor: theme.colors.neutralsOverlay.light['900'],
+  },
+  dark: {
+    backgroundColor: theme.colors.neutralsOverlay.dark['900'],
+  },
+});
+
 export const chatMessageUserContent = style({
   borderBottomRightRadius: '0',
 });

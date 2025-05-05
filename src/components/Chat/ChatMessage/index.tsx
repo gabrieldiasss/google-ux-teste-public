@@ -7,6 +7,7 @@ import {
   chatMessageContentColorSchemeStyle,
   chatMessageContentStyle,
   chatMessageNAI,
+  chatMessageNAIBg,
   chatMessageNAIContent,
   chatMessageStyle,
   chatMessageUser,
@@ -54,7 +55,9 @@ export const ChatMessage = ({
       <div
         className={clsx(
           chatMessageContentStyle,
-          chatMessageContentColorSchemeStyle[colorScheme],
+          message.from === 'user'
+            ? chatMessageContentColorSchemeStyle[colorScheme]
+            : chatMessageNAIBg[colorScheme],
           message.from === 'user'
             ? chatMessageUserContent
             : chatMessageNAIContent,

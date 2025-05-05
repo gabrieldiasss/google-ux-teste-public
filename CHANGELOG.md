@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.66
+
+### Patch Changes
+
+- add verification for chat background
+
 ## 1.0.65
 
 ### Patch Changes
