@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.69
+
+### Patch Changes
+
+- change name and reset field
+
 ## 1.0.68
 
 ### Patch Changes

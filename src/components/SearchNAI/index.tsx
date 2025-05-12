@@ -77,6 +77,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   function handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (event.key === 'Enter' && !event.shiftKey) {
       onSendMessage?.(inputValue);
+      setInputValue('');
     }
   }
 
@@ -131,7 +132,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
                 }}
               >
                 Pergunte para a{' '}
-                <span className={placeholderHighlightStyle}>CLEUSA</span>
+                <span className={placeholderHighlightStyle}>NAI</span>
               </span>
             )
           )}
