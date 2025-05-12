@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.70
+
+### Patch Changes
+
+- change label user for name
+
 ## 1.0.69
 
 ### Patch Changes

@@ -31,6 +31,7 @@ type ChatMessageProps = {
     file?: string;
     from: 'user' | 'nai';
     type: 'text' | 'audio' | 'file';
+    userName: string;
   };
 };
 
@@ -100,7 +101,7 @@ export const ChatMessage = ({
           </>
         )}
       </div>
-      {message.from === 'user' && <Avatar label={message.from} size="md" />}
+      {message.from === 'user' && <Avatar label={message.userName} size="md" />}
     </div>
   );
 };
