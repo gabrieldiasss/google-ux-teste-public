@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.71
+
+### Patch Changes
+
+- max height search nai
+
 ## 1.0.70
 
 ### Patch Changes

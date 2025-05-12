@@ -1,4 +1,4 @@
-import React, { KeyboardEventHandler, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useColorScheme } from '@/providers';
 import {
   buttonsWrapperStyle,
@@ -58,6 +58,18 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
     number | undefined
   >(undefined);
 
+  const adjustHeight = () => {
+    const textRef = inputRef.current;
+    if (textRef) {
+      textRef.style.height = 'auto';
+      textRef.style.height = `${textRef.scrollHeight}px`;
+    }
+  };
+
+  useEffect(() => {
+    adjustHeight();
+  }, [inputValue]);
+
   const { colorScheme } = useColorScheme();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -108,6 +120,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             onBlur={() => setIsFocused(false)}
             onChange={handleInputChange}
             value={inputValue}
+            style={{ maxHeight: '80px' }}
           />
 
           {listeningInSeconds !== undefined ? (
