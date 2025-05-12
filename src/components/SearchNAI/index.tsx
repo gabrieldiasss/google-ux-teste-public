@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { KeyboardEventHandler, useRef, useState } from 'react';
 import { useColorScheme } from '@/providers';
 import {
   buttonsWrapperStyle,
@@ -74,6 +74,12 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
       '0',
     )}:${((listeningInSeconds || 0) % 60).toString().padStart(2, '0')}`;
 
+  function handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      onSendMessage?.(inputValue);
+    }
+  }
+
   return (
     <div className={globalWrapperStyle}>
       <div
@@ -95,6 +101,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           <Textarea
             ref={inputRef}
             className={clsx(inputStyle)}
+            onKeyDown={handleKeyDown}
             placeholder=" "
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
@@ -124,7 +131,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
                 }}
               >
                 Pergunte para a{' '}
-                <span className={placeholderHighlightStyle}>NAI</span>
+                <span className={placeholderHighlightStyle}>CLEUSA</span>
               </span>
             )
           )}

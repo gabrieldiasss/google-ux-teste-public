@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.68
+
+### Patch Changes
+
+- enter send values in search nai
+
 ## 1.0.67
 
 ### Patch Changes
