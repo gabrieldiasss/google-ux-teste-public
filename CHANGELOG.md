@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.72
+
+### Patch Changes
+
+- fix: styles height container searchNAI
+
 ## 1.0.71
 
 ### Patch Changes
