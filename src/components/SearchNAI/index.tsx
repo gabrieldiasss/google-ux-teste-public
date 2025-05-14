@@ -58,18 +58,6 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
     number | undefined
   >(undefined);
 
-  const adjustHeight = () => {
-    const textRef = inputRef.current;
-    if (textRef) {
-      textRef.style.height = 'auto';
-      textRef.style.height = `${textRef.scrollHeight}px`;
-    }
-  };
-
-  useEffect(() => {
-    adjustHeight();
-  }, [inputValue]);
-
   const { colorScheme } = useColorScheme();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -88,6 +76,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
       onSendMessage?.(inputValue);
       setInputValue('');
     }
@@ -120,7 +109,6 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             onBlur={() => setIsFocused(false)}
             onChange={handleInputChange}
             value={inputValue}
-            style={{ maxHeight: '80px' }}
           />
 
           {listeningInSeconds !== undefined ? (
