@@ -167,7 +167,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
       </div>
       {shouldShowButtons && (
         <div
-          ref={refMenuButtons ? refMenuButtons : undefined}
+          ref={refMenuButtons}
           className={clsx(
             buttonsWrapperStyle,
             inputWrapperColorSchemeStyle[colorScheme],
