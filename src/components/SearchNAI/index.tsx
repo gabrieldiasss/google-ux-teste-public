@@ -112,6 +112,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           isFileLoaded={isFileLoaded}
           onClickAddNewChat={onClickAddNewChat}
           onClickChatHistory={onClickChatHistory}
+          refMenuButtons={refMenuButtons}
         />
         <div className={placeholderWrapperStyle}>
           <Textarea
@@ -167,7 +168,6 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
       </div>
       {shouldShowButtons && (
         <div
-          ref={refMenuButtons}
           className={clsx(
             buttonsWrapperStyle,
             inputWrapperColorSchemeStyle[colorScheme],

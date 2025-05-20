@@ -26,6 +26,7 @@ export type MenuButtonProps = {
     title: string;
     date: Date;
   }[];
+  refMenuButtons: (node: HTMLDivElement | null) => void;
 };
 
 export function MenuButton({
@@ -36,6 +37,7 @@ export function MenuButton({
   onUploadFile,
   renderPosition = 'top',
   historyData,
+  refMenuButtons,
 }: MenuButtonProps): JSX.Element {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
@@ -151,6 +153,7 @@ export function MenuButton({
       />
       {visible && (
         <div
+          ref={refMenuButtons}
           className={clsx(
             menuButtonsWrapperStyle,
             menuButtonsWrapperColorSchemeStyle[colorScheme],

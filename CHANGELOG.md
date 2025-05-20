@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.76
+
+### Patch Changes
+
+- change place ref
+
 ## 1.0.75
 
 ### Patch Changes
