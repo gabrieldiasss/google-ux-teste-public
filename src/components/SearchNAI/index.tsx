@@ -34,7 +34,7 @@ export interface SearchNAIProps
   shouldShowButtons?: boolean;
   onClickDashboardButton?: () => void;
   onClickMenuButton?: () => void;
-  refMenuButtons?: React.RefObject<HTMLDivElement>;
+  refMenuButtons?: (node: HTMLDivElement | null) => void;
 }
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
