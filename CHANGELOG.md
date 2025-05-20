@@ -1,5 +1,12 @@
 # design-system-senai-react
 
+## 1.0.73
+
+### Patch Changes
+
+- style search bar and ref menu buttons
+- search nai style and add ref
+
 ## 1.0.72
 
 ### Patch Changes

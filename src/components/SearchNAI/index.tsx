@@ -34,6 +34,7 @@ export interface SearchNAIProps
   shouldShowButtons?: boolean;
   onClickDashboardButton?: () => void;
   onClickMenuButton?: () => void;
+  refMenuButtons?: React.RefObject<HTMLDivElement>;
 }
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
@@ -50,6 +51,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   shouldShowButtons,
   onClickDashboardButton,
   onClickMenuButton,
+  refMenuButtons,
 }) => {
   const [inputValue, setInputValue] = useState('');
   const [isFocused, setIsFocused] = useState(false);
@@ -82,6 +84,18 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
     }
   }
 
+  const adjustHeight = () => {
+    const textRef = inputRef.current;
+    if (textRef) {
+      textRef.style.height = 'auto';
+      textRef.style.height = `${textRef.scrollHeight}px`;
+    }
+  };
+
+  useEffect(() => {
+    adjustHeight();
+  }, [inputValue]);
+
   return (
     <div className={globalWrapperStyle}>
       <div
@@ -109,6 +123,8 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
             onBlur={() => setIsFocused(false)}
             onChange={handleInputChange}
             value={inputValue}
+            rows={1}
+            style={{ maxHeight: '80px' }}
           />
 
           {listeningInSeconds !== undefined ? (
@@ -151,6 +167,7 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
       </div>
       {shouldShowButtons && (
         <div
+          ref={refMenuButtons ? refMenuButtons : undefined}
           className={clsx(
             buttonsWrapperStyle,
             inputWrapperColorSchemeStyle[colorScheme],

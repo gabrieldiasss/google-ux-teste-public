@@ -10,7 +10,7 @@ export const globalWrapperStyle = style({
 });
 export const inputWrapperStyle = style({
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'start',
   flexDirection: 'row',
   gap: theme.spacing.xs,
   padding: theme.spacing.xxxs,
