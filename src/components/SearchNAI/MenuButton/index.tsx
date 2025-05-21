@@ -27,6 +27,8 @@ export type MenuButtonProps = {
     date: Date;
   }[];
   refMenuButtons: (node: HTMLDivElement | null) => void;
+  isVisible: boolean;
+  handleChangeVisible: (status: boolean) => void;
 };
 
 export function MenuButton({
@@ -38,6 +40,8 @@ export function MenuButton({
   renderPosition = 'top',
   historyData,
   refMenuButtons,
+  handleChangeVisible,
+  isVisible,
 }: MenuButtonProps): JSX.Element {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
@@ -101,7 +105,6 @@ export function MenuButton({
   };
 
   const { colorScheme } = useColorScheme();
-  const [visible, setVisible] = useState(false);
   const [currentFeature, setCurrentFeature] = useState<
     keyof typeof menuItems | undefined
   >(undefined);
@@ -111,7 +114,7 @@ export function MenuButton({
     if (!feature) {
       return;
     }
-    setVisible(false);
+    handleChangeVisible(false);
     if (!menuItems[feature].skipSetCurrentFeature) setCurrentFeature(feature);
 
     if (feature === 'attachment') {
@@ -144,14 +147,14 @@ export function MenuButton({
         variant={currentFeature ? 'filled' : 'light'}
         onClick={() => {
           if (currentFeature) {
-            setVisible(false);
+            handleChangeVisible(false);
             setCurrentFeature(undefined);
           } else {
-            setVisible(!visible);
+            handleChangeVisible(!isVisible);
           }
         }}
       />
-      {visible && (
+      {isVisible && (
         <div
           ref={refMenuButtons}
           className={clsx(
@@ -188,7 +191,7 @@ export function MenuButton({
                 console.log('File uploaded:', file);
                 onUploadFile?.(file);
                 setCurrentFeature('attachment');
-                setVisible(false);
+                handleChangeVisible(false);
               }
             }}
           />

@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.78
+
+### Patch Changes
+
+- change state control
+
 ## 1.0.77
 
 ### Patch Changes
