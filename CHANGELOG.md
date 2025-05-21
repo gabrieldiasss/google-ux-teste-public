@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.77
+
+### Patch Changes
+
+- refactor chatMessage type
+
 ## 1.0.76
 
 ### Patch Changes

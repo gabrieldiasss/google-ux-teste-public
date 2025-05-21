@@ -31,7 +31,7 @@ type ChatMessageProps = {
     file?: string;
     from: 'user' | 'nai';
     type: 'text' | 'audio' | 'file';
-    userName: string;
+    userName?: string;
   };
 };
 
