@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.79
+
+### Patch Changes
+
+- add prop control search nai
+
 ## 1.0.78
 
 ### Patch Changes

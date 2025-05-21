@@ -35,6 +35,8 @@ export interface SearchNAIProps
   onClickDashboardButton?: () => void;
   onClickMenuButton?: () => void;
   refMenuButtons?: (node: HTMLDivElement | null) => void;
+  isVisible: boolean;
+  handleChangeVisible: (status: boolean) => void;
 }
 
 export const SearchNAI: React.FC<SearchNAIProps> = ({
@@ -52,6 +54,8 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
   onClickDashboardButton,
   onClickMenuButton,
   refMenuButtons,
+  isVisible,
+  handleChangeVisible,
 }) => {
   const [inputValue, setInputValue] = useState('');
   const [isFocused, setIsFocused] = useState(false);
@@ -113,6 +117,8 @@ export const SearchNAI: React.FC<SearchNAIProps> = ({
           onClickAddNewChat={onClickAddNewChat}
           onClickChatHistory={onClickChatHistory}
           refMenuButtons={refMenuButtons}
+          handleChangeVisible={handleChangeVisible}
+          isVisible={isVisible}
         />
         <div className={placeholderWrapperStyle}>
           <Textarea
