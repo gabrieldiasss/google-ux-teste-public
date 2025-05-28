@@ -1,6 +1,6 @@
 {
   "name": "design-system-senai-react",
-  "version": "1.0.81",
+  "version": "1.0.82",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",
@@ -20,10 +20,12 @@
   },
   "dependencies": {
     "@headlessui/react": "2.2.0",
+    "@types/react-lazy-load-image-component": "^1.6.4",
     "@vanilla-extract/css": "^1.16.0",
     "@wavesurfer/react": "^1.0.7",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
+    "react-lazy-load-image-component": "^1.6.3",
     "react-markdown": "^10.1.0",
     "react-select": "^5.9.0",
     "remark-gfm": "^4.0.1",

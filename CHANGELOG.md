@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.82
+
+### Patch Changes
+
+- feat add lazy loading on images
+
 ## 1.0.81
 
 ### Patch Changes

@@ -10,6 +10,7 @@ import {
   circleInnerPaddingSizes,
 } from './avatar.css';
 import { AvatarCircle } from './AvatarCircle';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -54,7 +55,13 @@ export const Avatar: React.FC<AvatarProps> = ({
         )}
       >
         {image ? (
-          <img className={avatarContentStyle} src={image} alt="avatar" />
+          <LazyLoadImage
+            src={image}
+            effect="opacity"
+            placeholderSrc={image}
+            className={avatarContentStyle}
+            alt="avatar"
+          />
         ) : (
           <span className={avatarContentStyle}>{char}</span>
         )}
