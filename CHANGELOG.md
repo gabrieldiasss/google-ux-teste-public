@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.85
+
+### Patch Changes
+
+- change avatar lazy
+
 ## 1.0.84
 
 ### Patch Changes
