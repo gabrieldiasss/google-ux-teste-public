@@ -19,6 +19,7 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   hasNotification?: boolean;
   isSelected?: boolean;
   selectedCircleBgColor?: string;
+  containsAvatar: boolean;
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
@@ -28,6 +29,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   hasNotification = false,
   isSelected = false,
   selectedCircleBgColor,
+  containsAvatar,
 }) => {
   const char = label?.trim()?.charAt(0)?.toUpperCase() || '';
 
@@ -54,11 +56,11 @@ export const Avatar: React.FC<AvatarProps> = ({
           avatarSizes[size],
         )}
       >
-        {image ? (
+        {containsAvatar ? (
           <LazyLoadImage
-            src={image}
+            src={image as string}
             effect="opacity"
-            placeholderSrc={image}
+            placeholderSrc={image as string}
             className={avatarContentStyle}
             alt="avatar"
           />

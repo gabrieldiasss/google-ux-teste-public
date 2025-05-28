@@ -26,6 +26,7 @@ import remarkGfm from 'remark-gfm';
 type ChatMessageProps = {
   isNaiTyping?: boolean;
   userAvatar: string;
+  hasAvatarUser: boolean;
   message: {
     id: string;
     message?: string;
@@ -41,6 +42,7 @@ export const ChatMessage = ({
   message,
   isNaiTyping,
   userAvatar,
+  hasAvatarUser,
 }: ChatMessageProps): JSX.Element => {
   const { colorScheme } = useColorScheme();
 
@@ -54,7 +56,12 @@ export const ChatMessage = ({
       )}
     >
       {message.from === 'nai' && (
-        <Avatar label={message.from} size="md" image={logoNai} />
+        <Avatar
+          containsAvatar={hasAvatarUser}
+          label={message.from}
+          size="md"
+          image={logoNai}
+        />
       )}
       <div
         className={clsx(
@@ -109,6 +116,7 @@ export const ChatMessage = ({
           image={userAvatar ? userAvatar : undefined}
           label={!userAvatar ? message.userName : undefined}
           size="md"
+          containsAvatar={hasAvatarUser}
         />
       )}
     </div>
