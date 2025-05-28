@@ -111,14 +111,21 @@ export const ChatMessage = ({
           </>
         )}
       </div>
-      {message.from === 'user' && (
+      {/*    {message.from === 'user' && (
         <Avatar
           image={userAvatar ? userAvatar : undefined}
           label={!userAvatar ? message.userName : undefined}
           size="md"
           containsAvatar={hasAvatarUser}
         />
-      )}
+      )} */}
+
+      <Avatar
+        image={userAvatar ? userAvatar : undefined}
+        label={!userAvatar ? message.userName : undefined}
+        size="md"
+        containsAvatar={hasAvatarUser}
+      />
     </div>
   );
 };

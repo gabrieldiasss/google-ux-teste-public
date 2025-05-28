@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.84
+
+### Patch Changes
+
+- teste verifys
+
 ## 1.0.83
 
 ### Patch Changes
