@@ -32,6 +32,7 @@ type ChatMessageProps = {
     from: 'user' | 'nai';
     type: 'text' | 'audio' | 'file';
     userName?: string;
+    image?: string;
   };
 };
 
@@ -101,7 +102,13 @@ export const ChatMessage = ({
           </>
         )}
       </div>
-      {message.from === 'user' && <Avatar label={message.userName} size="md" />}
+      {message.from === 'user' && (
+        <Avatar
+          image={message.image ? message.image : undefined}
+          label={!message.image ? message.userName : undefined}
+          size="md"
+        />
+      )}
     </div>
   );
 };

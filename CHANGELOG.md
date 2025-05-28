@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.80
+
+### Patch Changes
+
+- add picture on chat message
+
 ## 1.0.79
 
 ### Patch Changes
