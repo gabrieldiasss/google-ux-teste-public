@@ -105,9 +105,9 @@ export const ChatMessage = ({
         )}
       </div>
 
-      {message.from === 'user' && (
+      {message.from === 'user' && userAvatar && (
         <Avatar
-          image={userAvatar ? userAvatar : undefined}
+          image={userAvatar}
           label={!userAvatar ? message.userName : undefined}
           size="md"
         />

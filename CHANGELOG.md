@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.86
+
+### Patch Changes
+
+- verify image avatar
+
 ## 1.0.85
 
 ### Patch Changes
