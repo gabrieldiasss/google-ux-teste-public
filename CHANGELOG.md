@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.88
+
+### Patch Changes
+
+- remove verify userAvatar
+
 ## 1.0.87
 
 ### Patch Changes
