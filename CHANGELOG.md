@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.87
+
+### Patch Changes
+
+- user avatart optional
+
 ## 1.0.86
 
 ### Patch Changes

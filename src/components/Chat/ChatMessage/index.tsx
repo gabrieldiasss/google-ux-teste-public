@@ -25,7 +25,7 @@ import remarkGfm from 'remark-gfm';
 
 type ChatMessageProps = {
   isNaiTyping?: boolean;
-  userAvatar: string;
+  userAvatar?: string;
   message: {
     id: string;
     message?: string;
