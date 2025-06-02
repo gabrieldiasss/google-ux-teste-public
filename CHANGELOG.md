@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.89
+
+### Patch Changes
+
+- invert logic display avatar
+
 ## 1.0.88
 
 ### Patch Changes

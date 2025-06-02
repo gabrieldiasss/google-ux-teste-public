@@ -54,16 +54,15 @@ export const Avatar: React.FC<AvatarProps> = ({
           avatarSizes[size],
         )}
       >
-        {image ? (
-          <LazyLoadImage
+        {!image ? (
+          <span className={avatarContentStyle}>{char}</span>
+        ) : (
+          <img
             src={image}
-            effect="opacity"
+            loading="lazy"
             className={avatarContentStyle}
             alt="avatar"
-            threshold={100}
           />
-        ) : (
-          <span className={avatarContentStyle}>{char}</span>
         )}
       </div>
     </div>
