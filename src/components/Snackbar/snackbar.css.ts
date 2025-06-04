@@ -137,7 +137,7 @@ export const snackbarBody = style({
 export const actionsButtonsRight = style({
   display: 'flex',
   alignItems: 'center',
-  gap: 16,
+  gap: 24,
 });
 
 export const snackbarBaseTitleStyle = {

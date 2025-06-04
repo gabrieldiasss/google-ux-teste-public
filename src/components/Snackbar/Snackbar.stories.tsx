@@ -49,12 +49,12 @@ export const Default: Story = {
         <Button
           onClick={() => {
             addSnackbar({
-              title: 'BOAA',
+              title: 'This is message',
               message: 'Snackbar message',
               duration: 5000,
               type: 'success',
               complementButton: {
-                label: 'Oi',
+                label: 'Text button',
                 position: 'right',
                 onClick: () => {
                   console.log('Oi');
@@ -66,7 +66,7 @@ export const Default: Story = {
               duration: 5000,
               type: 'error',
               complementButton: {
-                label: 'Oi',
+                label: 'Text button',
                 position: 'bottom',
                 onClick: () => {
                   console.log('Oi');
