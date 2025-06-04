@@ -45,7 +45,7 @@ export const Default: Story = {
     const { addSnackbar } = useSnackbar();
 
     return (
-      <SnackbarProvider>
+      <div>
         <Button
           onClick={() => {
             addSnackbar({
@@ -87,7 +87,7 @@ export const Default: Story = {
         >
           Add Multiple Snackbars
         </Button>
-      </SnackbarProvider>
+      </div>
     );
   },
 };

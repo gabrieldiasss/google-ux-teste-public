@@ -1,5 +1,17 @@
 # design-system-senai-react
 
+## 1.0.95
+
+### Patch Changes
+
+- fix snackbar provider
+
+## 1.0.94
+
+### Patch Changes
+
+- fix bug snackbar
+
 ## 1.0.93
 
 ### Patch Changes
