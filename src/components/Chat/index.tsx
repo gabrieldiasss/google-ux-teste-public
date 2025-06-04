@@ -64,6 +64,7 @@ export const Chat: React.FC<ChatProps> = ({
       chatWrapper.scrollTop = chatWrapper.scrollHeight;
     }
   }, [chatMessages]);
+
   return (
     <div
       className={clsx(

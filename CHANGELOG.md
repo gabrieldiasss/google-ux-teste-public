@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.90
+
+### Patch Changes
+
+- refactor storybook component avatar and add button remove
+
 ## 1.0.89
 
 ### Patch Changes

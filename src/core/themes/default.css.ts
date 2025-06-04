@@ -55,7 +55,6 @@ export const themeTokens = {
       800: '#E84910CC', // rgba(232,73,16,0.8)
       900: '#E84910E6', // rgba(232,73,16,0.9)
     },
-
     secondary: {
       50: '#eef7ff',
       100: '#d8edff',

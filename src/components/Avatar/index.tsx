@@ -8,9 +8,16 @@ import {
   circleOuterStyle,
   circleWrapperStyle,
   circleInnerPaddingSizes,
+  buttonRemoveStyle,
+  containerStyle,
+  buttonStyle,
+  avatarButtonPosition,
+  buttonBackgroundVariantOverlayStyle,
+  buttonBackgroundVariantContainerStyle,
 } from './avatar.css';
 import { AvatarCircle } from './AvatarCircle';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Icon } from '../Icon';
+import { useColorScheme } from '@/providers/ColorSchemeProvider';
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -19,6 +26,7 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   hasNotification?: boolean;
   isSelected?: boolean;
   selectedCircleBgColor?: string;
+  isRemove?: boolean;
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
@@ -28,8 +36,11 @@ export const Avatar: React.FC<AvatarProps> = ({
   hasNotification = false,
   isSelected = false,
   selectedCircleBgColor,
+  isRemove,
 }) => {
   const char = label?.trim()?.charAt(0)?.toUpperCase() || '';
+
+  const { colorScheme } = useColorScheme();
 
   return (
     <div className={circleWrapperStyle}>
@@ -54,6 +65,25 @@ export const Avatar: React.FC<AvatarProps> = ({
           avatarSizes[size],
         )}
       >
+        {isRemove && (
+          <div className={clsx(buttonRemoveStyle, avatarButtonPosition[size])}>
+            <div
+              className={clsx(
+                containerStyle,
+                buttonBackgroundVariantOverlayStyle[colorScheme],
+              )}
+            >
+              <div
+                className={clsx(
+                  buttonStyle,
+                  buttonBackgroundVariantContainerStyle[colorScheme],
+                )}
+              >
+                <Icon name="remove" size={18} color="#fffff" />
+              </div>
+            </div>
+          </div>
+        )}
         {!image ? (
           <span className={avatarContentStyle}>{char}</span>
         ) : (
