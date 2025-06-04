@@ -21,7 +21,7 @@ const SnackbarContext = createContext<SnackbarContextType>({
 });
 
 export const useSnackbar = (): SnackbarContextType => {
-  const context = useContext(SnackbarContext);
+  const context = useContext(SnackbarContext) as SnackbarContextType;
   if (context.notMountedSnackbar) {
     console.error('useSnackbar must be used within a SnackbarProvider');
   }

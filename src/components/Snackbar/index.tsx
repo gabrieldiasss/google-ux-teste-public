@@ -19,6 +19,9 @@ import {
   snackbarIconContainerVariantColorScheme,
   snackbarTitleVariantColorScheme,
   snackbarMessageVariantColorScheme,
+  snackbarIconWrapperVariantStyles,
+  actionsButtonsRight,
+  snackbarComplementButtonVariantStyle,
 } from './snackbar.css';
 
 export interface SnackbarProps {
@@ -31,6 +34,7 @@ export interface SnackbarProps {
   complementButton?: {
     label?: string;
     onClick?: () => void;
+    position: 'right' | 'bottom';
   };
 }
 
@@ -58,6 +62,7 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
           <div
             className={clsx(
               snackbarIconContainer,
+              snackbarIconWrapperVariantStyles[type],
               snackbarIconContainerVariantColorScheme[colorScheme],
             )}
           >
@@ -84,9 +89,12 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
                 </div>
               )}
             </div>
-            {complementButton && (
+            {complementButton?.position === 'bottom' && (
               <button
-                className={snackbarComplementButton}
+                className={clsx(
+                  snackbarComplementButton,
+                  snackbarComplementButtonVariantStyle[colorScheme],
+                )}
                 onClick={(e) => {
                   e.stopPropagation();
                   complementButton.onClick?.();
@@ -97,15 +105,32 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
             )}
           </div>
         </div>
-        <button
-          className={snackbarCloseButton}
-          onClick={(e) => {
-            e.stopPropagation();
-            onClose();
-          }}
-        >
-          <Icon name="close" size={24} color="inherit" />
-        </button>
+
+        <div className={actionsButtonsRight}>
+          {complementButton?.position === 'right' && (
+            <button
+              className={clsx(
+                snackbarComplementButton,
+                snackbarComplementButtonVariantStyle[colorScheme],
+              )}
+              onClick={(e) => {
+                e.stopPropagation();
+                complementButton.onClick?.();
+              }}
+            >
+              {complementButton.label}
+            </button>
+          )}
+          <button
+            className={snackbarCloseButton}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+          >
+            <Icon name="close" size={24} color="inherit" />
+          </button>
+        </div>
       </div>
     </div>
   );

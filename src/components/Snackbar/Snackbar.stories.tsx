@@ -7,10 +7,30 @@ import {
   SnackbarProvider,
   useSnackbar,
 } from './../../providers/SnackbarProvider';
+import {
+  ColorSchemeProvider,
+  useColorScheme,
+} from '../../providers/ColorSchemeProvider';
+import { StoryWrapper } from '../StoryWrapper';
 
 const meta: Meta<typeof Snackbar> = {
   title: 'Components/Snackbar',
   component: Snackbar,
+  decorators: [
+    (Story) => {
+      const { colorScheme } = useColorScheme();
+
+      return (
+        <ColorSchemeProvider defaultColorScheme={colorScheme}>
+          <SnackbarProvider>
+            <StoryWrapper>
+              <Story />
+            </StoryWrapper>
+          </SnackbarProvider>
+        </ColorSchemeProvider>
+      );
+    },
+  ],
   parameters: {
     layout: 'centered',
   },
@@ -29,14 +49,29 @@ export const Default: Story = {
         <Button
           onClick={() => {
             addSnackbar({
+              title: 'BOAA',
               message: 'Snackbar message',
               duration: 5000,
               type: 'success',
+              complementButton: {
+                label: 'Oi',
+                position: 'right',
+                onClick: () => {
+                  console.log('Oi');
+                },
+              },
             });
             addSnackbar({
               message: 'Snackbar message',
               duration: 5000,
               type: 'error',
+              complementButton: {
+                label: 'Oi',
+                position: 'bottom',
+                onClick: () => {
+                  console.log('Oi');
+                },
+              },
             });
             addSnackbar({
               message: 'Snackbar message',

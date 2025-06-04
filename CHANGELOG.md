@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.92
+
+### Patch Changes
+
+- refactor component snackbar
+
 ## 1.0.91
 
 ### Patch Changes

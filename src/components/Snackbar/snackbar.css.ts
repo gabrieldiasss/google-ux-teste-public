@@ -82,11 +82,9 @@ export const snackbarIconContainer = style({
 
 export const snackbarIconContainerVariantColorScheme = styleVariants({
   light: {
-    background: theme.colors.neutralsOverlay.light[700],
     color: theme.colors.neutralsOverlay.light[700],
   },
   dark: {
-    background: theme.colors.neutralsOverlay.dark[700],
     color: theme.colors.neutralsOverlay.dark[700],
   },
 });
@@ -98,8 +96,22 @@ export const snackbarIconWrapper = style({
   height: 20,
   width: 20,
   color: 'inherit',
-  background: theme.colors.success[100],
   borderRadius: '50%',
+});
+
+export const snackbarIconWrapperVariantStyles = styleVariants({
+  success: {
+    background: theme.colors.successOverlay[200],
+  },
+  error: {
+    background: theme.colors.dangerOverlay[200],
+  },
+  warning: {
+    background: theme.colors.warningOverlay[200],
+  },
+  info: {
+    background: theme.colors.infoOverlay[200],
+  },
 });
 
 export const snackbarIconVariantStyles = styleVariants({
@@ -122,6 +134,12 @@ export const snackbarBody = style({
   flexDirection: 'column',
 });
 
+export const actionsButtonsRight = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: 16,
+});
+
 export const snackbarBaseTitleStyle = {
   fontSize: theme.fontSizes.xxs,
   fontWeight: theme.fontWeights.bold,
@@ -130,11 +148,11 @@ export const snackbarBaseTitleStyle = {
 export const snackbarTitleVariantColorScheme = styleVariants({
   light: {
     ...snackbarBaseTitleStyle,
-    color: theme.colors.neutrals.light[800],
+    color: theme.colors.neutrals.light[950],
   },
   dark: {
     ...snackbarBaseTitleStyle,
-    color: theme.colors.neutrals.dark[800],
+    color: theme.colors.neutrals.dark[950],
   },
 });
 export const snackbarBaseMessageStyle = {
@@ -145,11 +163,11 @@ export const snackbarBaseMessageStyle = {
 export const snackbarMessageVariantColorScheme = styleVariants({
   light: {
     ...snackbarBaseMessageStyle,
-    color: theme.colors.neutrals.light[700],
+    color: theme.colors.neutrals.light[900],
   },
   dark: {
     ...snackbarBaseMessageStyle,
-    color: theme.colors.neutrals.dark[700],
+    color: theme.colors.neutrals.dark[900],
   },
 });
 
@@ -160,9 +178,17 @@ export const snackbarComplementButton = style({
   background: 'none',
   padding: theme.spacing.none,
   margin: theme.spacing.none,
-  color: 'inherit',
 
   cursor: 'pointer',
+});
+
+export const snackbarComplementButtonVariantStyle = styleVariants({
+  light: {
+    color: theme.colors.neutrals.light[700],
+  },
+  dark: {
+    color: theme.colors.neutrals.dark[700],
+  },
 });
 
 export const snackbarCloseButton = style({
