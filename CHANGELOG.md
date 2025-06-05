@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.97
+
+### Patch Changes
+
+- adjusts badge
+
 ## 1.0.96
 
 ### Patch Changes

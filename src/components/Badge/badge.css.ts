@@ -6,43 +6,40 @@ export const badgeStyle = style({
   alignItems: 'center',
   justifyContent: 'center',
   color: theme.colors.neutrals.light[50],
-  fontSize: theme.fontSizes.xxs,
-  lineHeight: 1.5,
+  fontSize: theme.fontSizes.xxxs,
   borderRadius: '50%',
   fontFamily: theme.fontFamily.default,
   ':disabled': {
     background: theme.colors.neutralsOverlay.light[400],
   },
+  fontWeight: 'bold',
 });
 
 export const badgeState = styleVariants({
   numberOn: {
-    paddingInline: theme.spacing.xxs,
-    paddingBlock: theme.spacing.xxxs,
+    width: 22,
+    height: 22,
   },
   numberOff: {
-    paddingInline: theme.spacing.xxxs,
-    paddingBlock: theme.spacing.xxxs,
+    width: 8,
+    height: 8,
   },
 });
 
 export const badgeColors = styleVariants({
-  primary: {
-    background: theme.colors.secondary[900],
-  },
-  secondary: {
-    background: theme.colors.primary[600],
-  },
   error: {
     background: theme.colors.danger[600],
   },
   warning: {
-    background: theme.colors.warning[400],
+    background: theme.colors.warning[600],
   },
   info: {
-    background: theme.colors.info[500],
+    background: theme.colors.info[600],
   },
   success: {
-    background: theme.colors.success[500],
+    background: theme.colors.success[700],
+  },
+  disabled: {
+    background: theme.colors.neutralsOverlay.dark[300],
   },
 });
