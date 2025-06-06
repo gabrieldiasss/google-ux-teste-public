@@ -1,5 +1,17 @@
 # design-system-senai-react
 
+## 1.0.100
+
+### Patch Changes
+
+- update tag & header
+
+## 1.0.99
+
+### Patch Changes
+
+- update component header & tag
+
 ## 1.0.98
 
 ### Patch Changes

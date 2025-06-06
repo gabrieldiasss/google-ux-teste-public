@@ -15,8 +15,9 @@ export const headerWrapperBaseStyle = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   flexDirection: 'row',
-  width: '100%',
+  width: '95%',
 });
+
 export const headerNavWrapperBaseStyle = style({
   display: 'flex',
   alignItems: 'center',

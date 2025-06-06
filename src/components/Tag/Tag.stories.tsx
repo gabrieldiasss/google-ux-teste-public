@@ -2,6 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tag } from '.';
 import React from 'react';
+import {
+  ColorSchemeProvider,
+  useColorScheme,
+} from '../../providers/ColorSchemeProvider';
+import { StoryWrapper } from '../StoryWrapper';
 
 const meta: Meta<typeof Tag> = {
   // Update the type of meta
@@ -10,6 +15,19 @@ const meta: Meta<typeof Tag> = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [
+    (Story) => {
+      const { colorScheme } = useColorScheme();
+
+      return (
+        <ColorSchemeProvider defaultColorScheme={colorScheme}>
+          <StoryWrapper>
+            <Story />
+          </StoryWrapper>
+        </ColorSchemeProvider>
+      );
+    },
+  ],
   tags: ['autodocs'],
 };
 
@@ -18,7 +36,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Variants: Story = {
   render: () => (
-    <div className="flex space-x-4">
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
       <Tag
         variant="success"
         label="Success"

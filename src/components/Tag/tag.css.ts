@@ -42,7 +42,7 @@ export const tagLightColors = styleVariants({
     color: theme.colors.neutrals.light[900],
   },
   neutral: {
-    background: theme.colors.neutralsOverlay.light[50],
+    background: theme.colors.neutralsOverlay.dark[50],
     color: theme.colors.neutrals.light[900],
   },
   outline: {
@@ -54,23 +54,23 @@ export const tagLightColors = styleVariants({
 
 export const tagDarkColors = styleVariants({
   success: {
-    background: theme.colors.successOverlay[100],
+    background: theme.colors.successOverlay[200],
     color: theme.colors.neutrals.dark[900],
   },
   info: {
-    background: theme.colors.infoOverlay[100],
+    background: theme.colors.infoOverlay[200],
     color: theme.colors.neutrals.dark[900],
   },
   warning: {
-    background: theme.colors.warningOverlay[100],
+    background: theme.colors.warningOverlay[200],
     color: theme.colors.neutrals.dark[900],
   },
   error: {
-    background: theme.colors.dangerOverlay[100],
+    background: theme.colors.dangerOverlay[200],
     color: theme.colors.neutrals.dark[900],
   },
   neutral: {
-    background: theme.colors.neutralsOverlay.dark[50],
+    background: theme.colors.neutralsOverlay.light[50],
     color: theme.colors.neutrals.dark[900],
   },
   outline: {
@@ -101,8 +101,8 @@ export const tagIconButton = style({
     borderRadius: theme.borders.corner.xxxs,
     boxSizing: 'border-box',
     transition: 'background-color 0.2s ease-in-out',
-  }
-})
+  },
+});
 
 export const tagIconButtonColorScheme = styleVariants({
   light: {
@@ -117,7 +117,7 @@ export const tagIconButtonColorScheme = styleVariants({
       borderRadius: theme.borders.corner.xxxs,
       boxSizing: 'border-box',
       transition: 'background-color 0.2s ease-in-out',
-    }
+    },
   },
   dark: {
     ':hover': {
@@ -131,6 +131,6 @@ export const tagIconButtonColorScheme = styleVariants({
       borderRadius: theme.borders.corner.xxxs,
       boxSizing: 'border-box',
       transition: 'background-color 0.2s ease-in-out',
-    }
+    },
   },
-})
+});
