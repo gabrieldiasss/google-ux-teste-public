@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.102
+
+### Patch Changes
+
+- create component avatar nai
+
 ## 1.0.101
 
 ### Patch Changes

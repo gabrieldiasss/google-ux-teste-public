@@ -2,12 +2,12 @@ import { styleVariants } from '@vanilla-extract/css';
 
 export const logoSizes = styleVariants({
   xs: {
-    width: 61,
+    width: 60,
   },
   md: {
-    width: 100,
+    width: 95,
   },
   xl: {
-    width: 130,
+    width: 124,
   },
 });
