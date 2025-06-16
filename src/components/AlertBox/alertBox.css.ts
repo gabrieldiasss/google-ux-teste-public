@@ -77,23 +77,23 @@ export const alertBoxWrapperTextColorSchemeVariantStyle = styleVariants({
 
 export const alertBoxIconWrapperVariantStyle = {
   info: style({
-    backgroundColor: theme.colors.infoOverlay[100],
-    color: theme.colors.info[600],
+    backgroundColor: theme.colors.infoOverlay[200],
+    color: theme.colors.info[400],
   }),
 
   success: style({
     backgroundColor: theme.colors.successOverlay[100],
-    color: theme.colors.success[600],
+    color: theme.colors.success[400],
   }),
 
   warning: style({
     backgroundColor: theme.colors.warningOverlay[100],
-    color: theme.colors.warning[600],
+    color: theme.colors.warning[400],
   }),
 
   error: style({
     backgroundColor: theme.colors.dangerOverlay[100],
-    color: theme.colors.danger[600],
+    color: theme.colors.danger[400],
   }),
 };
 export const alertBoxTitleStyle = style({

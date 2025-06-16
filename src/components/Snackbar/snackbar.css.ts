@@ -34,6 +34,8 @@ export const snackbarContent = style({
   borderRadius: theme.borders.corner.s,
   padding: `${theme.spacing.xs} ${theme.spacing.s}`,
   position: 'relative',
+  backgroundSize: '100%',
+  backgroundRepeat: 'no-repeat',
 });
 
 export const snackbarTypeStyles = styleVariants({
@@ -99,35 +101,35 @@ export const snackbarIconWrapper = style({
   borderRadius: '50%',
 });
 
-export const snackbarIconWrapperVariantStyles = styleVariants({
-  success: {
-    background: theme.colors.successOverlay[200],
-  },
-  error: {
-    background: theme.colors.dangerOverlay[200],
-  },
-  warning: {
-    background: theme.colors.warningOverlay[200],
-  },
-  info: {
-    background: theme.colors.infoOverlay[200],
-  },
-});
+export const snackbarIconWrapperVariantStyles = {
+  light: styleVariants({
+    success: { background: theme.colors.successOverlay[100] },
+    error: { background: theme.colors.dangerOverlay[100] },
+    warning: { background: theme.colors.warningOverlay[100] },
+    info: { background: theme.colors.infoOverlay[100] },
+  }),
+  dark: styleVariants({
+    success: { background: theme.colors.successOverlay[200] },
+    error: { background: theme.colors.dangerOverlay[200] },
+    warning: { background: theme.colors.warningOverlay[200] },
+    info: { background: theme.colors.infoOverlay[200] },
+  }),
+} as const;
 
-export const snackbarIconVariantStyles = styleVariants({
-  success: {
-    background: theme.colors.success[500],
-  },
-  error: {
-    background: theme.colors.danger[500],
-  },
-  warning: {
-    background: theme.colors.warning[500],
-  },
-  info: {
-    background: theme.colors.info[500],
-  },
-});
+export const snackbarIconVariantStyles = {
+  light: styleVariants({
+    success: { background: theme.colors.success[700] },
+    error: { background: theme.colors.danger[700] },
+    warning: { background: theme.colors.warning[700] },
+    info: { background: theme.colors.info[700] },
+  }),
+  dark: styleVariants({
+    success: { background: theme.colors.success[400] },
+    error: { background: theme.colors.danger[400] },
+    warning: { background: theme.colors.warning[400] },
+    info: { background: theme.colors.info[400] },
+  }),
+} as const;
 
 export const snackbarBody = style({
   display: 'flex',
@@ -178,6 +180,7 @@ export const snackbarComplementButton = style({
   background: 'none',
   padding: theme.spacing.none,
   margin: theme.spacing.none,
+  fontWeight: theme.fontWeights.medium,
 
   cursor: 'pointer',
 });

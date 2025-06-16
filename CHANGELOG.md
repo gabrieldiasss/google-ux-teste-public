@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.104
+
+### Patch Changes
+
+- adjusts snackbar
+
 ## 1.0.103
 
 ### Patch Changes

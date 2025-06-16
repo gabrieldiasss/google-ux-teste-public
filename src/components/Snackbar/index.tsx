@@ -49,7 +49,7 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
   const iconNames: Record<string, SymbolCodepoints> = {
     success: 'check',
     error: 'close',
-    warning: 'info',
+    warning: 'priority_high',
     info: 'info',
   };
 
@@ -62,14 +62,14 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
           <div
             className={clsx(
               snackbarIconContainer,
-              snackbarIconWrapperVariantStyles[type],
+              snackbarIconWrapperVariantStyles[colorScheme][type],
               snackbarIconContainerVariantColorScheme[colorScheme],
             )}
           >
             <div
               className={clsx(
                 snackbarIconWrapper,
-                snackbarIconVariantStyles[type],
+                snackbarIconVariantStyles[colorScheme][type],
               )}
             >
               <Icon name={iconNames[type]} size={16} color="inherit" />
@@ -88,21 +88,26 @@ export const Snackbar: React.FC<SnackbarProps & { onClose: () => void }> = ({
                   {message}
                 </div>
               )}
-            </div>
-            {complementButton?.position === 'bottom' && (
-              <button
-                className={clsx(
-                  snackbarComplementButton,
-                  snackbarComplementButtonVariantStyle[colorScheme],
+
+              <div>
+                {complementButton?.position === 'bottom' && (
+                  <div style={{ marginTop: '12px' }}>
+                    <button
+                      className={clsx(
+                        snackbarComplementButton,
+                        snackbarComplementButtonVariantStyle[colorScheme],
+                      )}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        complementButton.onClick?.();
+                      }}
+                    >
+                      {complementButton.label}
+                    </button>
+                  </div>
                 )}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  complementButton.onClick?.();
-                }}
-              >
-                {complementButton.label}
-              </button>
-            )}
+              </div>
+            </div>
           </div>
         </div>
 

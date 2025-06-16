@@ -52,6 +52,8 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
 }) => {
   const { colorScheme } = useColorScheme();
 
+  const mode = 'dark';
+
   const alertBoxIcon: Record<string, SymbolCodepoints> = {
     success: 'check_circle',
     error: 'cancel',
@@ -69,7 +71,7 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
         }}
         className={clsx(
           alertBoxGlobalWrapperStyle,
-          alertBoxGlobalWrapperColorSchemeVariantStyle[colorScheme],
+          alertBoxGlobalWrapperColorSchemeVariantStyle[mode],
         )}
       >
         <div
@@ -79,14 +81,14 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
           }}
           className={clsx(
             alertBoxWrapperBaseStyle,
-            alertBoxWrapperVariantStyle[colorScheme],
+            alertBoxWrapperVariantStyle[mode],
           )}
         >
           <div className={clsx(alertBoxWrapperContentBaseStyle)}>
             <div
               className={clsx(
                 alertBoxIconWrapperBaseStyle,
-                alertBoxIconWrapperVariantStyle[type],
+                alertBoxIconWrapperVariantStyle[type][mode],
               )}
             >
               <Icon name={alertBoxIcon[type]} size={36} color="inherit" />
@@ -95,7 +97,7 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
             <div
               className={clsx(
                 alertBoxWrapperTextBaseStyle,
-                alertBoxWrapperTextColorSchemeVariantStyle[colorScheme],
+                alertBoxWrapperTextColorSchemeVariantStyle[mode],
               )}
             >
               <span className={clsx(alertBoxTitleStyle)}>{title}</span>
