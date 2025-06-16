@@ -240,7 +240,7 @@ export const themeTokens = {
     gradient: {
       1: 'linear-gradient(225deg, #0F59E6 0.44%, #1670FA 5.39%, #E84910 54.13%, #F5631A 71.48%, #F8833F 88.33%, #FBB076 99.56%)',
       2: 'linear-gradient(140.11deg, #D8EDFF 1.64%, #54B2FF 40.6%, #A7B5B9 68.76%, #FBB070 96.34%)',
-      3: 'radial-gradient(circle at 1%, rgba(0, 134, 255,0.12) 33%, rgba(0, 134, 255, 0.00) 70% 100%)',
+      3: 'radial-gradient(circle at 1%, rgba(0, 134, 255,0.10) 33%, rgba(0, 134, 255, 0.00) 70% 100%)',
       4: 'radial-gradient(circle at 1%,rgba(255, 21, 21, 0.10) 33%, rgba(227, 26, 26, 0.00) 70% 100%)',
       5: 'radial-gradient(circle at 1%, rgba(249, 118, 7, 0.10) 33%, rgba(5, 4, 2, 0) 70% 100%)',
       6: 'radial-gradient(circle at 1%, rgba(1, 181, 116, 0.10) 33%, rgba(1, 181, 116, 0.00) 70% 100%)',
