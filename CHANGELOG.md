@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.106
+
+### Patch Changes
+
+- feat: create line, bar, area, pie, radar, radial, charts & metrics panel
+
 ## 1.0.105
 
 ### Patch Changes
