@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.108
+
+### Patch Changes
+
+- react forward component
+
 ## 1.0.107
 
 ### Patch Changes
