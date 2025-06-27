@@ -41,3 +41,5 @@ export function MetricPanel({
     </div>
   );
 }
+
+MetricPanel.displayName = 'MetricPanel';

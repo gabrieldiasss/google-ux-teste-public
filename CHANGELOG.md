@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.115
+
+### Patch Changes
+
+- export metric panel display name
+
 ## 1.0.114
 
 ### Patch Changes
