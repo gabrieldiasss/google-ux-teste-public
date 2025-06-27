@@ -33,14 +33,14 @@ interface AreaChartProps {
     indicator3: number;
   }[];
   header: { title: string; subtitle: string };
-  lines: {
+  areas: {
     color: string;
     indicator: string;
   }[];
 }
 
 export const AreaChart = forwardRef<HTMLDivElement, AreaChartProps>(
-  ({ data, header, lines }, ref) => {
+  ({ data, header, areas }, ref) => {
     const { colorScheme } = useColorScheme();
 
     const textChartColor =
@@ -86,14 +86,14 @@ export const AreaChart = forwardRef<HTMLDivElement, AreaChartProps>(
           </div>
 
           <div className={indicatorChart}>
-            {lines.map((line, index) => (
+            {areas.map((area, index) => (
               <div key={index} className={indicator}>
                 <div
                   className={circleIndicator}
-                  style={{ background: line.color }}
+                  style={{ background: area.color }}
                 ></div>
                 <div className={textVariantSubtitle[colorScheme]}>
-                  {line.indicator}
+                  {area.indicator}
                 </div>
               </div>
             ))}
@@ -132,13 +132,13 @@ export const AreaChart = forwardRef<HTMLDivElement, AreaChartProps>(
                 isAnimationActive={false}
                 cursor={false}
               />
-              {lines.map((line, index) => (
+              {areas.map((area, index) => (
                 <Area
                   key={index}
                   type="monotone"
-                  dataKey={line.indicator}
-                  fill={line.color}
-                  stroke={line.color}
+                  dataKey={area.indicator}
+                  fill={area.color}
+                  stroke={area.color}
                   style={{ borderRadius: 24 }}
                   stackId="1"
                 />

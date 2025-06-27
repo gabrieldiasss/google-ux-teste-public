@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.110
+
+### Patch Changes
+
+- change properties and export metrics panel
+
 ## 1.0.109
 
 ### Patch Changes

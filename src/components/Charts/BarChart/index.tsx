@@ -33,13 +33,13 @@ interface BarChartProps {
     indicator3: number;
   }[];
   header: { title: string; subtitle: string };
-  lines: {
+  bars: {
     color: string;
     indicator: string;
   }[];
 }
 
-export const BarChart: React.FC<BarChartProps> = ({ data, header, lines }) => {
+export const BarChart: React.FC<BarChartProps> = ({ data, header, bars }) => {
   const { colorScheme } = useColorScheme();
 
   const textChartColor =
@@ -82,7 +82,7 @@ export const BarChart: React.FC<BarChartProps> = ({ data, header, lines }) => {
         </div>
 
         <div className={indicatorChart}>
-          {lines.map((line) => (
+          {bars.map((line) => (
             <div className={indicator}>
               <div
                 className={circleIndicator}
@@ -131,11 +131,11 @@ export const BarChart: React.FC<BarChartProps> = ({ data, header, lines }) => {
               isAnimationActive={false}
               cursor={false}
             />
-            {lines.map((line) => (
+            {bars.map((bar) => (
               <Bar
                 type="monotone"
-                dataKey={line.indicator}
-                fill={line.color}
+                dataKey={bar.indicator}
+                fill={bar.color}
                 style={{ borderRadius: 24 }}
                 radius={[4, 4, 0, 0]}
               />

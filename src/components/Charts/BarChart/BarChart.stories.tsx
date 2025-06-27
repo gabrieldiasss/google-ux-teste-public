@@ -220,7 +220,7 @@ export const Default: Story = {
       },
     ];
 
-    const lines = [
+    const bars = [
       {
         color: '#E84910',
         indicator: 'indicator1',
@@ -240,7 +240,7 @@ export const Default: Story = {
         <BarChart
           data={data}
           header={{ title: 'Título', subtitle: 'Descrição ' }}
-          lines={lines}
+          bars={bars}
         />
       </div>
     );

@@ -35,6 +35,7 @@ import { PaddingPieChart } from './Charts/PieChart/PaddingPieChart';
 import { PaddingPieChartHalf } from './Charts/PieChart/PaddingPieChartHalf';
 import { RadarChart } from './Charts/RadarChart';
 import { RadialChart } from './Charts/RadialChart';
+import { MetricPanel } from './MetricPanel';
 
 export {
   Button,
@@ -74,4 +75,5 @@ export {
   PaddingPieChartHalf,
   RadarChart,
   RadialChart,
+  MetricPanel,
 };
