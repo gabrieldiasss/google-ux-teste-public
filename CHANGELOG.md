@@ -1,5 +1,12 @@
 # design-system-senai-react
 
+## 1.0.113
+
+### Patch Changes
+
+- able selector
+- ac0a71c: export progress bar
+
 ## 1.0.112
 
 ### Patch Changes
