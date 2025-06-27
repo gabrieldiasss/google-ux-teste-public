@@ -23,7 +23,7 @@ import { AlertBox } from './AlertBox';
 import { SearchNAI } from './SearchNAI';
 import { Chat } from './Chat';
 import { ChatMessage } from './Chat/ChatMessage';
-import { Select } from './Select';
+/* import { Select } from './Select'; */
 import { Pagination } from './Pagination';
 import { NAIButton } from './NAIButton';
 import { AvatarNAI } from './AvatarNAI';
@@ -36,6 +36,7 @@ import { PaddingPieChartHalf } from './Charts/PieChart/PaddingPieChartHalf';
 import { RadarChart } from './Charts/RadarChart';
 import { RadialChart } from './Charts/RadialChart';
 import { MetricPanel } from './MetricPanel';
+import { ProgressBar } from './Charts/ProgressBar';
 
 export {
   Button,
@@ -62,7 +63,7 @@ export {
   AlertBox,
   SearchNAI,
   Chat,
-  Select,
+  /*   Select, */
   Pagination,
   ChatMessage,
   NAIButton,
@@ -76,4 +77,5 @@ export {
   RadarChart,
   RadialChart,
   MetricPanel,
+  ProgressBar,
 };
