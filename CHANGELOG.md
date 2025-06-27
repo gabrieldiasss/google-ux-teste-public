@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.112
+
+### Patch Changes
+
+- create progress bar
+
 ## 1.0.111
 
 ### Patch Changes
