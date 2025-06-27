@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.111
+
+### Patch Changes
+
+- able selector
+
 ## 1.0.110
 
 ### Patch Changes
