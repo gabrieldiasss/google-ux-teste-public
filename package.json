@@ -1,6 +1,6 @@
 {
   "name": "design-system-senai-react",
-  "version": "1.0.108",
+  "version": "1.0.109",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",

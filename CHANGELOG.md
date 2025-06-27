@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.109
+
+### Patch Changes
+
+- add babel preset react
+
 ## 1.0.108
 
 ### Patch Changes
