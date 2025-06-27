@@ -7,11 +7,14 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import image from '@rollup/plugin-image';
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
+import babel from '@rollup/plugin-babel';
+
 const packageJson = require('./package.json');
 
 export default [
   // JavaScript and TypeScript build configuration
   {
+    threeshake: true,
     input: 'src/index.ts',
     output: [
       {
@@ -34,6 +37,11 @@ export default [
       commonjs(), // Convert CJS modules to ESM
       typescript({
         tsconfig: './tsconfig.json',
+      }),
+      babel({
+        babelHelpers: 'bundled',
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        exclude: 'node_modules/**',
       }),
       postcss({
         extensions: ['.css'],

@@ -33,8 +33,10 @@
     "wavesurfer.js": "^7.8.11"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.27.1",
     "@changesets/cli": "^2.27.1",
     "@chromatic-com/storybook": "3.2.4",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^13.1.3",
