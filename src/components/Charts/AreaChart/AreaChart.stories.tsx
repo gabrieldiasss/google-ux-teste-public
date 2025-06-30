@@ -2,11 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { AreaChart } from '.';
-import {
-  ColorSchemeProvider,
-  useColorScheme,
-} from '../../../providers/ColorSchemeProvider';
-import { StoryWrapper } from '../../StoryWrapper';
+
 
 const meta: Meta<typeof AreaChart> = {
   title: 'Components/Charts/AreaChart',
@@ -14,19 +10,6 @@ const meta: Meta<typeof AreaChart> = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story) => {
-      const { colorScheme } = useColorScheme();
-
-      return (
-        <ColorSchemeProvider defaultColorScheme={colorScheme}>
-          <StoryWrapper>
-            <Story />
-          </StoryWrapper>
-        </ColorSchemeProvider>
-      );
-    },
-  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof AreaChart>;
 
