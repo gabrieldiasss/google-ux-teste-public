@@ -38,8 +38,8 @@ export const Default: Story = {
     const data = [
       {
         name: 'Page A',
-        indicator1: 25000, // Entre 1000-3000 ou 30000-70000
-        indicator2: 8500, // Acima de 8000 (máx. 10000)
+        indicator1: 25000,
+        indicator2: 8500,
         amt: 2400,
         indicator3: 3200,
       },
@@ -240,7 +240,7 @@ export const Default: Story = {
         <AreaChart
           data={data}
           header={{ title: 'Título', subtitle: 'Descrição ' }}
-          lines={lines}
+          areas={lines}
         />
       </div>
     );

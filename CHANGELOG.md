@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.116
+
+### Patch Changes
+
+- able chart area
+
 ## 1.0.115
 
 ### Patch Changes

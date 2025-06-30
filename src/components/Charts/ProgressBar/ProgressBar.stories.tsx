@@ -35,10 +35,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => {
-    return (
-      <div style={{ width: '300px', height: '400px' }}>
-        <ProgressBar percentage={20} size="lg" />
-      </div>
-    );
+    return <ProgressBar percentage={20} size="lg" />;
   },
 };

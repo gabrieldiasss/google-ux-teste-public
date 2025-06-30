@@ -29,7 +29,6 @@ import { NAIButton } from './NAIButton';
 import { AvatarNAI } from './AvatarNAI';
 /* import { LineChart } from './Charts/LineCharts';
 import { BarChart } from './Charts/BarChart';
-import { AreaChart } from './Charts/AreaChart';
 import { SimplePieChart } from './Charts/PieChart/SimplePieChart';
 import { PaddingPieChart } from './Charts/PieChart/PaddingPieChart';
 import { PaddingPieChartHalf } from './Charts/PieChart/PaddingPieChartHalf';
@@ -37,6 +36,7 @@ import { RadarChart } from './Charts/RadarChart';
 import { RadialChart } from './Charts/RadialChart'; */
 import { MetricPanel } from './MetricPanel';
 import { ProgressBar } from './Charts/ProgressBar';
+import { AreaChart } from './Charts/AreaChart';
 
 export {
   Button,
@@ -68,9 +68,10 @@ export {
   ChatMessage,
   NAIButton,
   AvatarNAI,
+  AreaChart,
   /*   LineChart,
   BarChart,
-  AreaChart,
+
   SimplePieChart,
   PaddingPieChart,
   PaddingPieChartHalf,
