@@ -2,11 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { LineChart } from '.';
-import {
-  ColorSchemeProvider,
-  useColorScheme,
-} from '../../../providers/ColorSchemeProvider';
-import { StoryWrapper } from '../../StoryWrapper';
 
 const meta: Meta<typeof LineChart> = {
   title: 'Components/Charts/LineChart',
@@ -14,19 +9,6 @@ const meta: Meta<typeof LineChart> = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story) => {
-      const { colorScheme } = useColorScheme();
-
-      return (
-        <ColorSchemeProvider defaultColorScheme={colorScheme}>
-          <StoryWrapper>
-            <Story />
-          </StoryWrapper>
-        </ColorSchemeProvider>
-      );
-    },
-  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof LineChart>;
 
@@ -236,7 +218,7 @@ export const Default: Story = {
     ];
 
     return (
-      <div style={{ width: '90vw', height: '400px' }}>
+      <div style={{ width: '80vw', height: '400px' }}>
         <LineChart
           data={data}
           header={{ title: 'Título', subtitle: 'Descrição ' }}

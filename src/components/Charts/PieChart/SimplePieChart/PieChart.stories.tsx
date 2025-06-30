@@ -2,11 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { SimplePieChart } from '.';
-import {
-  ColorSchemeProvider,
-  useColorScheme,
-} from '../../../../providers/ColorSchemeProvider';
-import { StoryWrapper } from '../../../StoryWrapper';
 
 const meta: Meta<typeof SimplePieChart> = {
   title: 'Components/Charts/PieChart',
@@ -14,19 +9,6 @@ const meta: Meta<typeof SimplePieChart> = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story) => {
-      const { colorScheme } = useColorScheme();
-
-      return (
-        <ColorSchemeProvider defaultColorScheme={colorScheme}>
-          <StoryWrapper>
-            <Story />
-          </StoryWrapper>
-        </ColorSchemeProvider>
-      );
-    },
-  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof SimplePieChart>;
 

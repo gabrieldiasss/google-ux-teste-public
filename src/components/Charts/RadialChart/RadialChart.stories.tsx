@@ -2,31 +2,12 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { RadialChart } from '.';
-import {
-  ColorSchemeProvider,
-  useColorScheme,
-} from '../../../providers/ColorSchemeProvider';
-import { StoryWrapper } from '../../StoryWrapper';
-
 const meta: Meta<typeof RadialChart> = {
   title: 'Components/Charts/RadialChart',
   component: RadialChart,
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story) => {
-      const { colorScheme } = useColorScheme();
-
-      return (
-        <ColorSchemeProvider defaultColorScheme={colorScheme}>
-          <StoryWrapper>
-            <Story />
-          </StoryWrapper>
-        </ColorSchemeProvider>
-      );
-    },
-  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof RadialChart>;
 

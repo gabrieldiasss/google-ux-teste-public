@@ -2,11 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { PaddingPieChartHalf } from '.';
-import {
-  ColorSchemeProvider,
-  useColorScheme,
-} from '../../../../providers/ColorSchemeProvider';
-import { StoryWrapper } from '../../../StoryWrapper';
 
 const meta: Meta<typeof PaddingPieChartHalf> = {
   title: 'Components/Charts/PaddingPieChartHalf',
@@ -14,19 +9,6 @@ const meta: Meta<typeof PaddingPieChartHalf> = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story) => {
-      const { colorScheme } = useColorScheme();
-
-      return (
-        <ColorSchemeProvider defaultColorScheme={colorScheme}>
-          <StoryWrapper>
-            <Story />
-          </StoryWrapper>
-        </ColorSchemeProvider>
-      );
-    },
-  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof PaddingPieChartHalf>;
 
