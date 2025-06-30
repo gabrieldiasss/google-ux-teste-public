@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.117
+
+### Patch Changes
+
+- add path
+
 ## 1.0.116
 
 ### Patch Changes
