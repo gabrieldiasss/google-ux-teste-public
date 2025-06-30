@@ -1,5 +1,11 @@
 # design-system-senai-react
 
+## 1.0.118
+
+### Patch Changes
+
+- 80vw
+
 ## 1.0.117
 
 ### Patch Changes
