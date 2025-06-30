@@ -2,11 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { RadarChart } from '.';
-import {
-  ColorSchemeProvider,
-  useColorScheme,
-} from '../../../providers/ColorSchemeProvider';
-import { StoryWrapper } from '../../StoryWrapper';
 
 const meta: Meta<typeof RadarChart> = {
   title: 'Components/Charts/RadarChart',
@@ -14,19 +9,6 @@ const meta: Meta<typeof RadarChart> = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    (Story) => {
-      const { colorScheme } = useColorScheme();
-
-      return (
-        <ColorSchemeProvider defaultColorScheme={colorScheme}>
-          <StoryWrapper>
-            <Story />
-          </StoryWrapper>
-        </ColorSchemeProvider>
-      );
-    },
-  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof RadarChart>;
 

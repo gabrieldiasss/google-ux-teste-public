@@ -218,7 +218,7 @@ export const Default: Story = {
     ];
 
     return (
-      <div style={{ width: '90vw', height: '400px' }}>
+      <div style={{ width: '80vw', height: '400px' }}>
         <BarChart
           data={data}
           header={{ title: 'Título', subtitle: 'Descrição ' }}
