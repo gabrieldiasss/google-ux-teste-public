@@ -228,3 +228,58 @@ export const Default: Story = {
     );
   },
 };
+
+export const Negatives: Story = {
+  render: () => {
+    const data = [
+        { name: 'Page A', indicator1: 1000, indicator2: -2400 },
+        { name: 'Page B', indicator1: 3000, indicator2: 1398 },
+        { name: 'Page C', indicator1: 2000, indicator2: -9800 },
+        { name: 'Page D', indicator1: 2780, indicator2: -3908 },
+        { name: 'Page E', indicator1: 1890, indicator2: 4800 },
+        { name: 'Page F', indicator1: 2390, indicator2: -3800 },
+        { name: 'Page G', indicator1: 3490, indicator2: 4300 },
+        { name: 'Page H', indicator1: 4200, indicator2: -3100 },
+        { name: 'Page I', indicator1: 3800, indicator2: 2900 },
+        { name: 'Page J', indicator1: 5100, indicator2: -5100 },
+        { name: 'Page K', indicator1: 2900, indicator2: 3700 },
+        { name: 'Page L', indicator1: 3400, indicator2: -4200 },
+        { name: 'Page M', indicator1: 4700, indicator2: 3500 },
+        { name: 'Page N', indicator1: 3900, indicator2: -4600 },
+        { name: 'Page O', indicator1: 3100, indicator2: 3300 },
+        { name: 'Page P', indicator1: 4500, indicator2: -2700 },
+        { name: 'Page Q', indicator1: 3600, indicator2: 4400 },
+        { name: 'Page R', indicator1: 4300, indicator2: -3900 },
+        { name: 'Page S', indicator1: 4900, indicator2: 5000 },
+        { name: 'Page T', indicator1: 4100, indicator2: -3600 },
+        { name: 'Page U', indicator1: 5300, indicator2: 4700 },
+        { name: 'Page V', indicator1: 3700, indicator2: -4100 },
+        { name: 'Page W', indicator1: 4400, indicator2: 4500 },
+        { name: 'Page X', indicator1: 4800, indicator2: -4900 },
+        { name: 'Page Y', indicator1: 5200, indicator2: 5200 },
+        { name: 'Page Z', indicator1: 4600, indicator2: -4800 },
+    ];
+
+
+    const bars = [
+      {
+        color: '#E84910',
+        indicator: 'indicator1',
+      },
+      {
+        color: '#FBB076',
+        indicator: 'indicator2',
+      },
+    ];
+
+    return (
+      <div style={{ width: '80vw', height: '400px' }}>
+        <BarChart
+          data={data}
+          header={{ title: 'Título', subtitle: 'Descrição ' }}
+          bars={bars}
+        />
+      </div>
+    );
+  },
+};
